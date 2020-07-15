@@ -9,7 +9,7 @@ import Voice from './Voice.js'
 import {PhraseLevel} from './Phrase_Level.js'
 import SignUp from "./SignUp.js"
 import Home from "./Home.js"
-
+import LevelOne from "./LevelOne.js"
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -31,6 +31,7 @@ ReactDOM.render(
           <Route exact path="/voice" component={Voice}/>
           <Route exact path="/phrase" component={PhraseLevel}/>
           <Route exact path="/signup" component={SignUp}/>
+          <Route exact path="/levelone" component={LevelOne}/>
       </Router>
     </Provider>,
 

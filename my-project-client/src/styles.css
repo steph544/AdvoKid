@@ -91,3 +91,27 @@ form input{
     height: 700px;
     background: url(./images/Login.png);
 }
+
+
+/* <--------Level One Page-----> */
+.levelone-bg-img{
+    background-image: url("./images/levelonebg.png");
+    min-height: 1600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.tv{
+    width: 30vw;
+}
+
+.center{
+    text-align: center;
+}
+
+.video{
+    margin-left: 200px;
+    width: 75px;
+}

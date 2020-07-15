@@ -68,7 +68,7 @@ class Login extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/>
+                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
                                      <br/>
                                      <br/>
                                      <NavLink

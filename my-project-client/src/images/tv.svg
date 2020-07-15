@@ -1,0 +1,45 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1140.07 773.07"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:url(#linear-gradient-4);}.cls-5{fill:url(#linear-gradient-5);}.cls-6{fill:url(#linear-gradient-6);}.cls-7{fill:url(#linear-gradient-7);}.cls-8{fill:url(#linear-gradient-8);}.cls-9{fill:url(#linear-gradient-9);}.cls-10{fill:url(#linear-gradient-10);}.cls-11{fill:url(#linear-gradient-11);}.cls-12{fill:url(#linear-gradient-12);}.cls-13{fill:url(#linear-gradient-13);}.cls-14{fill:url(#linear-gradient-14);}.cls-15{fill:url(#linear-gradient-15);}.cls-16{fill:url(#linear-gradient-16);}.cls-17{fill:url(#linear-gradient-17);}.cls-18{opacity:0.2;isolation:isolate;}.cls-19{fill:url(#linear-gradient-18);}.cls-20{fill:url(#linear-gradient-19);}.cls-21{fill:url(#linear-gradient-20);}.cls-22{fill:url(#linear-gradient-21);}.cls-23{fill:url(#linear-gradient-22);}.cls-24{fill:url(#linear-gradient-23);}
+  body{
+
+    background-color:beige;
+ 
+  }
+</style><linearGradient id="linear-gradient" x1="-2002.23" y1="1784.36" x2="-1775.93" y2="1558.06" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2d404e"/><stop offset="1" stop-color="#100c1a"/></linearGradient><linearGradient id="linear-gradient-2" x1="-813.53" y1="1784.36" x2="-587.23" y2="1558.06" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-3" x1="-2112.32" y1="3134.26" x2="-477.13" y2="1499.07" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffff69"/><stop offset="1" stop-color="#ff4545"/></linearGradient><linearGradient id="linear-gradient-4" x1="-1508.88" y1="1742.46" x2="-1508.88" y2="2890.96" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0.01" stop-color="#f68b1f"/><stop offset="1" stop-color="#d75342"/></linearGradient><linearGradient id="linear-gradient-5" x1="-1907.83" y1="2890.96" x2="-1907.83" y2="1742.36" xlink:href="#linear-gradient-4"/><linearGradient id="linear-gradient-6" x1="-1110.03" y1="2890.96" x2="-1110.03" y2="1742.36" xlink:href="#linear-gradient-4"/><linearGradient id="linear-gradient-7" x1="-6780.73" y1="2316.71" x2="-5188.44" y2="2316.71" gradientTransform="matrix(0.11, 0, 0, -0.51, 1588.02, 1559.83)" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-8" x1="-672.53" y1="1795.86" x2="-415.13" y2="1795.86" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#090000"/></linearGradient><linearGradient id="linear-gradient-9" x1="-672.53" y1="1863.86" x2="-415.13" y2="1863.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-10" x1="-672.53" y1="1931.86" x2="-415.13" y2="1931.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-11" x1="-672.53" y1="1999.86" x2="-415.13" y2="1999.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-12" x1="-672.53" y1="2067.86" x2="-415.13" y2="2067.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-13" x1="-672.53" y1="2135.86" x2="-415.13" y2="2135.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-14" x1="-672.53" y1="2203.86" x2="-415.13" y2="2203.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-15" x1="-672.53" y1="2271.86" x2="-415.13" y2="2271.86" xlink:href="#linear-gradient-8"/><linearGradient id="linear-gradient-16" x1="-2058.3" y1="2865.99" x2="-959.65" y2="1767.34" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-17" x1="-1992.98" y1="2800.72" x2="-1024.88" y2="1832.61" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00bfff"/><stop offset="1" stop-color="#9136d9"/></linearGradient><linearGradient id="linear-gradient-18" x1="-596.65" y1="2821.58" x2="-491.01" y2="2715.94" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d60079"/><stop offset="1" stop-color="#300d00"/></linearGradient><linearGradient id="linear-gradient-19" x1="-590.99" y1="2815.93" x2="-496.66" y2="2721.6" gradientTransform="matrix(0.51, 0, 0, -0.51, 1230.23, 1559.83)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff0090"/><stop offset="1" stop-color="#591700"/></linearGradient><linearGradient id="linear-gradient-20" x1="-596.65" y1="2646.48" x2="-491.01" y2="2540.84" xlink:href="#linear-gradient-18"/><linearGradient id="linear-gradient-21" x1="-590.99" y1="2640.83" x2="-496.66" y2="2546.5" xlink:href="#linear-gradient-19"/><linearGradient id="linear-gradient-22" x1="-596.65" y1="2471.48" x2="-491.01" y2="2365.84" xlink:href="#linear-gradient-18"/><linearGradient id="linear-gradient-23" x1="-590.99" y1="2465.83" x2="-496.66" y2="2371.5" xlink:href="#linear-gradient-19"/></defs><g id="g3897"><g id="g230"><g id="g45"><polygon id="polygon41" points="220.37 703.11 205.65 752.07 303.82 752.07 328.27 703.11 220.37 703.11"/><polygon id="polygon43" points="913.27 703.11 805.36 703.11 829.81 752.07 927.98 752.07 913.27 703.11"/></g><g id="g61"><rect id="rect52" class="cls-1" x="182.33" y="666.67" width="159.06" height="72.94"/><rect id="rect59" class="cls-2" x="791.67" y="666.67" width="159.06" height="72.94"/></g><path id="path68-6" class="cls-3" d="M47,71.67v601.2a43.67,43.67,0,0,0,43.67,43.67h951.72a43.68,43.68,0,0,0,43.68-43.67V71.67A43.68,43.68,0,0,0,1042.39,28H90.67A43.67,43.67,0,0,0,47,71.67Z"/>
+<rect id="rect75" class="cls-4" x="96.93" y="77.88" width="719.66" height="588.74"/>
+
+
+
+<g id="g91">
+<g class="video">
+<foreignObject x="96.93" y="77.88" width="719.66" height="588.74">
+<body>
+  <iframe xmlns="http://www.w3.org/1999/xhtml"
+    width="700" height="590"
+    src='./videos/School.mp4'
+    frameborder="0">
+  </iframe>
+
+</body> 
+</foreignObject>
+</g>
+<!-- <polygon id="polygon82" class="cls-5" points="407.57 372.27 96.93 77.88 96.93 666.67 407.57 372.27"/><polygon id="polygon89" class="cls-6" points="505.89 372.27 816.54 666.67 816.54 77.88 505.89 372.27"/> -->
+</g>
+
+<rect id="rect98" class="cls-7" x="866.77" y="77.88" width="169.37" height="588.74"/><g id="g156-8"><rect id="rect105" class="cls-8" x="885.48" y="630.53" width="131.95" height="17.43"/><rect id="rect112" class="cls-9" x="885.48" y="595.67" width="131.95" height="17.43"/><rect id="rect119" class="cls-10" x="885.48" y="560.81" width="131.95" height="17.43"/><rect id="rect126" class="cls-11" x="885.48" y="525.95" width="131.95" height="17.43"/><rect id="rect133" class="cls-12" x="885.48" y="491.1" width="131.95" height="17.43"/><rect id="rect140" class="cls-13" x="885.48" y="456.24" width="131.95" height="17.43"/><rect id="rect147" class="cls-14" x="885.48" y="421.38" width="131.95" height="17.43"/>
+
+<rect id="rect154" class="cls-15" x="885.48" y="386.52" width="131.95" height="17.43"/></g>
+
+<!-- <path id="path163" class="cls-16" d="M143.63,622.38a2466.59,2466.59,0,0,0,626.16,0,1577.71,1577.71,0,0,0,0-500.21,2465.67,2465.67,0,0,0-626.16,0A1577.12,1577.12,0,0,0,143.63,622.38Z"/>
+
+<path id="path170-5" class="cls-17" d="M456.73,617.35c-81.09,0-163.06-4.15-244.57-12.3a59.21,59.21,0,0,1-52.9-52,1545.77,1545.77,0,0,1,0-361.6,59.21,59.21,0,0,1,52.9-52,2447.78,2447.78,0,0,1,244.57-12.3c81.1,0,163.06,4.15,244.57,12.3a59.21,59.21,0,0,1,52.9,52,1553,1553,0,0,1,10.61,180.8,1552.78,1552.78,0,0,1-10.61,180.8,59.21,59.21,0,0,1-52.9,52,2448.38,2448.38,0,0,1-244.57,12.3Z"/>
+ -->
+<!-- 
+<path id="path172" class="cls-18" d="M143.63,122.17c-2.87,17.94-5.38,35.83-7.64,53.77,106.93,10.1,214.37,15.23,320.74,15.23S670.54,186,777.47,175.94q-3.37-26.91-7.63-53.77A2466.07,2466.07,0,0,0,143.63,122.17Z"/> -->
+
+<g id="g180-4"><circle id="circle174" cx="957.71" cy="146.77" r="38.29"/><circle id="circle176" cx="957.71" cy="236.48" r="38.29"/><circle id="circle178" cx="957.71" cy="326.24" r="38.29"/></g><g id="g196-9"><circle id="circle187" class="cls-19" cx="951.46" cy="140.52" r="38.29"/><circle id="circle194" class="cls-20" cx="951.46" cy="140.52" r="34.19"/></g><g id="g212-7"><circle id="circle203" class="cls-21" cx="951.46" cy="230.28" r="38.29"/><circle id="circle210" class="cls-22" cx="951.46" cy="230.28" r="34.19"/></g><g id="g228-6"><circle id="circle219" class="cls-23" cx="951.46" cy="319.98" r="38.29"/><circle id="circle226" class="cls-24" cx="951.46" cy="319.98" r="34.19"/>
+
+
+
+</g></g></g>
+
+</svg>
