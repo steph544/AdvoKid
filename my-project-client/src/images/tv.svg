@@ -1,4 +1,4 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1140.07 773.07"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:url(#linear-gradient-4);}.cls-5{fill:url(#linear-gradient-5);}.cls-6{fill:url(#linear-gradient-6);}.cls-7{fill:url(#linear-gradient-7);}.cls-8{fill:url(#linear-gradient-8);}.cls-9{fill:url(#linear-gradient-9);}.cls-10{fill:url(#linear-gradient-10);}.cls-11{fill:url(#linear-gradient-11);}.cls-12{fill:url(#linear-gradient-12);}.cls-13{fill:url(#linear-gradient-13);}.cls-14{fill:url(#linear-gradient-14);}.cls-15{fill:url(#linear-gradient-15);}.cls-16{fill:url(#linear-gradient-16);}.cls-17{fill:url(#linear-gradient-17);}.cls-18{opacity:0.2;isolation:isolate;}.cls-19{fill:url(#linear-gradient-18);}.cls-20{fill:url(#linear-gradient-19);}.cls-21{fill:url(#linear-gradient-20);}.cls-22{fill:url(#linear-gradient-21);}.cls-23{fill:url(#linear-gradient-22);}.cls-24{fill:url(#linear-gradient-23);}
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1400 900"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:url(#linear-gradient-4);}.cls-5{fill:url(#linear-gradient-5);}.cls-6{fill:url(#linear-gradient-6);}.cls-7{fill:url(#linear-gradient-7);}.cls-8{fill:url(#linear-gradient-8);}.cls-9{fill:url(#linear-gradient-9);}.cls-10{fill:url(#linear-gradient-10);}.cls-11{fill:url(#linear-gradient-11);}.cls-12{fill:url(#linear-gradient-12);}.cls-13{fill:url(#linear-gradient-13);}.cls-14{fill:url(#linear-gradient-14);}.cls-15{fill:url(#linear-gradient-15);}.cls-16{fill:url(#linear-gradient-16);}.cls-17{fill:url(#linear-gradient-17);}.cls-18{opacity:0.2;isolation:isolate;}.cls-19{fill:url(#linear-gradient-18);}.cls-20{fill:url(#linear-gradient-19);}.cls-21{fill:url(#linear-gradient-20);}.cls-22{fill:url(#linear-gradient-21);}.cls-23{fill:url(#linear-gradient-22);}.cls-24{fill:url(#linear-gradient-23);}
   body{
 
     background-color:beige;
@@ -13,11 +13,14 @@
 <g class="video">
 <foreignObject x="96.93" y="77.88" width="719.66" height="588.74">
 <body>
-  <iframe xmlns="http://www.w3.org/1999/xhtml"
+
+  <!-- <iframe xmlns="http://www.w3.org/1999/xhtml"
     width="700" height="590"
-    src='./videos/School.mp4'
+    src="/Users/stephaniecheney/Development/code/Mod5FinalProject/my-project-client/src/videos/School.mp4"
     frameborder="0">
-  </iframe>
+  </iframe> -->
+
+  <iframe width="720" height="590" src="https://www.youtube.com/embed/BdS14RhRbQY" frameborder="0" ></iframe>
 
 </body> 
 </foreignObject>
