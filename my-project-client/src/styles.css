@@ -1,0 +1,93 @@
+html, body { margin:0; padding:0; overflow:hidden }
+svg { position:fixed; top:0; bottom:0; left:0; right:0 }
+/* <------- Home Page -------> */
+.bg-img{
+   
+    background-color: rgb(18, 195, 235);
+    height: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%, 70%;
+    position: relative;
+}
+
+.voice-bg-img{
+   
+    background-image: url("./images/phrase_background.jpg");
+    min-height: 1500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.logo:hover{
+    fill:orange
+}
+
+#tv {
+    animation: woodlog 3s infinite linear ;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes tv {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.center{
+    text-align: center;
+}
+
+#image-3{
+    fill: orange
+}
+
+/* <-----Sign Up Page ------>  */
+
+.signup-bg-img{
+    background-image: url("./images/signupbg.png");
+    min-height: 1600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#image-container {
+    width: 720px;
+    height: 1010px;
+    background: url(./images/SignUp.png);
+}
+#form-container {
+    width:450px;
+    margin: 10px auto 0 auto;
+    text-align: center
+ }
+
+.signup_img{
+    text-align: center
+}
+
+form input{
+    height:50px;
+    width:450px;
+    font-size:14pt;
+}
+
+.yellowbutton:hover {
+    background: url('./images/yellowsubmitbutton.png') no-repeat;
+  }
+
+  /* <-----Login Page ------>  */
+
+  #login-image-container {
+    width: 720px;
+    height: 700px;
+    background: url(./images/Login.png);
+}
