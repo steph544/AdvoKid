@@ -1,5 +1,16 @@
-html, body { margin:0; padding:0; overflow:hidden }
-svg { position:fixed; top:0; bottom:0; left:0; right:0 }
+html, body { 
+    margin:0; 
+    padding:0; 
+    overflow:hidden 
+}
+/* svg {
+     position:fixed; 
+     top:0; 
+     bottom:0; 
+     left:0; 
+     right:0 
+    }
+     */
 /* <------- Home Page -------> */
 .bg-img{
    
@@ -100,7 +111,11 @@ form input{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position:fixed; 
+     top:0; 
+     bottom:0; 
+     left:0; 
+     right:0 
 }
 
 .tv{

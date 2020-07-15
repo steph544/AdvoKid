@@ -24,7 +24,6 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
       <Router>
-          <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/navMap" component={NavMap} />
