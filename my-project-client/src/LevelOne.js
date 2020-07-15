@@ -8,6 +8,11 @@ import {ReactComponent as TV} from './images/tv.svg';
 
 
 function LevelOne(){
+
+    // function changePic(){
+    //     const character = document.getElementById('character')
+    //     character.src=('./images/zombie.png')
+    // }
   
 
     return(
@@ -17,13 +22,13 @@ function LevelOne(){
                     <Grid.Column width={1}>
 
                     </Grid.Column>
-                    <Grid.Column centered width={5}>
+                    <Grid.Column centered width={6}>
                         <Grid.Row>
                             <img style={{width: '140px'}} src={require('./images/star.png')} /> 
                         </Grid.Row> 
 
                         <Grid.Row>
-                            <img src={require('./images/chicken.png')} />
+                            <img id="character" src={require('./images/chicken.png')} />
                         </Grid.Row>  
 
                   
