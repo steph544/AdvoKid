@@ -42,7 +42,7 @@ class SignUp extends Component{
         .then(userInfo => 
             {
                 console.log(userInfo)
-            
+            if (localStorage.user !== "undefined")
             this.props.history.push("/login") 
         }
         )

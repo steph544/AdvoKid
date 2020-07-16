@@ -39,8 +39,10 @@ class Login extends Component{
                 console.log(userInfo)
             localStorage.token = userInfo.token 
             localStorage.user = this.state.username 
+            if (localStorage.token !== "undefined"){
+                this.props.history.push("/navMap") 
+            }
             
-            this.props.history.push("/navMap") 
         }
         )
         
