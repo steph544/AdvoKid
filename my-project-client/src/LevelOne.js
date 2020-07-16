@@ -5,8 +5,10 @@ import {connect} from 'react-redux'
 import "./styles.css"
 import {ReactComponent as TV} from './images/tv.svg';
 import {ReactComponent as Chicken} from './images/chicken.svg';
+import Webcam from "react-webcam";
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
 import ScriptTag from 'react-script-tag'
+// import "%PUBLIC_URL%/clmtrackr/build/clmtrackr.js"
 // import "./clmtracker-webcam.js"
 // import "./js/libs/utils.js"
 // import "./build/clmtrackr.js"
@@ -17,18 +19,78 @@ import ScriptTag from 'react-script-tag'
 // import "./js/emotionmodel.js"
 
 
-function LevelOne(){
+class LevelOne extends React.Component{
+    // constructor(props){
+    //     super()
+        
+    //     this.videoref=React.createRef()
+    // }
 
     // function changePic(){
     //     const character = document.getElementById('character')
     //     character.src=('./images/zombie.png')
     // }
 
+setRef =(webcam)=>{
+this.webcam=webcam 
+}
 
+    
+componentDidMount(){
+    /*global google*/
+                this.webcam.video.play() 
+                window.pModel.shapeModel.nonRegularizedVectors.push(9);
+				window.pModel.shapeModel.nonRegularizedVectors.push(11);
+                
+				var ctrack = new window.clm.tracker({useWebGL : true});
+				ctrack.init(window.pModel);
+                var trackingStarted = false;
+                ctrack.start(this.webcam.video);
+                console.log(this.webcam.video)
+                trackingStarted = true;
+                
 
+                var ec = new window.emotionClassifier();
+				ec.init(window.emotionModel);
+                var emotionData = ec.getBlank();
+                
+                function pointsAdded(er){
+					if (er[5].value>0.5){
+						console.log("I am HAPPY!")
+						
+					}
+				}
 
+                function drawLoop() {
+					window.requestAnimFrame(drawLoop);
+					// overlayCC.clearRect(0, 0, vid_width, vid_height);
+					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
+					// if (ctrack.getCurrentPosition()) {
+					// 	ctrack.draw(overlay);
+                    // }
+                    // var positions= ctrack.getCurrentPosition();
+                    // console.log(positions)
+					var cp = ctrack.getCurrentParameters();
+                   
+                    var er = ec.meanPredict(cp); 
+                    // console.log(er)
+					if (er) {
+                        pointsAdded(er)
+                       
+						// window.updateData(er);
+						// for (var i = 0;i < er.length;i++) {
+						// 	if (er[i].value > 0.4) {
+						// 		document.getElementById('icon'+(i+1)).style.visibility = 'visible';
+						// 	} else {
+						// 		document.getElementById('icon'+(i+1)).style.visibility = 'hidden';
+						// 	}
+						// }
+					}
+                }
+                drawLoop();
+}
   
-
+render(){
     return(
         
          <div className="levelone-bg-img">
@@ -51,9 +113,10 @@ function LevelOne(){
                         </Grid.Row> 
 
                         <Grid.Row className="parent">
+                            <Webcam width={400} height={300} ref={this.setRef}/>
                         
                                 {/* <<----Webcam begins----> */}
-                        <div id="content" className="webcam-position">
+                        {/* <div id="content" className="webcam-position">
                             <h2>Emotion detection example</h2>
                             <div id="webcam-container" >
                                 <video id="videoel" width="385" height="300" preload="auto" loop playsinline autoplay>
@@ -75,7 +138,7 @@ function LevelOne(){
                                 <input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
                                 <input class="btn" type="button" value="Stop" onclick="stopVideo()" id="stopbutton"></input>
                             </div>
-                        </div>
+                        </div> */}
                                     {/* <<----Webcam ends----> */}
                             
                                     <Chicken className="character"/> 
@@ -102,6 +165,8 @@ function LevelOne(){
 
         
     )
+}
+    
     
 }
 
