@@ -235,3 +235,16 @@ position: absolute;
 top: 30px;
 left: 0px;
 }
+
+/* <------Parents Home Page --------> */
+.parents-bg-img{
+   
+    background-image: url("./images/parents_landingbg.svg");
+    min-height: 1500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+

@@ -15,6 +15,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import userReducer from './reducers/userReducer';
 import NavMap from './NavMap';
+import Parents from './parents.js'
 
 const store = createStore(
   userReducer,
@@ -31,6 +32,7 @@ ReactDOM.render(
           <Route exact path="/phrase" component={PhraseLevel}/>
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/levelone" component={LevelOne}/>
+          <Route exact path="/parents" component={Parents}/>
       </Router>
     </Provider>,
 
