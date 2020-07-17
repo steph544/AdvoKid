@@ -16,6 +16,7 @@ import { Provider } from 'react-redux';
 import userReducer from './reducers/userReducer';
 import NavMap from './NavMap';
 import Parents from './parents.js'
+import Webcam from "./WebCam.js"
 
 const store = createStore(
   userReducer,
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/levelone" component={LevelOne}/>
           <Route exact path="/parents" component={Parents}/>
+          <Route exact path="/webcam" component={Webcam}/>
       </Router>
     </Provider>,
 
