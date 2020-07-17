@@ -220,20 +220,20 @@ h2 {
 position: relative;
 top: 0;
 left: 0;
+z-index: 2
 }
   
-.webcam-position{
-position: relative;
-top: 0;
-left: 0;
-border: 1px solid #000000;
-/* z-index: 10; */
+.webcam_position{
+    position: absolute;
+    top: 150px;
+    left: 210px;
+    z-index: 1
 }
 
 .webcam-position2{
     position: relative;
     top: 40px;
-    left: 200px;
+    left: 350px;
     z-index: 2;
 }
 

@@ -17,6 +17,7 @@ import userReducer from './reducers/userReducer';
 import NavMap from './NavMap';
 import Parents from './parents.js'
 import Webcam from "./WebCam.js"
+import Response from "./response.js"
 
 const store = createStore(
   userReducer,
@@ -35,6 +36,7 @@ ReactDOM.render(
           <Route exact path="/levelone" component={LevelOne}/>
           <Route exact path="/parents" component={Parents}/>
           <Route exact path="/webcam" component={Webcam}/>
+          <Route exact path="/response" component={Response}/>
       </Router>
     </Provider>,
 

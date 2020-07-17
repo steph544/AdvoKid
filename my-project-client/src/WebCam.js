@@ -47,30 +47,30 @@ this.webcam.video.play()
     ec.init(window.emotionModel);
             var emotionData = ec.getBlank();
             
-            function getPoints(){
+            const getPoints=()=>{
                 this.setState=({
                     phrase: "I am Happy!"
                 })
                 }
            
 
-           function drawLoop(){
-      window.requestAnimFrame(drawLoop);
-      // overlayCC.clearRect(0, 0, vid_width, vid_height);
-      //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
-      // if (ctrack.getCurrentPosition()) {
-      // 	ctrack.draw(overlay);
-                // }
-                // var positions= ctrack.getCurrentPosition();
-                // console.log(positions)
-      var cp = ctrack.getCurrentParameters();
-               
-                var er = ec.meanPredict(cp); 
-                console.log(er)
-      if (er) {
+           const drawLoop=()=>{
+                window.requestAnimFrame(drawLoop);
+                // overlayCC.clearRect(0, 0, vid_width, vid_height);
+                //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
+                // if (ctrack.getCurrentPosition()) {
+                // 	ctrack.draw(overlay);
+                          // }
+                          // var positions= ctrack.getCurrentPosition();
+                          // console.log(positions)
+                var cp = ctrack.getCurrentParameters();
+                        
+                          var er = ec.meanPredict(cp); 
+                          console.log(er)
+                if (er) {
                     if (er[5].value > 0.5){ 
                       window.requestAnimFrame = function() {};
-                    //   self.capture() 
+                      this.capture()
                     }
                     
                     
@@ -103,17 +103,33 @@ this.webcam.video.play()
     }
     return(
       <div className="levelone-bg-img">
+          <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
       <Grid>
           <Grid.Row>
               Row 1
               <Grid.Column width={1}>
-                   <img style={{width: '140px'}} src={require('./images/star.png')} /> 
-                   Column 1, Row 1
+                   {/* <img style={{width: '140px'}} src={require('./images/star.png')} /> 
+                   Column 1, Row 1 */}
               </Grid.Column>
-              <Grid.Column centered width={7}>
-                <img src={require("./images/dog_response.svg")}/>
-                
-                  Column 2, Row 1
+              <Grid.Column centered width={7}>     
+                          <div onClick={this.change}>
+                            <img width="970" height="590" className="parent" src={require("./images/webcam_frame.png")}/>
+                                  <Webcam className="webcam_position" width={600} height={400} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} /> 
+                              <br/>
+                              <br/>
+                                 <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
+                          
+                              <img src={this.state.imageData} alt=""/>
+                         
+                         
+                          </div>
                   <Grid.Row> 
                    Row 1 in Column 2
                   </Grid.Row> 
@@ -134,35 +150,20 @@ this.webcam.video.play()
 
               <Grid.Column centered width={6} textAlign='center'> 
                        <Grid.Row>   
-                           
-                           <div onClick={this.change}>
-                              <Webcam className="webcam-position2" width={400} height={300} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} />
-                          
-                              <img src={this.state.imageData} alt=""/>
-                          </div>  
-                          <img src={require("./images/practicebtn.png")} onClick={this.startVideo}></img>
+                            <img src={require("./images/chicken_response2.svg")}/>
+                      
                        </Grid.Row>
 
                        <Grid.Row>
                        <NavLink
                         to="/webcam"
-                        exact
-                        
-                        activeStyle={{
-                            background: 'darkblue'
-                        }}
                         > 
                           <img src={require("./images/nextbtn.png")}></img> 
                         </NavLink> 
                     
 
                         <NavLink
-                        to="/levelone"
-                        exact
-                        
-                        activeStyle={{
-                            background: 'darkblue'
-                        }}
+                        to="/response"
                         > 
                           <img src={require("./images/backbtn.png")}></img> 
                         </NavLink> 
