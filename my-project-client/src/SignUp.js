@@ -85,7 +85,13 @@ class SignUp extends Component{
                                         <br/>
                                         <br/>
                                      <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
-                                </form>
+                                  
+                                        <NavLink
+                                            to="/"
+                                            > 
+                                            <img src={require("./images/signup_back.png")}></img> 
+                                        </NavLink> 
+                                     </form>
                 
                                 </div>
                             </div>

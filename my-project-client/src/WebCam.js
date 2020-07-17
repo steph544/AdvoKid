@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Grid, Image, Modal } from 'semantic-ui-react'
+import { Grid, Image, Modal, Message } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 import Webcam from "react-webcam";
@@ -41,7 +41,7 @@ startVideo=()=> {
              return window.setTimeout(callback, 1000/60);
            };
   })();
-  
+
 this.webcam.video.play() 
             window.pModel.shapeModel.nonRegularizedVectors.push(9);
     window.pModel.shapeModel.nonRegularizedVectors.push(11);
@@ -148,12 +148,11 @@ this.webcam.video.play()
 
                       <Grid.Column>
                         
-    <Modal open={open} onClose={this.close} dimmer="blurring">
+    <Modal open={open} onClose={this.close} dimmer="blurring" size="small">
     <Modal.Content>
-      <Image wrapped size='medium' src={this.state.imageData} alt="" />
+      <Image fluid src={this.state.imageData} alt="" />
       <br/>
-      <br/>
-       <h1>{this.state.phrase}</h1>
+      <Image fluid src={require("./images/greatjob.svg")} alt="" />
       </Modal.Content>
     </Modal>
                       </Grid.Column>
@@ -170,7 +169,7 @@ this.webcam.video.play()
 
                        <Grid.Row>
                        <NavLink
-                        to="/webcam"
+                        to="/navMap"
                         > 
                           <img src={require("./images/nextbtn.png")}></img> 
                         </NavLink> 
