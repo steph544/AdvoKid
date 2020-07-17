@@ -52,12 +52,12 @@ render(){
 
                              <Grid.Row>
                              <NavLink
+                                to="/navMap"                        
+                                > 
+                                <img src={require("./images/backbtn.png")}></img> 
+                            </NavLink> 
+                             <NavLink
                                 to="/response"
-                                exact
-                                
-                                activeStyle={{
-                                    background: 'darkblue'
-                                }}
                                 > 
                                 <img src={require("./images/nextbtn.png")}></img> 
                             </NavLink> 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Modal } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 import Webcam from "react-webcam";
@@ -14,25 +14,34 @@ class WebCam extends React.Component{
     image_name: "",
     saveImage: false, 
     webcam: null,
-    phrase: ""
+    phrase: "",
+    open: false
 }
 setRef = (webcam) => {
 this.webcam = webcam;  
 }
+close = () => this.setState({ open: false })
 
 capture = () => {
     const imageSrc = this.webcam.getScreenshot();
     this.setState({
-        imageData: imageSrc 
-    })
-}
-
-
-change=()=>{
-    console.log("changed")
+        imageData: imageSrc, 
+        open: true 
+    });
 }
 
 startVideo=()=> {
+  window.requestAnimFrame = (function() {
+    return window.requestAnimationFrame ||
+           window.webkitRequestAnimationFrame ||
+           window.mozRequestAnimationFrame ||
+           window.oRequestAnimationFrame ||
+           window.msRequestAnimationFrame ||
+           function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+             return window.setTimeout(callback, 1000/60);
+           };
+  })();
+  
 this.webcam.video.play() 
             window.pModel.shapeModel.nonRegularizedVectors.push(9);
     window.pModel.shapeModel.nonRegularizedVectors.push(11);
@@ -100,6 +109,7 @@ this.webcam.video.play()
     const videoConstraints={
         facingMode: 'user'
     }
+    const { open, dimmer } = this.state;    
     return(
       <div className="levelone-bg-img">
           <br/>
@@ -112,7 +122,6 @@ this.webcam.video.play()
             <br/>
       <Grid>
           <Grid.Row>
-              Row 1
               <Grid.Column width={1}>
                    {/* <img style={{width: '140px'}} src={require('./images/star.png')} /> 
                    Column 1, Row 1 */}
@@ -123,27 +132,30 @@ this.webcam.video.play()
                                   <Webcam className="webcam_position" width={600} height={400} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} /> 
                               <br/>
                               <br/>
-                                 <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
-                                 <br/>
-                  <h1>{this.state.phrase}</h1>
-                          <br/>
-                          <br/>
-                              <img src={this.state.imageData} alt=""/>
+                              <div className="center">
+                                <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
+                              </div>
+                                 
+                              </div>
+                  
                          
-                         
-                          </div>
                   <Grid.Row> 
-                   Row 1 in Column 2
                   </Grid.Row> 
 
-                  <Grid.Row> Row 2 in Column 2
+                  <Grid.Row> 
                       <Grid.Column>
-                      Column 1 in Row 2 of Column 2
                       </Grid.Column>
 
                       <Grid.Column>
-                      Column 2 in Row 2 of Column 2
                         
+    <Modal open={open} onClose={this.close} dimmer="blurring">
+    <Modal.Content>
+      <Image wrapped size='medium' src={this.state.imageData} alt="" />
+      <br/>
+      <br/>
+       <h1>{this.state.phrase}</h1>
+      </Modal.Content>
+    </Modal>
                       </Grid.Column>
                      
                          
@@ -179,9 +191,6 @@ this.webcam.video.play()
           <Grid.Column width={8}>
           </Grid.Column>
           <Grid.Column width={8}>
-             <div>
-                 <button onClick={this.capture}>Capture Photo</button>
-              </div>
           </Grid.Column>
           </Grid.Row>
       </Grid>
