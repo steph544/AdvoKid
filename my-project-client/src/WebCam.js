@@ -13,7 +13,8 @@ class WebCam extends React.Component{
     imageData: null, 
     image_name: "",
     saveImage: false, 
-    webcam: null
+    webcam: null,
+    phrase: ""
 }
 setRef = (webcam) => {
 this.webcam = webcam;  
@@ -25,6 +26,7 @@ capture = () => {
         imageData: imageSrc 
     })
 }
+
 
 change=()=>{
     console.log("changed")
@@ -47,12 +49,6 @@ this.webcam.video.play()
     ec.init(window.emotionModel);
             var emotionData = ec.getBlank();
             
-            const getPoints=()=>{
-                this.setState=({
-                    phrase: "I am Happy!"
-                })
-                }
-           
 
            const drawLoop=()=>{
                 window.requestAnimFrame(drawLoop);
@@ -70,7 +66,10 @@ this.webcam.video.play()
                 if (er) {
                     if (er[5].value > 0.5){ 
                       window.requestAnimFrame = function() {};
-                      this.capture()
+                      this.capture();
+                      this.setState({
+                        phrase: "GREAT JOB!"
+                      })
                     }
                     
                     
@@ -125,7 +124,10 @@ this.webcam.video.play()
                               <br/>
                               <br/>
                                  <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
-                          
+                                 <br/>
+                  <h1>{this.state.phrase}</h1>
+                          <br/>
+                          <br/>
                               <img src={this.state.imageData} alt=""/>
                          
                          
