@@ -1146,15 +1146,6 @@
 	</g>
 </g>
 <g>
-<foreignObject x="205.3" y="39.9" width="385.3" height="385.3">
-<body>
-	<video id="videoel" className="webcam-position" width="385" height="385" preload="auto" loop="loop" autoplay="autoplay">
-	</video>
-	
-	<canvas id="overlay" width="100px" height="100px"></canvas>
-  <!-- <iframe width="385" height="385" src="https://www.youtube.com/embed/BdS14RhRbQY" frameborder="0" ></iframe> -->
 
-</body> 
-</foreignObject>
 </g>
 </svg>

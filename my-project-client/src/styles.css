@@ -230,10 +230,18 @@ border: 1px solid #000000;
 /* z-index: 10; */
 }
 
+.webcam-position2{
+    position: relative;
+    top: 40px;
+    left: 200px;
+    z-index: 2;
+}
+
 .character {
 position: absolute;
-top: 30px;
+top: 40px;
 left: 0px;
+z-index: 1
 }
 
 /* <------Parents Home Page --------> */

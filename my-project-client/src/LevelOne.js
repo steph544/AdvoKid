@@ -20,6 +20,9 @@ import ScriptTag from 'react-script-tag'
 
 
 class LevelOne extends React.Component{
+    state={
+        phrase:""
+    }
     // constructor(props){
     //     super()
         
@@ -34,6 +37,7 @@ class LevelOne extends React.Component{
 setRef =(webcam)=>{
 this.webcam=webcam 
 }
+
 
     
 componentDidMount(){
@@ -54,14 +58,15 @@ componentDidMount(){
 				ec.init(window.emotionModel);
                 var emotionData = ec.getBlank();
                 
-                function pointsAdded(er){
-					if (er[5].value>0.5){
-						console.log("I am HAPPY!")
-						
-					}
-				}
+              
+                function getPoints(){
+                    this.setState=({
+                        phrase: "I am Happy!"
+                    })
+                    }
+          
 
-                function drawLoop() {
+               function drawLoop(){
 					window.requestAnimFrame(drawLoop);
 					// overlayCC.clearRect(0, 0, vid_width, vid_height);
 					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
@@ -73,9 +78,15 @@ componentDidMount(){
 					var cp = ctrack.getCurrentParameters();
                    
                     var er = ec.meanPredict(cp); 
-                    // console.log(er)
+                    console.log(er)
 					if (er) {
-                        pointsAdded(er)
+                        if (er[5].value > 0.5){ 
+                          window.requestAnimFrame = function() {};
+                          console.log("stephanie")
+                        }
+                        
+                        
+                        // pointsAdded(er)
                        
 						// window.updateData(er);
 						// for (var i = 0;i < er.length;i++) {
@@ -113,41 +124,15 @@ render(){
                         </Grid.Row> 
 
                         <Grid.Row className="parent">
-                            <Webcam width={400} height={300} ref={this.setRef}/>
-                        
-                                {/* <<----Webcam begins----> */}
-                        {/* <div id="content" className="webcam-position">
-                            <h2>Emotion detection example</h2>
-                            <div id="webcam-container" >
-                                <video id="videoel" width="385" height="300" preload="auto" loop playsinline autoplay>
-                                </video>
-
-                                <canvas id="overlay" width="400" height="300"></canvas>
-                            </div>
-
-                            <div id="emotion_container">
-                                <div id="emotion_icons">
-                                    <img class="emotion_icon" id="icon1" src="./media/icon_angry.png"></img>
-                                    <img class="emotion_icon" id="icon2" src="./media/icon_sad.png"></img>
-                                    <img class="emotion_icon" id="icon3" src="./media/icon_surprised.png"></img>
-                                    <img class="emotion_icon" id="icon4" src="./media/icon_happy.png"></img>
-                            </div>
-                            <div id='emotion_chart'></div>
-                            </div>
-                            <div id="controls">
-                                <input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
-                                <input class="btn" type="button" value="Stop" onclick="stopVideo()" id="stopbutton"></input>
-                            </div>
-                        </div> */}
-                                    {/* <<----Webcam ends----> */}
-                            
-                                    <Chicken className="character"/> 
+                            <TV className="tv" float='right'/> 
+                           
                         </Grid.Row>  
 
                   
                     </Grid.Column>
                     <Grid.Column centered width={6} textAlign='center'> 
-                            <TV className="tv" float='right'/> 
+                             <Webcam className="webcam-position2" width={400} height={300} ref={this.setRef}/>
+                            <Chicken className="character"/> 
                     </Grid.Column>
                 </Grid.Row>
                 
@@ -156,6 +141,7 @@ render(){
                 </Grid.Column>
                 <Grid.Column width={8}>
                     Column 4
+            <h1>{this.state.phrase}</h1>
                 </Grid.Column>
                 </Grid.Row>
             </Grid>
