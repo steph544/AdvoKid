@@ -265,10 +265,34 @@ z-index: 1
     position: relative;
 }
 
+.parents_page {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.tabs { 
+    grid-area: 1 / 1 / 6 / 6; 
+}
+
+.tabs-size{
+    height: "1300px"; 
+    width: "2300px";
+    z-index: 1
+}
+
+.profile_pic { 
+    grid-area: 2 / 2 / 5 / 3; 
+    z-index: 2
+}
+.child_signup { 
+    grid-area: 2 / 3 / 5 / 5; 
+}
+
 /* <------Webcam Page --------> */
 .font{
     font-family: Impact, Charcoal, sans-serif;
 }
-
-
 
