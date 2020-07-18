@@ -291,6 +291,10 @@ z-index: 1
     grid-area: 2 / 3 / 5 / 5; 
 }
 
+img[usemap], map area{
+    outline: none;
+}
+
 /* <------Webcam Page --------> */
 .font{
     font-family: Impact, Charcoal, sans-serif;
