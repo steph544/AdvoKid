@@ -125,7 +125,17 @@ form input{
 }
 
 .video{
+    text-align: center; 
     width: 30px;
+}
+
+.video_tv{
+    position: relative;
+    left: 350px;
+    bottom: 600px;
+    height: 300%;
+    width: 205%;
+    float: right;
 }
 
 

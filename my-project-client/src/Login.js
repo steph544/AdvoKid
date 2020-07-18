@@ -70,7 +70,7 @@ class Login extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
                                      <br/>
                                      <br/>
                                      <NavLink
@@ -80,7 +80,7 @@ class Login extends Component{
                                         activeStyle={{
                                             background: 'darkblue'
                                         }}
-                                        > <img className="yellowbutton" src={require('./images/signupbutton.png')}/> 
+                                        > <img src={require('./images/signupbutton.png')}/> 
                                         </NavLink> 
                                      
                                 </form>

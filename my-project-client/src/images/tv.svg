@@ -18,9 +18,9 @@
     frameborder="0">
   </iframe> -->
 
-  <iframe id="tv_iframe" width="720" height="590" src="https://www.youtube.com/embed/BdS14RhRbQY" frameborder="0" ></iframe>
-   <!-- <video width="720" height="590" src="./videos/School.mp4" controls="controls">
-  </video> -->
+  <!-- <iframe id="tv_iframe" width="720" height="590" src="https://www.youtube.com/embed/BdS14RhRbQY" frameborder="0" ></iframe> -->
+   <video className="video_tv" height="800" controls="controls"> <source src='/assets/videos/School.mp4'></source>
+  </video>
 
 </body> 
 </foreignObject>

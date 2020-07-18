@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   resources :children
   resources :incentives
   resources :audio_recordings
@@ -11,9 +12,6 @@ Rails.application.routes.draw do
   resources :videos
   resources :points
   resources :levels
-  # resources :messages
-  # resources :terms, only: [:create, :index, :update]
-  # localhost:3000/api/v1/login
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :index]

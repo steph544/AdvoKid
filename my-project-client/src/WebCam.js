@@ -8,6 +8,7 @@ import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
 
 
 
+
 class WebCam extends React.Component{
   state={
     imageData: null, 
@@ -15,7 +16,8 @@ class WebCam extends React.Component{
     saveImage: false, 
     webcam: null,
     phrase: "",
-    open: false
+    open: false,
+    photos: null 
 }
 setRef = (webcam) => {
 this.webcam = webcam;  
@@ -23,11 +25,28 @@ this.webcam = webcam;
 close = () => this.setState({ open: false })
 
 capture = () => {
+   
     const imageSrc = this.webcam.getScreenshot();
     this.setState({
-        imageData: imageSrc, 
-        open: true 
-    });
+    imageData: imageSrc, 
+    open: true 
+    })
+
+    fetch("http://localhost:3000/images",
+    {
+    method: "POST",
+    headers: {
+        "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+        screen_shot: imageSrc, 
+        username: localStorage.user
+    })
+    })
+    .then(res => res.json())
+    .then(image=> 
+      console.log(image)
+    ) 
 }
 
 startVideo=()=> {
@@ -50,7 +69,6 @@ this.webcam.video.play()
     ctrack.init(window.pModel);
     var trackingStarted = false;
     ctrack.start(this.webcam.video);
-    console.log(this.webcam.video)
     trackingStarted = true;
             
 
@@ -78,6 +96,27 @@ this.webcam.video.play()
     drawLoop();
 }
 
+componentDidMount(){
+  fetch("http://localhost:3000/images",
+  {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${localStorage.token}`,
+      "Content-type": "application/json", 
+      "Accept": "application/json"
+    } 
+  })
+  .then(res => res.json())
+  .then(data => 
+    {
+      console.log(data)
+      this.setState({
+        photos: data
+      })
+      
+    }
+  )
+}
 
  
   render(){
