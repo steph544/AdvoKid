@@ -2,7 +2,6 @@ class LevelSerializer < ActiveModel::Serializer
   attributes :id, :name, :child_id
 
     has_many :recordings 
-    has_many :children, through: :recordings 
     has_many :captures
     has_many :recordings 
     has_many :phrases 

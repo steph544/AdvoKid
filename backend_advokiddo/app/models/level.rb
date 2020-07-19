@@ -1,6 +1,6 @@
 class Level < ApplicationRecord
     has_many :recordings 
-    has_many :children, through: :recordings 
+    belongs_to :child 
     has_many :captures
     has_many :recordings 
     has_many :phrases 

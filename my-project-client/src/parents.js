@@ -11,10 +11,34 @@ import Prizes from "./Prizes.js"
 
 class Parents extends React.Component{
     state={
-        childInfo: null
+        users: null, 
+        childInfo: null,
+        currentUser: null,
     }
 
-   
+      
+    componentDidMount(){
+        fetch("http://localhost:3000/api/v1/users",
+        {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${localStorage.token}`,
+            "Content-type": "application/json", 
+            "Accept": "application/json"
+          } 
+        })
+        .then(res => res.json())
+        .then(data => 
+          {
+            this.setState({
+              users: data,
+              curretUser:  data.find(user => user.username===localStorage.user)
+            })
+          }
+       
+        )
+    }
+ 
 
     changeComp = (e) => {
         e.preventDefault();
@@ -65,6 +89,7 @@ class Parents extends React.Component{
     }
 
     render(){
+       
           return(
 
 <div className="parent_page parents-bg-img parents_page">

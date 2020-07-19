@@ -8,6 +8,7 @@ import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
 
 
 class LevelOne extends React.Component{
+
   
 render(){
     return(  
