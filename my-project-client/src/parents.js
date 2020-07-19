@@ -10,7 +10,6 @@ import ChildSignUp from './ChildSignUp.js'
 
 class Parents extends React.Component{
     state={
-        childPicture: "https://via.placeholder.com/150",
         childInfo: null
     }
 
@@ -67,8 +66,8 @@ class Parents extends React.Component{
 
     renderSwitch=(param)=>{
         switch(param){
-        case 'change':
-          return <h1>Hello</h1>
+        case null:
+          return <ChildSignUp/>
         case 'progress':
             return <h1>progress</h1>
         case 'levels':
@@ -83,35 +82,24 @@ class Parents extends React.Component{
     render(){
         const { username, password, email, first_name, last_name } = this.state
           return(
-         <div className="parents-bg-img parents_page">
-             <br/>
-             <br/> 
-             {/* <div className="parents_tab_container"> */}
-                 <img className="tabs" width="2300px" height="1300px" src="./assets/images/parents_tabs.png" usemap="#image-map"  hidefocus="true"/> 
 
-                    <map name="image-map">
+<div class="parent_page parents-bg-img parents_page">
+<div class="div1"> </div>
+<div class="div2"> 
+<img width="2300px" height="1300px" src="./assets/images/parents_tabs.png" usemap="#image-map"  hidefocus="true"/> 
+
+<map name="image-map">
                         <area target="" alt="Child" title="Child" href="" coords="220,70,622,203" shape="rect" onClick={(e)=> this.changeComp(e)}></area>
                         <area target="" alt="Progress" title="Progress" href="" coords="682,75,1078,189,1151,77,1533,191" shape="0" onClick={(e)=> this.changeComp2(e)}></area>
                         <area target="" alt="Levels" title="Levels" href="" coords="1130,71,1531,195" shape="0" onClick={(e)=> this.changeComp3(e)}></area>
                         <area target="" alt="Prizes" title="Prizes" href="" coords="1601,66,1991,187" shape="0" onClick={(e)=> this.changeComp4(e)}></area>
                     </map>
-                                
-                    <div className="profile_pic">
-                        <img src={this.state.childPicture} width="350px"/>            
-                        <img onClick={this.upload} src={require('./images/addchildpicbtn.svg')} width="350px"/>
-                    </div> 
+</div>
+<div class="div3"> </div>
 
-                    <div className="child_signup">
-                    <br/>
-                                {this.renderSwitch(this.state.childInfo)}
-                        </div>
-            </div> 
-                 
-                   
-    
-             
-    )
-    }
+{this.renderSwitch(this.state.childInfo)}
+</div>         
+    )}
   
     
 }
