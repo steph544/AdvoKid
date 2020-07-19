@@ -2,13 +2,13 @@ import React, {Component} from 'react'
 import { NavLink, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 import "./styles.css"
-import { render } from 'react-dom';
+
   
 
 
 class ChildSignUp extends React.Component{
     state={
-        child_picture: "https://via.placeholder.com/150"
+        childPicture: "https://via.placeholder.com/150"
     }
     
     handleChange = (e) => {
@@ -17,17 +17,35 @@ class ChildSignUp extends React.Component{
         })
     }
 
+     // upload=()=>{
+    //     fetch("http://localhost:3000/children/",
+    //     {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type" : "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //         screen_shot: imageSrc, 
+    //         username: localStorage.user
+    //     })
+    //     })
+    //     .then(res => res.json())
+    //     .then(image=> 
+    //       console.log(image)
+    //     ) 
+    // }
+    
     render(){
         const { username, password, email, first_name, last_name } = this.state
           return(
             <>
                
-            <div class="div4"> 
-            <img src={this.state.childPicture} width="350px"/>            
-                     <img onClick={this.upload} src={require('./images/addchildpicbtn.svg')} width="350px"/>
+            <div class="div24"> 
+            <img src={this.state.childPicture} width="450px"/>            
+                     <img onClick={this.upload} src={require('./images/addchildpicbtn.svg')} width="450px"/>
             </div>
 
-            <div class="div5"> 
+            <div class="div25"> 
             <form>
                 <br/>
                 <br/>
@@ -50,6 +68,10 @@ class ChildSignUp extends React.Component{
                 <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
         
             </form>
+            </div>
+
+            <div className="div26">
+                <img width="100%" height="100%" src={require("./images/dog.png")}/>
             </div>
                </>    
     
