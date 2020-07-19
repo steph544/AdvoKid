@@ -10,22 +10,14 @@ import {PhraseLevel} from './Phrase_Level.js'
 import SignUp from "./SignUp.js"
 import Home from "./Home.js"
 import LevelOne from "./LevelOne.js"
-
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import userReducer from './reducers/userReducer';
+// import userReducer from './reducers/userReducer';
 import NavMap from './NavMap';
 import Parents from './parents.js'
 import Webcam from "./WebCam.js"
 import Response from "./response.js"
 
-const store = createStore(
-  userReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
 ReactDOM.render(
-    <Provider store={store}>
+   
       <Router>
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
@@ -37,8 +29,7 @@ ReactDOM.render(
           <Route exact path="/parents" component={Parents}/>
           <Route exact path="/webcam" component={Webcam}/>
           <Route exact path="/response" component={Response}/>
-      </Router>
-    </Provider>,
+      </Router>,
 
   document.getElementById('root')
 );

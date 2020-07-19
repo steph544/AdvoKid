@@ -3,8 +3,17 @@ import { NavLink, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
+import { Dropdown, Grid} from 'semantic-ui-react'
 
-
+const options = [
+    { key: 1, text: 'Level One', value: 'One' },
+    { key: 2, text: 'Level Two', value: 'Two' },
+    { key: 3, text: 'Level Three', value: 'Three'},
+    { key: 4, text: 'Level Four', value: 'Four' },
+    { key: 5, text: 'Level Five', value: 'Five' },
+    { key: 6, text: 'Level Six', value: 'Six' },
+    { key: 7, text: 'Level Seven', value: 'Seven' },
+  ]
   
 
 
@@ -14,7 +23,10 @@ class Progress extends React.Component{
         this.state = {
           metric: 80
         };
+      
       }
+
+      handleChange = (e, { value }) => this.setState({ value })
 
 //       componentDidMount() {
 //         let percent = 25;
@@ -34,8 +46,30 @@ class Progress extends React.Component{
 //       getData(percent) {
 //     return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
 //   }
+renderSwitch=(param)=>{
+    switch(param){
+    case 'One':
+      return <h1>Level one Progress</h1>
+    case 'Two':
+        return <h1>Level 2 Progress</h1>
+    case 'Three':
+        return <h1>Level 3 Progress</h1>
+    case 'Four':
+        return <h1>Level 4 Progress</h1>
+    case 'Five':
+        return <h1>Level 5 Progress</h1>
+    case 'Six':
+        return <h1>Level 6 Progress</h1>
+    case 'Seven':
+        return <h1>Level 7 Progress</h1>
+    default: 
+    return <h1>Level 5 Progress</h1>
+    }
+}
+
 
     render(){
+        const { value } = this.state
           return(
         <>
             <div class="div24"> 
@@ -69,7 +103,19 @@ class Progress extends React.Component{
             </div>
 
             <div class="div25"> 
-                <h1>Progress Tab </h1>
+            <Grid columns={2}>
+        <Grid.Column>
+          <Dropdown
+            onChange={this.handleChange}
+            options={options}
+            placeholder='Choose a Level to View Progress'
+            selection
+            value={value}
+          />
+        </Grid.Column>
+
+      </Grid>
+      {this.renderSwitch(this.state.value)}
             </div>
         </>    
     )

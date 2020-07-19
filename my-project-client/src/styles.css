@@ -292,7 +292,7 @@ z-index: 1
 .parent_page {
     display: grid;
     grid-template-columns: .125fr .5fr .25fr repeat(4, .5fr) .125fr .5fr .25fr .125fr;
-    grid-template-rows: .1fr .07fr .125fr repeat(5, .25fr);
+    grid-template-rows: .1fr .15fr .10fr repeat(5, .25fr);
     grid-column-gap: 32px;
     grid-row-gap: 22px;
     }
@@ -325,10 +325,13 @@ z-index: 1
 .div22 { grid-area: 3 / 3 / 7 / 9; }
 .div23 { grid-area: 3 / 3 / 7 / 6; }
 .div24 { grid-area: 4 / 3 / 7 / 5; 
-z-index: 9999;}
-.div25 { grid-area: 4 / 5 / 7 / 9; }
+z-index: 999;}
+.div25 { grid-area: 4 / 5 / 7 / 9; 
+z-index: 1000}
 .div26 { grid-area: 4 / 7 / 7 / 9; }
 .div27 { grid-area: 4 / 3 / 7 / 9; } 
+.div28 { grid-area: 3 / 3 / 7 / 5; 
+    z-index: 2000;}
 
 
 img[usemap], map area{

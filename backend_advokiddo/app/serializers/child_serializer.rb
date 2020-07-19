@@ -1,6 +1,5 @@
 class ChildSerializer < ActiveModel::Serializer
   attributes :id, :user_id, :first_name, :last_name, :age
-
   has_many :points 
   has_many :prizes 
   has_many :levels
