@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Image, Modal, Message } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux'
 import Webcam from "react-webcam";
 import "./styles.css"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -217,4 +216,4 @@ componentDidMount(){
 }
 
 
-export default WebCam
+export default withRouter(WebCam)

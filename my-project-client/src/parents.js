@@ -35,6 +35,7 @@ class Parents extends React.Component{
               currentUser:  data.find(user => user.username===localStorage.user)
             })
         })
+        console.log(this.state.currentUser)
     }
  
 
@@ -76,36 +77,41 @@ class Parents extends React.Component{
         case null:
           return <ChildSignUp users={this.state.users} currentUser={this.state.currentUser}/>
         case 'progress':
-            return <Progress/>
+            return <Progress currentUser={this.state.currentUser}/>
         case 'levels':
-            return <Levels/>
+            return <Levels currentUser={this.state.currentUser}/>
         case 'prizes':
-            return <Prizes/>
+            return <Prizes currentUser={this.state.currentUser}/>
         default: 
-            return <ChildSignUp/>;
+            return <ChildSignUp users={this.state.users} currentUser={this.state.currentUser}/>;
         }
     }
 
     render(){
+        if (this.state.currentUser !== null){
+            return( 
+                        <Slide>
+                            <div className="parent_page parents-bg-img parents_page">
+                                <div className="div1"> 
+                                    <img width="100%" height="100%" src="./assets/images/parents_tabs.png" usemap="#image-map" hidefocus="true"/> 
 
-          return(
-            <Slide>
-                <div className="parent_page parents-bg-img parents_page">
-                    <div className="div20"> 
-                        <img width="100%" height="100%" src="./assets/images/parents_tabs.png" usemap="#image-map" hidefocus="true"/> 
-
-                        <map name="image-map">
-                            <area target="" alt="Child" title="Child" href="" coords="288,36,710,213" shape="rect" onClick={(e)=> this.changeComp(e)}></area>
-                            <area target="" alt="Progress" title="Progress" href="" coords="755,58,1190,208,952,148,1479,112" shape="rect" onClick={(e)=> this.changeComp2(e)}></area>
-                            <area target="" alt="Levels" title="Levels" href="" coords="1219,51,1618,204,1394,94,1836,123" shape="rect" onClick={(e)=> this.changeComp3(e)}></area>
-                            <area target="" alt="Prizes" title="Prizes" href="" coords="1660,50,2078,202,452,77,1878,126" shape="rect" onClick={(e)=> this.changeComp4(e)}></area>
-                        </map>
-                    </div>
-                {this.renderSwitch(this.state.childInfo)}
-                </div>     
-            </Slide>    
-    )}
+                                    <map name="image-map">
+                                        <area target="" alt="Child" title="Child" href="" coords="288,36,710,213" shape="rect" onClick={(e)=> this.changeComp(e)}></area>
+                                        <area target="" alt="Progress" title="Progress" href="" coords="755,58,1190,208,952,148,1479,112" shape="rect" onClick={(e)=> this.changeComp2(e)}></area>
+                                        <area target="" alt="Levels" title="Levels" href="" coords="1219,51,1618,204,1394,94,1836,123" shape="rect" onClick={(e)=> this.changeComp3(e)}></area>
+                                        <area target="" alt="Prizes" title="Prizes" href="" coords="1660,50,2078,202,452,77,1878,126" shape="rect" onClick={(e)=> this.changeComp4(e)}></area>
+                                    </map>
+                                </div>
+                            {this.renderSwitch(this.state.childInfo)}
+                            </div>     
+                        </Slide>    
+                )
+        } else {
+            return <h1>Loading...</h1>
+        }
+        
+}
 }
 
 
-export default Parents
+export default withRouter(Parents)

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
   import { NavLink, withRouter } from 'react-router-dom';
-  import {connect} from 'react-redux'
   import "./styles.css"
   import {ReactComponent as NavMapImage} from './images/navMapImage.svg';
   import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -22,4 +21,4 @@ function NavMap(){
 }
 
 
-export default NavMap
+export default withRouter(NavMap)

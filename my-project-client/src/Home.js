@@ -1,7 +1,7 @@
 import React from 'react'
 import "./styles.css"
 import {ReactComponent as LandingBg} from './images/landing_bg.svg';
-
+import { NavLink, withRouter } from 'react-router-dom';
 
 function Home(){
   
@@ -16,4 +16,4 @@ function Home(){
 }
 
 
-export default Home
+export default withRouter(Home)

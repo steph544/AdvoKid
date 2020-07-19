@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { NavLink, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux'
 import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
 import { Dropdown, Grid} from 'semantic-ui-react'
@@ -72,7 +71,7 @@ renderSwitch=(param)=>{
         const { value } = this.state
           return(
         <>
-            <div class="div24"> 
+            <div class="div2"> 
                 <svg width={400} height={400}>
                     
                     <VictoryPie 
@@ -102,7 +101,7 @@ renderSwitch=(param)=>{
 
             </div>
 
-            <div class="div25"> 
+            <div class="div3"> 
             <Grid columns={2}>
         <Grid.Column>
           <Dropdown
@@ -125,4 +124,4 @@ renderSwitch=(param)=>{
 }
 
 
-export default Progress
+export default withRouter(Progress)

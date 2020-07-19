@@ -9,16 +9,7 @@ import { Dropdown, Grid} from 'semantic-ui-react'
 class ChildSignUp extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
-        options: [ 
-            { key: 1, text: 'Please Sign Up Child', value: 'One' },
-            { key: 2, text: 'Level Two', value: 'Two' },
-            { key: 3, text: 'Level Three', value: 'Three'},
-            // { key: 4, text: 'Level Four', value: 'Four' },
-            // { key: 5, text: 'Level Five', value: 'Five' },
-            // { key: 6, text: 'Level Six', value: 'Six' },
-            // { key: 7, text: 'Level Seven', value: 'Seven' },
-          ], 
-          blank: "blank"
+        options: []
     }
 
     handleChange = (e) => {
@@ -27,27 +18,16 @@ class ChildSignUp extends React.Component{
         })
     }
 
-    componentDidMount(){
-        if (this.props.currentUser === null) {
+    componentDidMount(){ 
+        if(this.props.currentUser.children)
+        {this.props.currentUser.children.map((child, index) => this.setState({
+            options:[...this.state.options, {key: index, text: child.first_name, value: index}]
+        })
+        )} else {
             this.setState({
-                blank: "not blank"
-            })
-          }
-
-        // if (this.props.currentUser.children.length === 0) {
-        //     this.setState({
-        //         options: [...this.state.options, {key: 2, text: 'Hello', value: 'Hello'}]
-        //     })
-        //   }
-    
-        // if(this.props.currentUser.children){
-        //       this.props.currentUser.children.map((child, index) => this.setState({
-        //     options:[...this.state.options, {key: index, text: child.first_name, value: index}]
-        // })
-        // )
-        // }
-      
-    }
+                options:[...this.state.options, {key: "No Current Children", text: "No Current Children", value: "No Current Children"}]
+        })
+    }}
 
      // upload=()=>{
     //     fetch("http://localhost:3000/children/",
@@ -74,7 +54,7 @@ class ChildSignUp extends React.Component{
         const { username, password, email, first_name, last_name } = this.state
           return(
             <>
-                <div class="div28">
+                <div class="div6">
                      <Grid columns={2}>
                         <Grid.Column >
                         <Dropdown
@@ -89,12 +69,12 @@ class ChildSignUp extends React.Component{
                     </Grid>
                 </div>
                     
-            <div class="div24"> 
+            <div class="div2"> 
             <img src={this.state.childPicture} width="450px"/>            
                      <img onClick={this.upload} src={require('./images/addchildpicbtn.svg')} width="450px"/>
             </div>
 
-            <div class="div25"> 
+            <div class="div3"> 
             <form>
                 <br/>
                 <br/>
@@ -114,18 +94,19 @@ class ChildSignUp extends React.Component{
                 <input type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
                     <br/>
                     <br/>
-                <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
+                <img src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
         
             </form>
             </div>
 
-            <div className="div26">
-                <img width="100%" height="95%" src={require("./images/dog.png")}/> 
+            <div className="div4">
+                <img width="95%" height="80%" src={require("./images/dog.png")}/> 
                 <br/>
-                <NavLink
-                    to="/navMap"                        
-                    > 
-                        <img src={require('./images/letsplaybtn.png')} width="450px"/>
+                <br/> 
+                <br/>
+                <br/>
+                <NavLink to="/navMap">  
+                <img src={require('./images/letsplaybtn.png')} width="450px"/>
                 </NavLink> 
                
 

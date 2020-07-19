@@ -1,6 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux'
-
+import { NavLink, withRouter } from 'react-router-dom';
 
 
 function Voice() {
@@ -39,9 +38,7 @@ function Voice() {
     )
 }
 
-const mapStateToProps=state=>({
-    users: state.users
-})
-export default connect(mapStateToProps)(Voice)
+
+export default withRouter(Voice)
 
 

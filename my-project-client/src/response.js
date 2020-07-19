@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Image } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux'
 import Webcam from "react-webcam";
 import "./styles.css"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -79,4 +78,4 @@ class Response extends React.Component{
 }
 
 
-export default Response
+export default withRouter(Response)

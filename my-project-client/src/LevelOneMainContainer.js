@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Image } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux'
 import "./styles.css"
 import {ReactComponent as TV} from './images/tv.svg';
 import {ReactComponent as Chicken} from './images/chicken.svg';
@@ -88,4 +87,4 @@ render(){
 }
 
 
-export default LevelOneMainContainer
+export default withRouter(LevelOneMainContainer)

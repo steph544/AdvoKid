@@ -7,7 +7,6 @@ import {
     Segment,
   } from 'semantic-ui-react';
   import { NavLink, withRouter} from 'react-router-dom';
-  import {connect} from 'react-redux'
 
 class SignUp extends Component{
     state = {}
