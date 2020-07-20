@@ -39,7 +39,8 @@ capture = () => {
     },
     body: JSON.stringify({
         screen_shot: imageSrc, 
-        username: localStorage.user
+        username: localStorage.user,
+        child_id: "221"
     })
     })
     .then(res => res.json())

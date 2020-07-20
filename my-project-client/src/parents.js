@@ -35,7 +35,6 @@ class Parents extends React.Component{
               currentUser:  data.find(user => user.username===localStorage.user)
             })
         })
-        console.log(this.state.currentUser)
     }
  
 

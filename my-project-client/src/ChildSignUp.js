@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import { NavLink, withRouter } from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
@@ -9,7 +9,9 @@ import { Dropdown, Grid} from 'semantic-ui-react'
 class ChildSignUp extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
-        options: []
+        options: [],
+        loading: false,
+        image: ""
     }
 
     handleChange = (e) => {
@@ -48,8 +50,38 @@ class ChildSignUp extends React.Component{
     // }
     handleChange = (e, { value }) => this.setState({ value })
 
+    // uploadWidget() {
+    //     cloudinary.openUploadWidget({ cloud_name: 'dt5tuiuls', upload_preset: 'child_profile', 
+    //         function(error, result) {
+    //             console.log(result);
+    //         }
+    // })}
+    // const [loading, setLoading] = useState(false)
+    // const [image, setImage] = useState("")
+
+    uploadImage=(e)=>{
+        const files = e.target.files 
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'child_profile')
+        this.setState({
+            loading: true 
+        })
+
+        fetch("https://api.cloudinary.com/v1_1/dt5tuiuls/image/upload", {
+            method: 'POST',
+            body: data
+        })
+        .then(res=>res.json())
+        .then(file=> this.setState({
+            loading: false, 
+            childPicture: file.secure_url 
+        }))
+       
+    }
+
     render(){
-    
+      
         const { value } = this.state
         const { username, password, email, first_name, last_name } = this.state
           return(
@@ -69,9 +101,16 @@ class ChildSignUp extends React.Component{
                     </Grid>
                 </div>
                     
-            <div class="div2"> 
-            <img src={this.state.childPicture} width="450px"/>            
-                     <img onClick={this.upload} src={require('./images/addchildpicbtn.svg')} width="450px"/>
+            <div class="div2 image-upload">
+            <label for="file-input"> 
+                 <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
+                 <br/>
+                 <img src={require('./images/addchildpicbtn.svg')} width="450px"/>
+            </label>      
+            <br/> 
+            <input  id="file-input" type="file" name="file" onChange={(e)=>this.uploadImage(e)}/>
+            <br/>
+        
             </div>
 
             <div class="div3"> 
@@ -100,7 +139,7 @@ class ChildSignUp extends React.Component{
             </div>
 
             <div className="div4">
-                <img width="95%" height="80%" src={require("./images/dog.png")}/> 
+                <img width="90%" height="80%" src={require("./images/dog.png")}/> 
                 <br/>
                 <br/> 
                 <br/>
