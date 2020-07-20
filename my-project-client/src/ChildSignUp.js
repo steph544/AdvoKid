@@ -14,8 +14,8 @@ class ChildSignUp extends React.Component{
     }
 
     selectChild=(value)=>{
+        this.props.selectChild(value) 
         this.setState({
-             selectedChild: value, 
              view: "profile"
         })
     }
@@ -23,7 +23,7 @@ class ChildSignUp extends React.Component{
     renderSwitch=(param)=>{
         switch(param){
         case 'profile':
-          return <ChildProfile currentUser={this.props.currentUser} selectedChild={this.state.selectedChild} selectChild={this.selectChild}/>
+          return <ChildProfile currentUser={this.props.currentUser} currentChild={this.props.currentChild} selectChild={this.selectChild}/>
         // case 'progress':
         //     return <Progress currentUser={this.state.currentUser}/>
         // case 'levels':

@@ -9,7 +9,7 @@ import { Dropdown, Grid} from 'semantic-ui-react'
 class ChildSignUpForm extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
-        options: [],
+        options: [{key:"", text:"Sign Up"}],
         selectedChild: ""
     }
 
@@ -19,14 +19,17 @@ class ChildSignUpForm extends React.Component{
         })
     }
 
-    selectChild = (e, { value }) => this.props.selectChild({ value })
+    selectChild = (e, { value }) => 
+    this.props.selectChild({ value })
 
     componentDidMount(){ 
-        if(this.props.currentUser.children)
-        {this.props.currentUser.children.map((child, index) => this.setState({
-            options:[{key: index, text: child.first_name, value: child}]
-        })
-        )} else {
+        if(this.props.currentUser.children){
+            let array = this.props.currentUser.children.map((child, index) => ({key: index, text: child.first_name, value: child}))
+            this.setState({
+                options: array
+            })
+        }
+        else {
             this.setState({
                 options: [{key: "No Current Children", text: "No Current Children", value: "No Current Children"}]
         })

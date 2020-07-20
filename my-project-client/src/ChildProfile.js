@@ -17,15 +17,18 @@ class ChildProfile extends React.Component{
     selectChild = (e, { value }) => this.props.selectChild({ value })
 
     componentDidMount(){ 
-        if(this.props.currentUser.children)
-        {this.props.currentUser.children.map((child, index) => this.setState({
-            options:[{key: index, text: child.first_name, value: child}]
-        })
-        )} else {
+        if(this.props.currentUser.children){
+            let array = this.props.currentUser.children.map((child, index) => ({key: index, text: child.first_name, value: child}))
+            this.setState({
+                options: array
+            })
+        }
+        else {
             this.setState({
                 options: [{key: "No Current Children", text: "No Current Children", value: "No Current Children"}]
         })
     }}
+
 
     //  upload=()=>{
     //     fetch("http://localhost:3000/children/",
@@ -108,7 +111,7 @@ class ChildProfile extends React.Component{
             <>        
             <div class="div2 image-upload">
                 <label for="file-input"> 
-                    <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
+                    <img className="avatar" src={this.props.currentChild.value.image} width="400px" height="400px"/>
                         <br/>
                             
                 </label>      
@@ -130,29 +133,22 @@ class ChildProfile extends React.Component{
                 />
                 </Grid.Column>
             </Grid>
-            {/* {this.props.selectedChild.first_name} */}
-            {/* <form>
-                <br/>
-                    <br/>
-
                 <img className="signup_img" src={require('./images/first_name.png')}/>
-                    <br/> 
-                <input type="text" name="first_name" onChange={(e) => this.handleChange(e)} value={first_name}></input>
-                    <br/>
+                        <br/> 
+                    {this.props.currentChild.value.first_name}
                         <br/>
-                <img className="signup_img" src={require('./images/last_name.png')}/>
-                    <br/>
-                <input type="text" name="last_name" onChange={(e) => this.handleChange(e)} value={last_name}></input>
-                    <br/>
+                            <br/>
+                    <img className="signup_img" src={require('./images/last_name.png')}/>
                         <br/>
-                <img className="signup_img" src={require('./images/age.png')}/>
-                    <br/>
-                <input type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
-                    <br/>
+                        {this.props.currentChild.value.last_name}
                         <br/>
-                <img src={require('./images/submitbutton.png')} onClick={(e) => this.childSignUp(e)}/> 
-        
-            </form> */}
+                            <br/>
+                    <img className="signup_img" src={require('./images/age.png')}/>
+                        <br/>
+                        {this.props.currentChild.value.age}
+                        <br/>
+                            <br/>
+                   
             </div>
 
             <div className="div4">

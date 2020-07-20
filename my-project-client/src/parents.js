@@ -14,9 +14,15 @@ class Parents extends React.Component{
         users: null, 
         childInfo: null,
         currentUser: null,
+        currentChild: null
     }
 
-      
+    selectChild=(value)=>{
+        this.setState({
+             currentChild: value
+        })
+    }
+
     componentDidMount(){
         fetch("http://localhost:3000/api/v1/users",
         {
@@ -74,7 +80,7 @@ class Parents extends React.Component{
     renderSwitch=(param)=>{
         switch(param){
         case null:
-          return <ChildSignUp users={this.state.users} currentUser={this.state.currentUser}/>
+          return <ChildSignUp selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
         case 'progress':
             return <Progress currentUser={this.state.currentUser}/>
         case 'levels':
