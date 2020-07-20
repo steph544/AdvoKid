@@ -26,7 +26,7 @@ class ChildSignUp extends React.Component{
         })
         )} else {
             this.setState({
-                options:[...this.state.options, {key: "No Current Children", text: "No Current Children", value: "No Current Children"}]
+                options: [{key: "No Current Children", text: "No Current Children", value: "No Current Children"}]
         })
     }}
 
