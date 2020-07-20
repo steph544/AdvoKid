@@ -1,15 +1,33 @@
 import React, {Component} from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image, Card } from 'semantic-ui-react'
 import { NavLink, withRouter } from 'react-router-dom';
 import Webcam from "react-webcam";
 import "./styles.css"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
-
+import ReactCardFlip from 'react-card-flip';
+import HappyCard from "./HappyCard.js"
+import WorriedCard from "./WorriedCard.js"
+import SurprisedCard from "./SurprisedCard.js"
+import SadCard from "./SadCard.js"
 
 
 class Response extends React.Component{
+  constructor() {
+    super();
+      this.state = {
+      isFlipped: false,
+      isFlipped2: false,
+      isFlipped3: false,
+      isFlipped4: false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
  
- 
+  handleClick(e) {
+    e.preventDefault();
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  }
+
   render(){
   
     return(
@@ -61,25 +79,27 @@ class Response extends React.Component{
                         </Grid.Row>  
                 </Grid.Column>
 
-                <Grid.Column centered width={7}>
-                  <Grid.Row stretched>
+                <Grid.Column centered width={8}>
+                  <Grid.Row>
                    </Grid.Row>
 
-                  <Grid.Row stretched>
-                
+                  <Grid.Row>
+                Grid ROW 
                     <Grid.Column>
-                        <img src={require("./images/happy.png")}/> 
-                        <br/>
-                        <h1>Happy</h1>
-                        <br/> 
-                        <img src={require("./images/worried.png")}/> 
-                        <br/>
-                        <h1>Upset</h1>
-                        <br/>
+                      <h1>Select the Correct Response:</h1>
+                          <section>
+                          <HappyCard/>
+                          <WorriedCard/> 
+                          </section>
                     </Grid.Column>
                     <Grid.Column>
-                      <img src={require("./images/surprised.png")}/> 
-                      <img src={require("./images/smirk.png")}/> 
+                      <br/>
+                         <br/>  
+                         <section>
+                                <SurprisedCard/> 
+                                <SadCard/> 
+                        </section>
+                        
                     </Grid.Column>
                   </Grid.Row>
                   <Grid.Row stretched>
