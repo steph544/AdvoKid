@@ -1,4 +1,5 @@
 class ChildrenController < ApplicationController
+    skip_before_action :logged_in?, only: [:create, :index]
     before_action :check_configuration, only: [:create]
 
     def check_configuration
@@ -16,9 +17,9 @@ class ChildrenController < ApplicationController
     end 
 
     def create 
-        username = image_params[:username]
+        username = child_params[:username]
         user = User.all.find_by(username: username)
-        url = uploadToCloudinary(image_params[:image])
+        url = uploadToCloudinary(child_params[:image])
         @child=Child.new(user_id: user.id, last_name: child_params[:last_name], age: child_params[:age], image: url, first_name: child_params[:first_name])
     
         if @child.save
@@ -36,6 +37,6 @@ class ChildrenController < ApplicationController
 
     private
     def child_params
-        params.require(:child).permit(:user_id, :last_name, :age, :image, :first_name)
+        params.require(:child).permit(:username, :last_name, :age, :image, :first_name)
     end
 end

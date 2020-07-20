@@ -10,8 +10,7 @@ class ChildSignUp extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
         options: [],
-        loading: false,
-        image: ""
+        loading: false
     }
 
     handleChange = (e) => {
@@ -31,7 +30,7 @@ class ChildSignUp extends React.Component{
         })
     }}
 
-     // upload=()=>{
+    //  upload=()=>{
     //     fetch("http://localhost:3000/children/",
     //     {
     //     method: "POST",
@@ -48,7 +47,7 @@ class ChildSignUp extends React.Component{
     //       console.log(image)
     //     ) 
     // }
-    handleChange = (e, { value }) => this.setState({ value })
+    // handleChange = (e, { value }) => this.setState({ value })
 
     // uploadWidget() {
     //     cloudinary.openUploadWidget({ cloud_name: 'dt5tuiuls', upload_preset: 'child_profile', 
@@ -64,10 +63,6 @@ class ChildSignUp extends React.Component{
         const data = new FormData()
         data.append('file', files[0])
         data.append('upload_preset', 'child_profile')
-        this.setState({
-            loading: true 
-        })
-
         fetch("https://api.cloudinary.com/v1_1/dt5tuiuls/image/upload", {
             method: 'POST',
             body: data
@@ -80,13 +75,41 @@ class ChildSignUp extends React.Component{
        
     }
 
+    childSignUp = (e) => {
+        e.preventDefault()
+
+        fetch("http://localhost:3000/children", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+              
+                first_name: this.state.first_name,
+                last_name: this.state.last_name,   
+                age: this.state.username, 
+                image: this.state.childPicture, 
+                username: localStorage.user 
+               
+            })
+        })
+        .then(res => res.json())
+        .then(childInfo => 
+            {
+                console.log(childInfo)
+      
+        }
+        )
+        
+    }
+
     render(){
       
         const { value } = this.state
-        const { username, password, email, first_name, last_name } = this.state
+        const { username, first_name, last_name, image } = this.state
           return(
             <>
-                <div class="div6">
+                {/* <div class="div6">
                      <Grid columns={2}>
                         <Grid.Column >
                         <Dropdown
@@ -99,7 +122,7 @@ class ChildSignUp extends React.Component{
                         />
                         </Grid.Column>
                     </Grid>
-                </div>
+                </div> */}
                     
             <div class="div2 image-upload">
             <label for="file-input"> 
@@ -108,12 +131,25 @@ class ChildSignUp extends React.Component{
                  <img src={require('./images/addchildpicbtn.svg')} width="450px"/>
             </label>      
             <br/> 
-            <input  id="file-input" type="file" name="file" onChange={(e)=>this.uploadImage(e)}/>
+            {/* <input  id="file-input" type="file" name="file" onChange={(e)=>this.uploadImage(e)}/> */}
+            <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
             <br/>
         
             </div>
 
             <div class="div3"> 
+            <Grid columns={2}>
+                        <Grid.Column >
+                        <Dropdown
+                            style={{width: '450px'}}
+                            onChange={this.handleChange}
+                            options={this.state.options}
+                            placeholder='Choose a Child or Sign Up Below'
+                            selection
+                            value={value}
+                        />
+                        </Grid.Column>
+                    </Grid>
             <form>
                 <br/>
                 <br/>
@@ -133,7 +169,7 @@ class ChildSignUp extends React.Component{
                 <input type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
                     <br/>
                     <br/>
-                <img src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
+                <img src={require('./images/submitbutton.png')} onClick={(e) => this.childSignUp(e)}/> 
         
             </form>
             </div>
