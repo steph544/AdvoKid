@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_07_19_231627) do
   end
 
   create_table "children", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "last_name"
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false

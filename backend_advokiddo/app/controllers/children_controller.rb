@@ -17,8 +17,9 @@ class ChildrenController < ApplicationController
     end 
 
     def create 
-        username = child_params[:username]
-        user = User.all.find_by(username: username)
+        # username = child_params[:username]
+        # byebug
+        user = User.all.find_by(username: params[:username])
         url = uploadToCloudinary(child_params[:image])
         @child=Child.new(user_id: user.id, last_name: child_params[:last_name], age: child_params[:age], image: url, first_name: child_params[:first_name])
     

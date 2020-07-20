@@ -25,7 +25,7 @@ Child.destroy_all
 end 
 
 15.times do
-    Child.create(user_id: User.all.first.id, name: Faker::Name.first_name, age: 22)
+    Child.create(user_id: User.all.first.id, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, age: 22, image: "https://picsum.photos/#{rand(1..300)}")
 end 
 
 10.times do
