@@ -88,7 +88,7 @@ class Parents extends React.Component{
         case 'prizes':
             return <Prizes currentUser={this.state.currentUser}/>
         default: 
-            return <ChildSignUp users={this.state.users} currentUser={this.state.currentUser}/>;
+        return <ChildSignUp selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
         }
     }
 

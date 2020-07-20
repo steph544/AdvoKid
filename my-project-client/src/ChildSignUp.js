@@ -31,7 +31,7 @@ class ChildSignUp extends React.Component{
         // case 'prizes':
         //     return <Prizes currentUser={this.state.currentUser}/>
         default: 
-            return <ChildSignUpForm currentUser={this.props.currentUser} selectChild={this.selectChild}/>
+            return <ChildSignUpForm currentUser={this.props.currentUser} selectChild={this.selectChild} currentChild={this.props.currentChild}/>
         }
     }
 
