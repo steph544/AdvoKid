@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { NavLink, withRouter } from 'react-router-dom';
 import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
-import { Dropdown, Grid} from 'semantic-ui-react'
+import { Dropdown, Grid, Card} from 'semantic-ui-react'
 
 const options = [
     { key: 1, text: 'Level One', value: 'One' },
