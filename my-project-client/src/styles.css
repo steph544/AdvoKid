@@ -304,12 +304,13 @@ z-index: 1
 z-index: 999;}
 .div3 { grid-area: 4 / 4 / 7 / 9; 
 z-index: 1000}
-.div4 { grid-area: 3 / 6 / 7 / 8; }
+.div4 { grid-area: 3 / 7 / 7 / 8; }
 .div5 { grid-area: 4 / 3 / 7 / 9; } 
 .div6 { grid-area: 3 / 5 / 7 / 5; 
     z-index: 2000;}
 .div7 { grid-area: 3 / 4 / 7 / 7; }
-
+.div8 { grid-area: 4 / 5 / 7 / 9; 
+    z-index: 1000}
 
 img[usemap], map area{
     outline: none;
