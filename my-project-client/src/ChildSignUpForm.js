@@ -6,12 +6,17 @@ import { Dropdown, Grid} from 'semantic-ui-react'
 
 
 
-class ChildProfile extends React.Component{
+class ChildSignUpForm extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
         options: [],
-        loading: false,
         selectedChild: ""
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     selectChild = (e, { value }) => this.props.selectChild({ value })
@@ -130,8 +135,7 @@ class ChildProfile extends React.Component{
                 />
                 </Grid.Column>
             </Grid>
-            {/* {this.props.selectedChild.first_name} */}
-            {/* <form>
+            <form>
                 <br/>
                     <br/>
 
@@ -152,7 +156,7 @@ class ChildProfile extends React.Component{
                         <br/>
                 <img src={require('./images/submitbutton.png')} onClick={(e) => this.childSignUp(e)}/> 
         
-            </form> */}
+            </form>
             </div>
 
             <div className="div4">
@@ -173,4 +177,4 @@ class ChildProfile extends React.Component{
 }
 
  {/* <img src={require('./images/addchildpicbtn.svg')} width="450px"/> */}
-export default withRouter(ChildProfile)
+export default withRouter(ChildSignUpForm)
