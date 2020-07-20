@@ -10,7 +10,7 @@ class ChildSignUpForm extends React.Component{
     state={
         childPicture: "https://via.placeholder.com/150",
         options: [{key:"", text:"Sign Up"}],
-        selectedChild: ""
+        selectedChild: null
     }
 
     handleChange = (e) => {
@@ -20,7 +20,9 @@ class ChildSignUpForm extends React.Component{
     }
 
     selectChild = (e, { value }) => 
-    this.props.selectChild({ value })
+    this.props.selectChild({ value },
+    this.setState({selectedChild: value})
+        )
 
     componentDidMount(){ 
         if(this.props.currentUser.children){
@@ -118,7 +120,7 @@ class ChildSignUpForm extends React.Component{
                 <label for="file-input"> 
                     <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
                         <br/>
-                            
+                    <img src={require('./images/addchildpicbtn.svg')} width="450px"/>
                 </label>      
                     <br/> 
                 <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
@@ -168,7 +170,12 @@ class ChildSignUpForm extends React.Component{
                     <br/> 
                         <br/>
                             <br/>
-                <NavLink to="/navMap">  
+                <NavLink to={{
+                    pathname: "/navMap",
+                    aboutProps:{
+                        currentChild: this.state.selectedChild
+                    }
+                }}>
                     <img src={require('./images/letsplaybtn.png')} width="450px"/>
                 </NavLink> 
             </div>
@@ -179,5 +186,5 @@ class ChildSignUpForm extends React.Component{
     )}
 }
 
- {/* <img src={require('./images/addchildpicbtn.svg')} width="450px"/> */}
+
 export default withRouter(ChildSignUpForm)

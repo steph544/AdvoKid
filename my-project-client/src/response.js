@@ -25,38 +25,72 @@ class Response extends React.Component{
               <Grid.Column width={1}>
               </Grid.Column>
               <Grid.Column centered width={7}>
-                <img src={require("./images/dog_response.svg")}/>
-                  <Grid.Row> 
-                  </Grid.Row> 
+                  <Grid.Column>
+                    <img src={require("./images/dog_response.svg")}/>
+                  </Grid.Column>
+                      <Grid.Row> 
+                      </Grid.Row> 
 
-                  <Grid.Row> 
-                      <Grid.Column>
-                      </Grid.Column>
+                      <Grid.Row> 
+                          <Grid.Column>
+                          </Grid.Column>
 
-                      <Grid.Column>
-                        <NavLink
-                            to="/levelone"
-                            exact
-                            
-                            activeStyle={{
-                                background: 'darkblue'
-                            }}
-                            > 
-                            <img src={require("./images/backbtn.png")}></img> 
-                        </NavLink> 
-                        <NavLink
-                            to="/webcam"
-                            exact
-                            
-                            activeStyle={{
-                                background: 'darkblue'
-                            }}
-                            > 
-                            <img src={require("./images/nextbtn.png")}></img> 
-                        </NavLink> 
-                      </Grid.Column>
+                          <Grid.Column>
+                            <NavLink
+                                to="/levelone"
+                                exact
+                                
+                                activeStyle={{
+                                    background: 'darkblue'
+                                }}
+                                > 
+                                <img src={require("./images/backbtn.png")}></img> 
+                            </NavLink> 
+                            <NavLink
+                                to="/webcam"
+                                exact
+                                
+                                activeStyle={{
+                                    background: 'darkblue'
+                                }}
+                                > 
+                                <img src={require("./images/nextbtn.png")}></img> 
+                            </NavLink> 
+                          </Grid.Column>
 
-                    </Grid.Row>  
+                        </Grid.Row>  
+                </Grid.Column>
+
+                <Grid.Column centered width={7}>
+                  <Grid.Row stretched>
+                   </Grid.Row>
+
+                  <Grid.Row stretched>
+                
+                    <Grid.Column>
+                        <img src={require("./images/happy.png")}/> 
+                        <br/>
+                        <h1>Happy</h1>
+                        <br/> 
+                        <img src={require("./images/worried.png")}/> 
+                        <br/>
+                        <h1>Upset</h1>
+                        <br/>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <img src={require("./images/surprised.png")}/> 
+                      <img src={require("./images/smirk.png")}/> 
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Grid.Row stretched>
+               
+                    <Grid.Column>
+                 
+                    </Grid.Column>
+                    <Grid.Column>
+                    
+                    </Grid.Column>
+                  </Grid.Row>
                 </Grid.Column>
 
             </Grid.Row>
