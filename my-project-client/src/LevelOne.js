@@ -13,8 +13,29 @@ class LevelOne extends React.Component{
 
 changePage=()=>{
     this.props.changePage("webcam")
-}
+}    
+
+// postProgress=()=>{
+//     fetch("http://localhost:3000/levels",
+//     {
+//     method: "POST",
+//     headers: {
+//         "Content-Type" : "application/json"
+//     },
+//     body: JSON.stringify({
+//         name: "LevelOne", 
+//         child_id: this.props.location.aboutProps.currentChild.id 
+//     })
+//     })
+//     .then(res => res.json())
+//     .then(level=> 
+//         console.log(level)
+//     ) 
+// }
+
 render(){
+
+
 
     return(
       

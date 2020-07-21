@@ -21,6 +21,25 @@ class WebCam extends React.Component{
 setRef = (webcam) => {
 this.webcam = webcam;  
 }
+
+postProgress=()=>{
+  fetch("http://localhost:3000/levels",
+  {
+  method: "POST",
+  headers: {
+      "Content-Type" : "application/json"
+  },
+  body: JSON.stringify({
+      name: "LevelOne", 
+      child_id: this.props.location.aboutProps.currentChild.id 
+  })
+  })
+  .then(res => res.json())
+  .then(level=> 
+      console.log(level)
+  ) 
+}
+
 close = () => this.setState({ open: false })
 
 capture = () => {
@@ -45,8 +64,9 @@ capture = () => {
     })
     .then(res => res.json())
     .then(image=> 
-      console.log(image)
+      this.postProgress()
     ) 
+
 }
 
 startVideo=()=> {
