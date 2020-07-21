@@ -40,7 +40,7 @@ capture = () => {
     body: JSON.stringify({
         screen_shot: imageSrc, 
         username: localStorage.user,
-        child_id: "221"
+        child_id: this.props.location.aboutProps.currentChild.id 
     })
     })
     .then(res => res.json())

@@ -65,12 +65,12 @@ class Response extends React.Component{
                                 <img src={require("./images/backbtn.png")}></img> 
                             </NavLink> 
                             <NavLink
-                                to="/webcam"
-                                exact
-                                
-                                activeStyle={{
-                                    background: 'darkblue'
-                                }}
+                                to={{
+                                  pathname: "/webCam", 
+                                 aboutProps:{
+                                     currentChild: this.props.location.aboutProps.currentChild 
+                                 }
+                              }}
                                 > 
                                 <img src={require("./images/nextbtn.png")}></img> 
                             </NavLink> 

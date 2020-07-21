@@ -20,7 +20,7 @@ render(){
                                 <br/>
                                     <br/>
                                         <br/>
-            <LevelOneMainContainer/>   
+            <LevelOneMainContainer currentChild={this.props.location.aboutProps.currentChild}/>   
       </div>
     )} 
 }

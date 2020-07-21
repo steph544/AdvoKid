@@ -50,14 +50,15 @@ render(){
                              </Grid.Row>
 
                              <Grid.Row>
-                             <NavLink
-                                to="/navMap"                        
-                                > 
+                             <NavLink to= "/navMap"> 
                                 <img src={require("./images/backbtn.png")}></img> 
                             </NavLink> 
-                             <NavLink
-                                to="/response"
-                                > 
+                             <NavLink to={{
+                                 pathname: "/response", 
+                                aboutProps:{
+                                    currentChild: this.props.currentChild 
+                                }
+                             }}> 
                                 <img src={require("./images/nextbtn.png")}></img> 
                             </NavLink> 
                                 
