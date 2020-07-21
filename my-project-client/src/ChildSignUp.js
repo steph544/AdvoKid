@@ -1,5 +1,4 @@
 import React, {Component, useState} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
 import ChildSignUpForm from './ChildSignUpForm.js'
@@ -47,4 +46,4 @@ class ChildSignUp extends React.Component{
 }
 
  {/* <img src={require('./images/addchildpicbtn.svg')} width="450px"/> */}
-export default withRouter(ChildSignUp)
+export default ChildSignUp

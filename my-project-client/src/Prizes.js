@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import "./styles.css"
 
   
@@ -25,4 +25,4 @@ class Prizes extends React.Component{
 }
 
 
-export default withRouter(Prizes)
+export default Prizes

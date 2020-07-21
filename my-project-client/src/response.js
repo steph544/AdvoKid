@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Image, Card } from 'semantic-ui-react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Webcam from "react-webcam";
 import "./styles.css"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -84,25 +84,19 @@ class Response extends React.Component{
                    </Grid.Row>
 
                   <Grid.Row>
-                Grid ROW 
                     <Grid.Column>
-                      <h1>Select the Correct Response:</h1>
-                          <section>
                           <HappyCard/>
                           <WorriedCard/> 
-                          </section>
                     </Grid.Column>
                     <Grid.Column>
                       <br/>
                          <br/>  
-                         <section>
-                                <SurprisedCard/> 
-                                <SadCard/> 
-                        </section>
+                            <SurprisedCard/> 
+                            <SadCard/> 
                         
                     </Grid.Column>
                   </Grid.Row>
-                  <Grid.Row stretched>
+                  <Grid.Row>
                
                     <Grid.Column>
                  
@@ -132,4 +126,4 @@ class Response extends React.Component{
 }
 
 
-export default withRouter(Response)
+export default Response

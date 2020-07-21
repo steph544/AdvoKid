@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 
 function Voice() {
@@ -39,6 +39,6 @@ function Voice() {
 }
 
 
-export default withRouter(Voice)
+export default Voice
 
 

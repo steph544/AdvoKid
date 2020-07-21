@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import "./styles.css"
 import LevelOneMainContainer from "./LevelOneMainContainer.js"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -25,4 +25,4 @@ render(){
     )} 
 }
 
-export default withRouter(LevelOne)
+export default LevelOne

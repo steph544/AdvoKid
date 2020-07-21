@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
 import { Dropdown, Grid, Card} from 'semantic-ui-react'
+import LevelOneProgress from "./LevelOneProgress.js"
 
 const options = [
     { key: 1, text: 'Level One', value: 'One' },
@@ -48,7 +49,7 @@ class Progress extends React.Component{
 renderSwitch=(param)=>{
     switch(param){
     case 'One':
-      return <h1>Level one Progress</h1>
+      return <LevelOneProgress/>
     case 'Two':
         return <h1>Level 2 Progress</h1>
     case 'Three':
@@ -124,4 +125,4 @@ renderSwitch=(param)=>{
 }
 
 
-export default withRouter(Progress)
+export default Progress

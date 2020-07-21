@@ -6,7 +6,7 @@ import {
     Message,
     Segment,
   } from 'semantic-ui-react';
-  import { NavLink, withRouter } from 'react-router-dom';
+  import { NavLink} from 'react-router-dom';
 
 
 class Login extends Component{
@@ -96,5 +96,5 @@ class Login extends Component{
 }
 
 
-export default withRouter(Login)
+export default Login
 

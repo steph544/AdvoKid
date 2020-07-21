@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
 import "./styles.css"
 import { render } from 'react-dom';
 import Progress from "./Progress.js"
@@ -119,4 +118,4 @@ class Parents extends React.Component{
 }
 
 
-export default withRouter(Parents)
+export default Parents

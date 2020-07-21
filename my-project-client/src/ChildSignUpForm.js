@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
 
@@ -173,7 +173,7 @@ class ChildSignUpForm extends React.Component{
                 <NavLink to={{
                     pathname: "/navMap",
                     aboutProps:{
-                        currentChild: this.state.selectedChild
+                        currentChild: this.props.currentChild 
                     }
                 }}>
                     <img src={require('./images/letsplaybtn.png')} width="450px"/>
@@ -187,4 +187,4 @@ class ChildSignUpForm extends React.Component{
 }
 
 
-export default withRouter(ChildSignUpForm)
+export default ChildSignUpForm

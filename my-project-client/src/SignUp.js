@@ -6,7 +6,7 @@ import {
     Grid,
     Segment,
   } from 'semantic-ui-react';
-  import { NavLink, withRouter} from 'react-router-dom';
+  import { NavLink} from 'react-router-dom';
 
 class SignUp extends Component{
     state = {}
@@ -102,6 +102,6 @@ class SignUp extends Component{
     }
 }
 
-export default withRouter(SignUp)
+export default SignUp
 
 

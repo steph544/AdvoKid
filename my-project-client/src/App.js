@@ -3,7 +3,7 @@ import React from 'react';
 // import NavBar from './NavBar.js'
 import './styles.css'
 // import Form from './Form.js'
-import { NavLink, withRouter } from 'react-router-dom';
+
 import Home from "./Home.js"
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default App;
 
 
 

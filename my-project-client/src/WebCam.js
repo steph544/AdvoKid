@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Grid, Image, Modal, Message } from 'semantic-ui-react'
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Webcam from "react-webcam";
 import "./styles.css"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
@@ -136,11 +136,11 @@ componentDidMount(){
                        <br/>
       <Grid>
           <Grid.Row>
-              <Grid.Column width={1}>
+              <Grid.Column width={2}>
                    {/* <img style={{width: '140px'}} src={require('./images/star.png')} /> 
                    Column 1, Row 1 */}
               </Grid.Column>
-              <Grid.Column centered width={7}>     
+              <Grid.Column centered width={5}>     
                           <div onClick={this.change}>
                             <img width="970" height="590" className="parent" src={require("./images/webcam_frame.png")}/>
                                   <Webcam className="webcam_position" width={600} height={400} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} /> 
@@ -181,19 +181,13 @@ componentDidMount(){
                       
                        </Grid.Row>
 
-                       <Grid.Row>
-                       <NavLink
-                        to="/navMap"
-                        > 
-                          <img src={require("./images/nextbtn.png")}></img> 
-                        </NavLink> 
-                    
-
-                        <NavLink
-                        to="/response"
-                        > 
-                          <img src={require("./images/backbtn.png")}></img> 
-                        </NavLink> 
+                       <Grid.Row>   
+                          <NavLink to="/response"> 
+                            <img src={require("./images/backbtn.png")}></img> 
+                          </NavLink> 
+                          <NavLink to="/navMap"> 
+                              <img src={require("./images/nextbtn.png")}></img> 
+                          </NavLink>
                        </Grid.Row>
                        
 
@@ -217,4 +211,4 @@ componentDidMount(){
 }
 
 
-export default withRouter(WebCam)
+export default WebCam
