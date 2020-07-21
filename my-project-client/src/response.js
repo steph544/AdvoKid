@@ -55,13 +55,12 @@ class Response extends React.Component{
 
                           <Grid.Column>
                             <NavLink
-                                to="/levelone"
-                                exact
-                                
-                                activeStyle={{
-                                    background: 'darkblue'
-                                }}
-                                > 
+                               to={{
+                                pathname: "/levelone", 
+                               aboutProps:{
+                                   currentChild: this.props.location.aboutProps.currentChild 
+                               }
+                            }}>  
                                 <img src={require("./images/backbtn.png")}></img> 
                             </NavLink> 
                             <NavLink

@@ -182,10 +182,20 @@ componentDidMount(){
                        </Grid.Row>
 
                        <Grid.Row>   
-                          <NavLink to="/response"> 
+                          <NavLink to={{
+                                 pathname: "/response", 
+                                aboutProps:{
+                                    currentChild: this.props.location.aboutProps.currentChild 
+                                }
+                             }}>   
                             <img src={require("./images/backbtn.png")}></img> 
                           </NavLink> 
-                          <NavLink to="/navMap"> 
+                          <NavLink to={{
+                                 pathname: "/navMap", 
+                                aboutProps:{
+                                    currentChild: this.props.location.aboutProps.currentChild 
+                                }
+                             }}>   
                               <img src={require("./images/nextbtn.png")}></img> 
                           </NavLink>
                        </Grid.Row>

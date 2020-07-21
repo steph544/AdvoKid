@@ -20,8 +20,7 @@ class ChildSignUpForm extends React.Component{
     }
 
     selectChild = (e, { value }) => 
-    this.props.selectChild({ value },
-    this.setState({selectedChild: value})
+    this.props.selectChild({ value }.value 
         )
 
     componentDidMount(){ 
@@ -169,7 +168,7 @@ class ChildSignUpForm extends React.Component{
                 <br/>
                     <br/> 
                         <br/>
-                            <br/>
+                            <br/> 
                 <NavLink to={{
                     pathname: "/navMap",
                     aboutProps:{

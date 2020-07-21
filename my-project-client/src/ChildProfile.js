@@ -14,7 +14,7 @@ class ChildProfile extends React.Component{
         selectedChild: ""
     }
 
-    selectChild = (e, { value }) => this.props.selectChild({ value })
+    selectChild = (e, { value }) =>  this.props.selectChild({ value }.value)
 
     componentDidMount(){ 
         if(this.props.currentUser.children){
@@ -111,7 +111,7 @@ class ChildProfile extends React.Component{
             <>        
             <div class="div2 image-upload">
                 <label for="file-input"> 
-                    <img className="avatar" src={this.props.currentChild.value.image} width="400px" height="400px"/>
+                    <img className="avatar" src={this.props.currentChild.image} width="400px" height="400px"/>
                         <br/>
                     <img src={require('./images/addchildpicbtn.svg')} width="450px"/> 
                 </label>      
@@ -135,17 +135,17 @@ class ChildProfile extends React.Component{
             </Grid>
                 <img className="signup_img" src={require('./images/first_name.png')}/>
                         <br/> 
-                    {this.props.currentChild.value.first_name}
+                    {this.props.currentChild.first_name}
                         <br/>
                             <br/>
                     <img className="signup_img" src={require('./images/last_name.png')}/>
                         <br/>
-                        {this.props.currentChild.value.last_name}
+                        {this.props.currentChild.last_name}
                         <br/>
                             <br/>
                     <img className="signup_img" src={require('./images/age.png')}/>
                         <br/>
-                        {this.props.currentChild.value.age}
+                        {this.props.currentChild.age}
                         <br/>
                             <br/>
                    

@@ -27,14 +27,22 @@ function Voice() {
 
 
     return(  
+        <>
             <div class="voice-bg-img">
                 <button onClick={()=>{recognition.start()}}>Respond</button>
                 <h3 id="transcript"></h3>
                 <h1 id="correct"></h1>
             </div>
 
-         
-            
+            <NavLink to={{
+                pathname: "/navMap", 
+            aboutProps:{
+                currentChild: this.props.location.aboutProps.currentChild 
+            }
+            }}>   
+            <img src={require("./images/backbtn.png")}></img> 
+            </NavLink>
+         </>   
     )
 }
 

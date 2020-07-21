@@ -9,7 +9,6 @@ import React, {Component} from 'react'
 class NavMap extends React.Component{
 
     render(){
-      console.log(this.props.location.aboutProps.currentChild.value)
       return( 
 
       <Rotate triggerOnce>
@@ -20,13 +19,13 @@ class NavMap extends React.Component{
                 <Link to={{
                   pathname: "/levelone",
                   aboutProps:{
-                      currentChild: this.props.location.aboutProps.currentChild.value
+                      currentChild: this.props.location.aboutProps.currentChild
                   }}
                   }><area coords="655,1200,60" shape="circle"></area></Link>
                  <Link to={{
                   pathname: "/voice",
                   aboutProps:{
-                      currentChild: this.props.location.aboutProps.currentChild.value
+                      currentChild: this.props.location.aboutProps.currentChild
                   }}
                   }><area coords="1150,1072,1265,1182" shape="rect"></area></Link>
             </map>
