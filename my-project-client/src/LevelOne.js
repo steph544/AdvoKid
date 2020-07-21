@@ -18,7 +18,7 @@ render(){
 
     return(
       
-         <div>
+         <div className="levelone-bg-img">
             <Grid>
                 <Grid.Row>
                
