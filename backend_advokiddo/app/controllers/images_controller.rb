@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-    skip_before_action :logged_in?, only: [:create, :index]
+    skip_before_action :logged_in?, only: [:create, :index, :destroy]
     before_action :check_configuration, only: [:create]
 
     def check_configuration
@@ -30,13 +30,14 @@ class ImagesController < ApplicationController
     end 
 
     def destroy 
-        image=Image.find(params[:id])
+        image=Image.find(image_params[:id])
         image.destroy 
+        render json: image.to_json
         
     end 
 
     private
     def image_params
-        params.permit(:username, :screen_shot, :child_id, :image)
+        params.permit(:username, :screen_shot, :child_id, :image, :id)
     end
 end

@@ -6,5 +6,6 @@ class Child < ApplicationRecord
     has_many :responses
     has_many :recordings 
     has_many :captures 
+    has_many :images 
 
 end

@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-    skip_before_action :logged_in?, only: [:create, :index]
+    skip_before_action :logged_in?, only: [:create, :index, :update]
     before_action :check_configuration, only: [:create]
 
     def check_configuration
@@ -33,11 +33,16 @@ class ChildrenController < ApplicationController
     def destroy 
         child=Child.find(child_params[:id])
         child.destroy 
-        
+    end 
+
+    def update 
+        @child=Child.all.find(child_params[:id])
+        @child.update(child_params)
+        render json: @child
     end 
 
     private
     def child_params
-        params.require(:child).permit(:username, :last_name, :age, :image, :first_name)
+        params.require(:child).permit(:id, :username, :last_name, :age, :image, :first_name)
     end
 end
