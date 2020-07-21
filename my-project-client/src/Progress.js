@@ -49,7 +49,7 @@ class Progress extends React.Component{
 renderSwitch=(param)=>{
     switch(param){
     case 'One':
-      return <LevelOneProgress/>
+      return <LevelOneProgress currentChild={this.props.currentChild}/>
     case 'Two':
         return <h1>Level 2 Progress</h1>
     case 'Three':
@@ -63,7 +63,7 @@ renderSwitch=(param)=>{
     case 'Seven':
         return <h1>Level 7 Progress</h1>
     default: 
-    return <h1>Level 5 Progress</h1>
+    return ""
     }
 }
 

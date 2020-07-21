@@ -84,15 +84,24 @@ class Response extends React.Component{
 
                   <Grid.Row>
                     <Grid.Column>
+                      <Card.Group itemsPerRow={2}>
                           <HappyCard/>
                           <WorriedCard/> 
+                        <Card>
+
+                        </Card>
+                        <Card>
+                          
+                        </Card>
+                          <SurprisedCard/>
+                          <SadCard/>
+                   
+                      </Card.Group>
+                          
+                          
                     </Grid.Column>
                     <Grid.Column>
-                      <br/>
-                         <br/>  
-                            <SurprisedCard/> 
-                            <SadCard/> 
-                        
+              
                     </Grid.Column>
                   </Grid.Row>
                   <Grid.Row>

@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
-
+import PhotoCard from "./PhotoCard.js"
+import {Grid, Container, Card} from 'semantic-ui-react'
 class LevelOneProgress extends React.Component{
 
     state={
-        photos: null 
+        photos: null,
+        currentChildPhotos: null
     }
 
     componentDidMount(){
@@ -21,9 +23,9 @@ class LevelOneProgress extends React.Component{
         .then(res => res.json())
         .then(data => 
           {
-            console.log(data)
             this.setState({
-              photos: data
+              photos: data,
+              currentChildPhotos: data.filter(obj=> obj.child_id === this.props.currentChild.id).slice(0,8)
             })
             
           }
@@ -32,11 +34,24 @@ class LevelOneProgress extends React.Component{
     
     render(){
         const { value } = this.state
-          return(
+        if (this.state.currentChildPhotos === null){
+          return("")
+        } else{
+           return(
         <>
-           
+          <div className="div3">
+            <br/>
+            <br/> 
+            <Card.Group itemsPerRow={4}>
+             {this.state.currentChildPhotos.map(photo =>
+                <PhotoCard photo={photo}/>)}
+            </Card.Group>
+          </div>
+               
         </>    
-    )
+        )
+        }
+         
     }
   
     

@@ -6,6 +6,7 @@ import ChildSignUp from './ChildSignUp.js'
 import Levels from "./Levels.js"
 import Prizes from "./Prizes.js"
 import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
+import ChildProfile from "./ChildProfile.js"
 
 
 class Parents extends React.Component{
@@ -22,7 +23,8 @@ class Parents extends React.Component{
         })
     }
 
-    componentDidMount(){
+    componentDidMount(){ 
+   
         fetch("http://localhost:3000/api/v1/users",
         {
           method: "GET",
@@ -37,16 +39,16 @@ class Parents extends React.Component{
           {
             this.setState({
               users: data,
-              currentUser:  data.find(user => user.username===localStorage.user)
+              currentUser:  data.find(user => user.username===localStorage.user), 
             })
         })
-    }
+    }  
  
 
     changeComp = (e) => {
         e.preventDefault();
         this.setState({
-            childInfo: null
+            childInfo: "profile"
         })
     }
     changeComp2 = (e) => {
@@ -86,12 +88,18 @@ class Parents extends React.Component{
             return <Levels currentUser={this.state.currentUser}/>
         case 'prizes':
             return <Prizes currentUser={this.state.currentUser}/>
+        case 'profile':
+            return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser}/>
         default: 
-        return <ChildSignUp selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
+        return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser}/>
         }
     }
 
     render(){
+        // if (this.props.location.aboutProps !== undefined){
+        //     this.state.currentChild= this.props.location.aboutProps.currentChild
+        // }
+
         if (this.state.currentUser !== null){
             return( 
                         <Slide>
