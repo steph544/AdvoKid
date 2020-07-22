@@ -51,21 +51,22 @@ function Voice(props) {
                  <div className="div11">
                  <img width="100%" height="100%" src={require("./images/genie.png")} hidefocus="true"/> 
                  </div>
-                
+                 <div className="div13">
+                     <br/> 
+                     <br/>
+                    <Link to={{
+                        pathname: "/navMap",
+                        aboutProps:{
+                            currentChild: props.location.aboutProps.currentChild
+                        }}
+                        }>   
+                        <img height="80%" src={require("./images/backbtn.png")} hidefocus="true"/> 
+                    </Link>
+                </div>
 
             </div>    
-            
-                {/* <Link to={{
-                    pathname: "/navMap",
-                    aboutProps:{
-                        currentChild: props.location.aboutProps.currentChild
-                    }}
-                    }>   
-                <h1> Back to NavMap</h1> 
-                </Link> */}
            
-
-     
+               
          </>   
     )
 }
