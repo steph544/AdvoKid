@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { NavLink} from 'react-router-dom';
-import {Card, Image, Button, Rating, Progress} from 'semantic-ui-react'
+import {Card, Image, Button, Rating, Progress, Modal, Header} from 'semantic-ui-react'
 import "./styles.css"
 
 class PhotoCard extends React.Component{
@@ -44,7 +44,14 @@ class PhotoCard extends React.Component{
           return(
         <> 
             <Card color='orange'>
-               <Image src={this.props.photo.screen_shot}/>
+                <Modal basic size="large" trigger={ <Image src={this.props.photo.screen_shot}/>}>
+                    <Modal.Content image>
+                    <Image wrapped rounded fluid size='big' src={this.props.photo.screen_shot} />
+                    <Modal.Description>
+                        
+                    </Modal.Description>
+                    </Modal.Content>
+                </Modal>
                <Progress percent={this.state.percent} autoSuccess />
                <Card.Content extra>
                    <Rating icon='star' defaultRating={0} maxRating={4} onRate={this.handleRate} /> 
