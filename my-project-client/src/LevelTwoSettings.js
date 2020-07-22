@@ -3,19 +3,57 @@ import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import { Button, Form, Segment, Grid } from 'semantic-ui-react'
 
+    
 class LevelTwoSettings extends React.Component{
-    state = {}
+    state = {
+        currentUser: JSON.parse(localStorage.getItem("currentUser")).id,
+    }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+        if (localStorage.currentChild !== "null"){
+            this.state.currentChild = JSON.parse(localStorage.getItem("currentChild")).id
+        } 
     }
 
-    handleSubmit = () => this.setState({ first_name: '', last_name: '', password: '', username: '', email: ''})
+    handleSubmit = () => this.setState({ first_phrase: '', second_phrase: '', third_phrase: ''})
+        
+    
+
+    submitPhrase = (e) => {
+        e.preventDefault()
+       if(this.state.currentChild !== null){
+            fetch("http://localhost:3000/phrases", {
+                        method: "POST",
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        body: JSON.stringify({
+                        
+                            phrase_one: this.state.firstphrase,
+                            phrase_two: this.state.secondphrase,   
+                            phrase_three: this.state.thirdphrase, 
+                            user_id: this.state.currentUser,
+                            child_id: this.state.currentChild
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(phrase => 
+                        {
+                            console.log(phrase)
+                    }
+                    )
+
+       }  
+        
+    }
 
     render(){
+     
         const { firstphrase, secondphrase, thirdphrase } = this.state
+    
         return(
         
             <div>
@@ -41,7 +79,7 @@ class LevelTwoSettings extends React.Component{
                                     <input type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
+                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
                                   
                                      </form>
                 

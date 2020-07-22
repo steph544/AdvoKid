@@ -21,7 +21,6 @@ class Parents extends React.Component{
         this.setState({
              currentChild: value, 
         })
-        localStorage.currentChild= value.id 
     }
 
     componentDidMount(){ 
@@ -41,7 +40,8 @@ class Parents extends React.Component{
             this.setState({
               users: data,
               currentUser:  data.find(user => user.username===localStorage.user)
-            })
+            }) 
+            localStorage.setItem('currentUser', JSON.stringify(data.find(user => user.username===localStorage.user))) 
         })
     }  
  
@@ -100,7 +100,7 @@ class Parents extends React.Component{
         // if (this.props.location.aboutProps !== undefined){
         //     this.state.currentChild= this.props.location.aboutProps.currentChild
         // }
-
+        localStorage.setItem('currentChild', JSON.stringify(this.state.currentChild))
         if (this.state.currentUser !== null){
             return( 
                         <Slide>
