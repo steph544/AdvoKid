@@ -10,8 +10,31 @@ function Voice(props) {
 
     const recognition= new SpeechRecognition();
 
+
+
+
     recognition.onstart=function(){
-        console.log("voice is activated, you can speak into microphone");
+        navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start();
+
+        const audioChunks = [];
+        mediaRecorder.addEventListener("dataavailable", event => {
+            audioChunks.push(event.data);
+        });
+
+        mediaRecorder.addEventListener("stop", () => {
+            const audioBlob = new Blob(audioChunks);
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            audio.play();
+        });
+
+        setTimeout(() => {
+            mediaRecorder.stop();
+        }, 3000);
+        });
     }
 
     recognition.onresult=function(event){
