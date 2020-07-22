@@ -33,7 +33,7 @@ function Voice(props) {
 
         setTimeout(() => {
             mediaRecorder.stop();
-        }, 3000);
+        }, 5000);
         });
     }
 
