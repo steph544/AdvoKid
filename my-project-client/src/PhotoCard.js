@@ -52,7 +52,7 @@ class PhotoCard extends React.Component{
                     </Modal.Description>
                     </Modal.Content>
                 </Modal>
-               <Progress percent={this.state.percent} autoSuccess />
+               <Progress percent={this.state.percent} autoSuccess color='green'/>
                <Card.Content extra>
                    <Rating icon='star' defaultRating={0} maxRating={4} onRate={this.handleRate} /> 
                    <div className='ui two buttons'>

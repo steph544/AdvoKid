@@ -28,24 +28,25 @@ class Progress extends React.Component{
 
       handleChange = (e, { value }) => this.setState({ value })
 
-//       componentDidMount() {
-//         let percent = 25;
-//         this.setStateInterval = window.setInterval(() => {
-//           percent += (Math.random() * 25);
-//           percent = (percent > 100) ? 0 : percent;
-//           this.setState({
-//             percent, data: this.getData(percent)
-//           });
-//         }, 2000);
-//       }
+  //     componentDidMount() {
+  //       let percent = 25;
+  //       this.setStateInterval = window.setInterval(() => {
+  //         percent += (Math.random() * 25);
+  //         percent = (percent > 100) ? 0 : percent;
+  //         this.setState({
+  //           percent, data: this.getData(percent)
+  //         });
+  //       }, 2000);
+  //     }
     
-//       componentWillUnmount() {
-//         window.clearInterval(this.setStateInterval);
-//       }
+  //     componentWillUnmount() {
+  //       window.clearInterval(this.setStateInterval);
+  //     }
 
-//       getData(percent) {
-//     return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
-//   }
+  //     getData(percent) {
+  //   return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
+  // }
+
 renderSwitch=(param)=>{
     switch(param){
     case 'One':

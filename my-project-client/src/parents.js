@@ -19,8 +19,9 @@ class Parents extends React.Component{
 
     selectChild=(value)=>{
         this.setState({
-             currentChild: value
+             currentChild: value, 
         })
+        localStorage.currentChild= value.id 
     }
 
     componentDidMount(){ 
