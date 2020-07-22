@@ -18,7 +18,8 @@ class LevelOneProgress extends React.Component{
     }
 
     componentDidMount(){
-        fetch("http://localhost:3000/images",
+      if(this.props.currentChild){
+         fetch("http://localhost:3000/images",
         {
           method: "GET",
           headers: {
@@ -39,11 +40,19 @@ class LevelOneProgress extends React.Component{
           }
         )
       }
+       
+      }
     
     render(){
         const { value } = this.state
-        if (this.state.currentChildPhotos === null){
-          return("")
+        if (this.state.displayedPhotos === null){
+          return( <div className="child-font">
+              <br/>
+                <br/> 
+                  <br/> 
+                     No Progress to Report
+            </div>
+            )
         } else{
            return(
         <>

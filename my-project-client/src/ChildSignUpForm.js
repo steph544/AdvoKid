@@ -127,14 +127,14 @@ class ChildSignUpForm extends React.Component{
                     <br/>
             </div>
 
-            <div class="div8"> 
+            <div class="div8 child-font"> 
             <Grid columns={2}>
                 <Grid.Column >
                 <Dropdown
                     style={{width: '450px'}}
                     onChange={this.selectChild}
                     options={this.state.options}
-                    placeholder='Choose a Child or Sign Up Below'
+                    placeholder='Choose Child'
                     selection
                     value={value}
                 />

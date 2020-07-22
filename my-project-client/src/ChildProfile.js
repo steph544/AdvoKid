@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
+import ChildSignUp from "./ChildSignUp.js"
 
 
 
@@ -23,7 +24,7 @@ class ChildProfile extends React.Component{
     )
 
     componentDidMount(){ 
-        if(this.props.currentUser.children){
+        if(this.props.currentUser.children && this.props.currentChild !== null){
             let array = this.props.currentUser.children.map((child, index) => ({key: index, text: child.first_name, value: child}))
             this.setState({
                 options: array, 
@@ -116,79 +117,83 @@ class ChildProfile extends React.Component{
       
         const { value } = this.state
         const { username, first_name, last_name, image } = this.state
-          return(
-        <>
-            <>        
-            <div class="div2 image-upload">
-                <label for="file-input"> 
-                    <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
-                        <br/>
-                    <img src={require('./images/addchildpicbtn.svg')} width="450px"/> 
-                </label>      
-                    <br/> 
-                <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
-                    <br/>
-            </div>
 
-            <div class="div8 child-font"> 
-            <Grid columns={2}>
-                <Grid.Column >
-                <Dropdown
-                    style={{width: '450px'}}
-                    onChange={this.selectChild}
-                    options={this.state.options}
-                    placeholder='Choose a Child'
-                    selection
-                    value={value}
-                />
-                </Grid.Column>
-            </Grid>
-            <br/>
-            <br/> 
-                <img className="signup_img" src={require('./images/first_name.png')}/>
+        if (this.props.currentChild !== null){
+        return(
+            <>
+                <>        
+                <div class="div2 image-upload">
+                    <label for="file-input"> 
+                        <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
+                            <br/>
+                        <img src={require('./images/addchildpicbtn.svg')} width="450px"/> 
+                    </label>      
                         <br/> 
-                            <br/>
-                    {this.props.currentChild.first_name}
+                    <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
                         <br/>
-                            <br/>
-                                <br/> 
-                    <img className="signup_img" src={require('./images/last_name.png')}/>
-                        <br/> 
-                            <br/>
-                        {this.props.currentChild.last_name}
-                        <br/>
-                            <br/>
-                                <br/> 
-                    <img className="signup_img" src={require('./images/age.png')}/>
-                        <br/> 
-                            <br/>
-                        {this.props.currentChild.age}
-                        <br/>
-                            <br/>
-                                <br/> 
-                   
-            </div>
+                </div>
 
-            <div className="div4">
-                <img width="90%" height="80%" src={require("./images/dog.png")}/> 
+                <div class="div8 child-font"> 
+                <Grid columns={2}>
+                    <Grid.Column >
+                    <Dropdown
+                        style={{width: '450px'}}
+                        onChange={this.selectChild}
+                        options={this.state.options}
+                        placeholder='Choose Child'
+                        selection
+                        value={value}
+                    />
+                    </Grid.Column>
+                </Grid>
                 <br/>
-                    <br/> 
-                        <br/>
+                <br/> 
+                    <img className="signup_img" src={require('./images/first_name.png')}/>
+                            <br/> 
+                                <br/>
+                        {this.props.currentChild.first_name}
                             <br/>
-                <NavLink to={{
-                    pathname: "/navMap",
-                    aboutProps:{
-                        currentChild: this.props.currentChild 
-                    }
-                }}> 
-                    <img src={require('./images/letsplaybtn.png')} width="450px"/>
-                </NavLink> 
-            </div>
-            </>
+                                <br/>
+                                    <br/> 
+                        <img className="signup_img" src={require('./images/last_name.png')}/>
+                            <br/> 
+                                <br/>
+                            {this.props.currentChild.last_name}
+                            <br/>
+                                <br/>
+                                    <br/> 
+                        <img className="signup_img" src={require('./images/age.png')}/>
+                            <br/> 
+                                <br/>
+                            {this.props.currentChild.age}
+                            <br/>
+                                <br/>
+                                    <br/> 
+                    
+                </div>
 
-
-        </>      
-    )}
+                <div className="div4">
+                    <img width="90%" height="80%" src={require("./images/dog.png")}/> 
+                    <br/>
+                        <br/> 
+                            <br/>
+                                <br/>
+                    <NavLink to={{
+                        pathname: "/navMap",
+                        aboutProps:{
+                            currentChild: this.props.currentChild 
+                        }
+                    }}> 
+                        <img src={require('./images/letsplaybtn.png')} width="450px"/>
+                    </NavLink> 
+                </div>
+                </>
+            </>      
+        )} else {
+            return <ChildSignUp selectChild={this.props.selectChild} currentChild={this.props.currentChild} users={this.props.users} currentUser={this.props.currentUser}/>
+        }
+        }
+          
 }
 
  {/* <img src={require('./images/addchildpicbtn.svg')} width="450px"/> */}

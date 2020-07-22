@@ -35,15 +35,18 @@ class ChildSignUp extends React.Component{
     }
 
     render(){
-      
-        const { value } = this.state
-        const { username, first_name, last_name, image } = this.state
+    //   if (this.props.location.aboutProps.currentChild === null){
+    //       return ""
+    //   } else {
+           const { value } = this.state
+           const { username, first_name, last_name, image } = this.state
           return(
-        <>   
+            <>   
                 {this.renderSwitch(this.state.view)}
-        </>      
-    )}
+            </>   
+    )
+// }
+}
 }
 
- {/* <img src={require('./images/addchildpicbtn.svg')} width="450px"/> */}
 export default ChildSignUp

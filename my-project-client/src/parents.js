@@ -91,7 +91,7 @@ class Parents extends React.Component{
         case 'profile':
             return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser}/>
         default: 
-        return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser}/>
+        return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
         }
     }
 
@@ -119,7 +119,7 @@ class Parents extends React.Component{
                         </Slide>    
                 )
         } else {
-            return <h1>Loading...</h1>
+            return ""
         }
         
 }
