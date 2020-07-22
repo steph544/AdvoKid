@@ -358,3 +358,23 @@ height:0
     min-width: 50%;
     min-height: 50%;
   }
+
+  /* <-----Voice Level ----->  */
+
+.div10 { grid-area: 2 / 4 / 6 / 8; }
+.div11 { grid-area: 2 / 3 / 6 / 4; }
+.div12 { grid-area: 2 / 5 / 5 / 7; }
+
+.child_phrase {
+position: absolute;
+top: 60%;
+left: 0px;
+z-index: 1;
+}
+
+.child-font2{
+    font-family: "Rockwell";
+    font-size: 40px;
+    color: white;
+    text-align: center
+}

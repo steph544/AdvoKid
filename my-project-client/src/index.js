@@ -25,7 +25,7 @@ ReactDOM.render(
           <Route exact path="/phrase" component={PhraseLevel}/>
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/levelone" component={LevelOne}/>
-          <Route exact path="/parents" component={Parents}/>
+          <Route exact path="/parents" component={Parents} render={(props) => <Parents renderSwitch = {this.renderSwitch} />}/>
           <Route exact path="/webcam" component={Webcam}/>
           <Route exact path="/response" component={Response}/>
       </Router>,

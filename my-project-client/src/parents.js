@@ -82,7 +82,7 @@ class Parents extends React.Component{
     renderSwitch=(param)=>{
         switch(param){
         case null:
-          return <ChildSignUp selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
+          return <ChildSignUp selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser} />
         case 'progress':
             return <Progress currentChild={this.state.currentChild}/>
         case 'levels':
@@ -90,9 +90,9 @@ class Parents extends React.Component{
         case 'prizes':
             return <Prizes currentUser={this.state.currentUser}/>
         case 'profile':
-            return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser}/>
+            return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser} />
         default: 
-        return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser}/>
+        return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} users={this.state.users} currentUser={this.state.currentUser} />
         }
     }
 

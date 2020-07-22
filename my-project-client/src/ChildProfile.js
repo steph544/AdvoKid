@@ -181,7 +181,8 @@ class ChildProfile extends React.Component{
                     <NavLink to={{
                         pathname: "/navMap",
                         aboutProps:{
-                            currentChild: this.props.currentChild 
+                            currentChild: this.props.currentChild,
+                            renderSwitch: this.props.renderSwitch  
                         }
                     }}> 
                         <img src={require('./images/letsplaybtn.png')} width="450px"/>

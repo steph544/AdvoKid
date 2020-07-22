@@ -23,7 +23,7 @@ class NavMap extends React.Component{
                   }}
                   }><area coords="655,1200,60" shape="circle"></area></Link>
                  <Link to={{
-                  pathname: "/voice",
+                  pathname: "/Voice",
                   aboutProps:{
                       currentChild: this.props.location.aboutProps.currentChild
                   }}

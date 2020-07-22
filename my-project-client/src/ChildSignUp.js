@@ -22,7 +22,7 @@ class ChildSignUp extends React.Component{
     renderSwitch=(param)=>{
         switch(param){
         case 'profile':
-          return <ChildProfile currentUser={this.props.currentUser} currentChild={this.props.currentChild} selectChild={this.selectChild}/>
+          return <ChildProfile currentUser={this.props.currentUser} currentChild={this.props.currentChild} selectChild={this.selectChild} />
         // case 'progress':
         //     return <Progress currentUser={this.state.currentUser}/>
         // case 'levels':
