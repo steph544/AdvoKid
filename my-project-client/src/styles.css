@@ -360,14 +360,20 @@ height:0
   }
 
   /* <-----Voice Level ----->  */
-
-.div10 { grid-area: 2 / 4 / 6 / 8; }
-.div11 { grid-area: 2 / 3 / 6 / 4; }
-.div12 { grid-area: 2 / 5 / 5 / 7; }
+.voice_grid {
+    display: grid;
+    grid-template-columns: .1255fr 1fr .5fr .8fr repeat(3, .5fr) .125fr .5fr .25fr .125fr;
+    grid-template-rows: .1fr .2fr .9fr repeat(5, .25fr);
+    grid-column-gap: 85px;
+    grid-row-gap: 18px;
+}
+.div10 { grid-area: 2 / 2 / 6 / 7; }
+.div11 { grid-area: 2 / 7 / 6 / 10; }
+.div12 { grid-area: 2 / 3 / 5 / 7; }
 
 .child_phrase {
 position: absolute;
-top: 60%;
+top: 50%;
 left: 0px;
 z-index: 1;
 }

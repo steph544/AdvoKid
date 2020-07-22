@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 import './styles.css'
 
 
@@ -29,7 +30,7 @@ function Voice(props) {
 
     return(  
         <>
-            <div class="voice-bg-img parent_page">
+            <div class="voice-bg-img voice_grid">
                 <div className="div10">
                     <img width="100%" height="100%" src={require("./images/chalkboard.png")} hidefocus="true"/> 
                 
@@ -37,9 +38,11 @@ function Voice(props) {
                  </div>  
 
                 <div className="div12 child_phrase child-font2">
-                    <h1>How are you doing today? 
-                        <br/> Would you like to come and play?</h1>
-                        <button onClick={()=>{recognition.start()}}>Respond</button>
+                    <h1 className="child-font2">
+                        How are you doing today? 
+                    </h1>
+                    <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
+                        {/* <button >Respond</button> */}
                     <h3 className="child-font2" id="transcript"></h3>
                     <h1 id="correct"></h1>  
                 </div>
