@@ -18,6 +18,7 @@ class ChildSignUpForm extends React.Component{
             [e.target.name]: e.target.value
         })
     }
+    
 
     selectChild = (e, { value }) => 
     this.props.selectChild({ value }.value 

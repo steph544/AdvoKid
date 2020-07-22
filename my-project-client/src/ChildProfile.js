@@ -11,16 +11,23 @@ class ChildProfile extends React.Component{
         childPicture: "https://via.placeholder.com/150",
         options: [],
         loading: false,
-        selectedChild: ""
+        selectedChild: this.props.currentChild, 
     }
 
-    selectChild = (e, { value }) =>  this.props.selectChild({ value }.value)
+    selectChild = (e, { value }) =>  (
+        this.props.selectChild({ value }.value),  
+        this.setState({ 
+            childPicture: {value}.value.image, 
+            selectedChild: {value}.value  
+        })
+    )
 
     componentDidMount(){ 
         if(this.props.currentUser.children){
             let array = this.props.currentUser.children.map((child, index) => ({key: index, text: child.first_name, value: child}))
             this.setState({
-                options: array
+                options: array, 
+                childPicture: this.props.currentChild.image 
             })
         }
         else {
@@ -30,23 +37,24 @@ class ChildProfile extends React.Component{
     }}
 
 
-    //  upload=()=>{
-    //     fetch("http://localhost:3000/children/",
-    //     {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type" : "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //         screen_shot: imageSrc, 
-    //         username: localStorage.user
-    //     })
-    //     })
-    //     .then(res => res.json())
-    //     .then(image=> 
-    //       console.log(image)
-    //     ) 
-    // }
+     updateChildPicture=()=>{
+         if (this.state.currentPicture !== null){
+           fetch(`http://localhost:3000/children/${this.state.selectedChild.id}`,
+        {
+        method: "PATCH",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            id: this.state.selectedChild.id,
+            image: this.state.childPicture  
+        })
+        })
+        .then(res => res.json())
+        .then(child=> console.log(child) ) 
+         }
+
+    }
     // handleChange = (e, { value }) => this.setState({ value })
 
     // uploadWidget() {
@@ -57,6 +65,7 @@ class ChildProfile extends React.Component{
     // })}
     // const [loading, setLoading] = useState(false)
     // const [image, setImage] = useState("")
+
 
     uploadImage=(e)=>{
         const files = e.target.files 
@@ -70,37 +79,38 @@ class ChildProfile extends React.Component{
         .then(res=>res.json())
         .then(file=> this.setState({
             childPicture: file.secure_url 
-        }))
-       
-    }
-
-    childSignUp = (e) => {
-        e.preventDefault()
-
-        fetch("http://localhost:3000/children", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-              
-                first_name: this.state.first_name,
-                last_name: this.state.last_name,   
-                age: this.state.username, 
-                image: this.state.childPicture, 
-                username: localStorage.user 
-               
-            })
-        })
-        .then(res => res.json())
-        .then(child => 
-            {
-                console.log(child)
-               this.props.selectChild(child)
-        }
+        }), 
+        this.updateChildPicture() 
         )
+       }
+
+    // childSignUp = (e) => {
+    //     e.preventDefault()
+
+    //     fetch("http://localhost:3000/children", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+              
+    //             first_name: this.state.first_name,
+    //             last_name: this.state.last_name,   
+    //             age: this.state.username, 
+    //             image: this.state.childPicture, 
+    //             username: localStorage.user 
+               
+    //         })
+    //     })
+    //     .then(res => res.json())
+    //     .then(child => 
+    //         {
+    //             console.log(child)
+    //            this.props.selectChild(child)
+    //     }
+    //     )
         
-    }
+    // }
 
     render(){
       
@@ -111,7 +121,7 @@ class ChildProfile extends React.Component{
             <>        
             <div class="div2 image-upload">
                 <label for="file-input"> 
-                    <img className="avatar" src={this.props.currentChild.image} width="400px" height="400px"/>
+                    <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
                         <br/>
                     <img src={require('./images/addchildpicbtn.svg')} width="450px"/> 
                 </label>      
@@ -120,34 +130,42 @@ class ChildProfile extends React.Component{
                     <br/>
             </div>
 
-            <div class="div8"> 
+            <div class="div8 child-font"> 
             <Grid columns={2}>
                 <Grid.Column >
                 <Dropdown
                     style={{width: '450px'}}
                     onChange={this.selectChild}
                     options={this.state.options}
-                    placeholder='Choose a Child or Sign Up Below'
+                    placeholder='Choose a Child'
                     selection
                     value={value}
                 />
                 </Grid.Column>
             </Grid>
+            <br/>
+            <br/> 
                 <img className="signup_img" src={require('./images/first_name.png')}/>
                         <br/> 
+                            <br/>
                     {this.props.currentChild.first_name}
                         <br/>
                             <br/>
+                                <br/> 
                     <img className="signup_img" src={require('./images/last_name.png')}/>
-                        <br/>
+                        <br/> 
+                            <br/>
                         {this.props.currentChild.last_name}
                         <br/>
                             <br/>
+                                <br/> 
                     <img className="signup_img" src={require('./images/age.png')}/>
-                        <br/>
+                        <br/> 
+                            <br/>
                         {this.props.currentChild.age}
                         <br/>
                             <br/>
+                                <br/> 
                    
             </div>
 

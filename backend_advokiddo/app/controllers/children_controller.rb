@@ -37,7 +37,7 @@ class ChildrenController < ApplicationController
 
     def update 
         @child=Child.all.find(child_params[:id])
-        @child.update(child_params)
+        @child.update(image: child_params[:image])
         render json: @child
     end 
 

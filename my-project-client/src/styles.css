@@ -330,6 +330,11 @@ width:0;
 height:0
 }
 
+.child-font{
+    font-family: "Rockwell";
+    font-size: 30px;
+}
+
 /* <------Webcam Page --------> */
 .font{
     font-family: Impact, Charcoal, sans-serif;

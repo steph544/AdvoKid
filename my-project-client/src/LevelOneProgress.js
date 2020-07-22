@@ -7,7 +7,14 @@ class LevelOneProgress extends React.Component{
 
     state={
         photos: null,
-        currentChildPhotos: null
+        currentChildPhotos: null,
+        displayedPhotos: null
+    }
+
+    deletePhoto=(value)=>{
+      this.setState({
+        displayedPhotos: this.state.displayedPhotos.filter(photo => photo !== value)
+      })
     }
 
     componentDidMount(){
@@ -25,7 +32,8 @@ class LevelOneProgress extends React.Component{
           {
             this.setState({
               photos: data,
-              currentChildPhotos: data.filter(obj=> obj.child_id === this.props.currentChild.id).slice(0,8)
+              displayedPhotos: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8),
+              currentChildPhotos: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8)
             })
             
           }
@@ -40,11 +48,9 @@ class LevelOneProgress extends React.Component{
            return(
         <>
           <div className="div3">
-            <br/>
-            <br/> 
             <Card.Group itemsPerRow={4}>
-             {this.state.currentChildPhotos.map(photo =>
-                <PhotoCard photo={photo}/>)}
+             {this.state.displayedPhotos.map(photo =>
+                <PhotoCard photo={photo} deletePhoto={this.deletePhoto} currentChild={this.props.currentChild}/>)}
             </Card.Group>
           </div>
                

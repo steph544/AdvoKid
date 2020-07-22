@@ -39,7 +39,7 @@ class Parents extends React.Component{
           {
             this.setState({
               users: data,
-              currentUser:  data.find(user => user.username===localStorage.user), 
+              currentUser:  data.find(user => user.username===localStorage.user)
             })
         })
     }  
