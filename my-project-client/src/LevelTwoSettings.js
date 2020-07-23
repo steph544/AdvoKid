@@ -44,9 +44,7 @@ class LevelTwoSettings extends React.Component{
                         {
                             console.log(phrase)
                     }
-                    )
-
-       }  
+                    )}  
         
     }
 
@@ -61,25 +59,28 @@ class LevelTwoSettings extends React.Component{
             <Grid centered columns={2}>
                 <Grid.Column style={{position: 'absolute', top:'10%', left: '35%'}}>
                     <div>
-                        <div id="form-container">
+                        <div>
                             <br/><br/><br/>
                             <br/><br/><br/>
                             <br/><br/><br/>
                             <br/>
                                 <form>
                                     <img className="signup_img" src={require('./images/firstphrase.png')}/>
-                                    <input type="text" name="firstphrase" onChange={(e) => this.handleChange(e)} value={firstphrase} maxlength="50"></input>
+                                    <br/>
+                                    <input className="rounded-input" type="text" name="firstphrase" onChange={(e) => this.handleChange(e)} value={firstphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
                                     <img className="signup_img" src={require('./images/secondphrase.png')}/>
-                                    <input type="text" name="secondphrase" onChange={(e) => this.handleChange(e)} value={secondphrase} maxlength="50"></input>
+                                    <br/>
+                                    <input className="rounded-input" type="text" name="secondphrase" onChange={(e) => this.handleChange(e)} value={secondphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
                                     <img className="signup_img" src={require('./images/thirdphrase.png')}/>
-                                    <input type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
+                                    <br/>
+                                    <input className="rounded-input" type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
                                   
                                      </form>
                 

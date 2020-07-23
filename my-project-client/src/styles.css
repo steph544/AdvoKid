@@ -386,3 +386,9 @@ z-index: 1;
     color: white;
     text-align: center
 }
+
+/* <--------Level Two Settings-----------> */
+.rounded-input {
+    padding:10px;
+    border-radius:10px;
+  }

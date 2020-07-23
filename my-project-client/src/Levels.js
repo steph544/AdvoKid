@@ -44,7 +44,7 @@ class Levels extends React.Component{
         case 'Seven':
             return <h1>Level 7 Settings</h1>
         default: 
-        return ""
+        return <img src={require("./images/levels_dash.png")}/>
         }
     }
 
@@ -53,22 +53,22 @@ class Levels extends React.Component{
           return(
         <>
             <div class="div2"> 
-                
+              <Grid columns={2}>
+                    <Grid.Column>
+                    <Dropdown
+                        onChange={this.handleChange}
+                        options={options}
+                        placeholder='Choose a Level to View Settings'
+                        selection
+                        value={value}
+                    />
+                </Grid.Column>
+
+                </Grid>
             </div>
 
             <div class="div3"> 
-            <Grid columns={2}>
-        <Grid.Column>
-          <Dropdown
-            onChange={this.handleChange}
-            options={options}
-            placeholder='Choose a Level to View Settings'
-            selection
-            value={value}
-          />
-        </Grid.Column>
-
-      </Grid>
+            
       {this.renderSwitch(this.state.value)}
             </div>
         </>    

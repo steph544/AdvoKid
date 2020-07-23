@@ -2,16 +2,43 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {Button} from 'semantic-ui-react';
 import './styles.css'
+import PhraseDisplay from "./PhraseDisplay.js"
 
 
 function Voice(props) {
+
+    const phrases=(data)=>{
+        if (localStorage.currentChild !== "null"){
+               let currentChildPhrases= data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop()
+
+        localStorage.setItem( 'currentChildPhrases', JSON.stringify(currentChildPhrases)) 
+
+        localStorage.phraseFetch= "done" 
+        }
+     
+    }
+
+    fetch("http://localhost:3000/phrases",
+        {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${localStorage.token}`,
+            "Content-type": "application/json", 
+            "Accept": "application/json"
+        } 
+        })
+    .then(res => res.json())
+    .then(data => 
+        {
+            phrases(data)       
+        }
+    )
+    
+    
     const SpeechRecognition=
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
     const recognition= new SpeechRecognition();
-
-
-
 
     recognition.onstart=function(){
         navigator.mediaDevices.getUserMedia({ audio: true })
@@ -50,8 +77,8 @@ function Voice(props) {
         }
     }
 
-
-    return(  
+    if (localStorage.phraseFetch === "done"){
+        return(  
         <>
             <div class="voice-bg-img voice_grid">
                 <div className="div10">
@@ -59,17 +86,30 @@ function Voice(props) {
                 
                     
                  </div>  
-
-                <div className="div12 child_phrase child-font2">
+                 <div className="div12 child_phrase child-font2">
+                {/* <div className="div12 child_phrase child-font2">
                     <h1 className="child-font2">
-                        How are you doing today? 
+                        {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one} 
                     </h1>
                     <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
-                        {/* <button >Respond</button> */}
+
+                    <Button onClick={()=>{nextPhrase()}} inverted color='blue' size="large" content='Next' />
+
                     <h3 className="child-font2" id="transcript"></h3>
                     <h1 id="correct"></h1>  
-                </div>
-                 
+                </div> */}
+
+            {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one}
+                    <br/> 
+                    <br/>
+                    <br/> 
+                    <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
+{/* 
+                    <Button onClick={()=>{nextPhrase()}} inverted color='blue' size="large" content='Next' /> */}
+
+                    <h3 className="child-font2" id="transcript"></h3>
+                    <h1 id="correct"></h1>  
+                </div> 
 
                  <div className="div11">
                  <img width="100%" height="100%" src={require("./images/genie.png")} hidefocus="true"/> 
@@ -91,7 +131,7 @@ function Voice(props) {
            
                
          </>   
-    )
+    )}
 }
 
 
