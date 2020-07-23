@@ -36,7 +36,26 @@ function Voice(props) {
         }
     )})
     
-    
+    const logAudio=(audio)=>{
+        fetch("http://localhost:3000/recordings",
+        {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            audio: audio, 
+            level_id: 2,
+            child_id: props.location.aboutProps.currentChild.id 
+        })
+        })
+        .then(res => res.json())
+        .then(audio=> 
+          console.log(audio)
+        ) 
+    }
+
+
     const SpeechRecognition=
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -58,6 +77,8 @@ function Voice(props) {
             const audioUrl = URL.createObjectURL(audioBlob);
             const audio = new Audio(audioUrl);
             audio.play();
+            logAudio(audioUrl)
+            // console.log(audioUrl)
         });
 
         setTimeout(() => {
