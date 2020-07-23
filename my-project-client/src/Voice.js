@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Button} from 'semantic-ui-react';
 import './styles.css'
@@ -11,14 +11,16 @@ function Voice(props) {
         if (localStorage.currentChild !== "null"){
                let currentChildPhrases= data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop()
 
-        localStorage.setItem( 'currentChildPhrases', JSON.stringify(currentChildPhrases)) 
-
+        // localStorage.setItem( 'currentChildPhrases', JSON.stringify(currentChildPhrases)) 
+                setData(currentChildPhrases)
         localStorage.phraseFetch= "done" 
+       
         }
      
     }
+    const [currentChildPhrases, setData] = useState("");
 
-    fetch("http://localhost:3000/phrases",
+    useEffect(()=>{fetch("http://localhost:3000/phrases",
         {
         method: "GET",
         headers: {
@@ -32,7 +34,7 @@ function Voice(props) {
         {
             phrases(data)       
         }
-    )
+    )})
     
     
     const SpeechRecognition=
@@ -98,12 +100,15 @@ function Voice(props) {
                     <h3 className="child-font2" id="transcript"></h3>
                     <h1 id="correct"></h1>  
                 </div> */}
-
-            {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one}
+                    {currentChildPhrases.phrase_one}
+            {/* {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one} */}
                     <br/> 
                     <br/>
                     <br/> 
                     <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
+              
+                               
+                 
 {/* 
                     <Button onClick={()=>{nextPhrase()}} inverted color='blue' size="large" content='Next' /> */}
 
@@ -129,7 +134,7 @@ function Voice(props) {
 
             </div>    
            
-               
+              
          </>   
     )}
 }
