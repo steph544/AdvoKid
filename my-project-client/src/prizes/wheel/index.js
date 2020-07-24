@@ -14,7 +14,7 @@ export default class Wheel extends React.Component {
   selectItem() {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
-      console.log(selectedItem)
+      this.props.selectedPrize(selectedItem)
       if (this.props.onSelectItem) {
         this.props.onSelectItem(selectedItem);
       }

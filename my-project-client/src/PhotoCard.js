@@ -6,7 +6,7 @@ import "./styles.css"
 class PhotoCard extends React.Component{
     state = { 
         percent: 0,
-        rating: 0 
+        rating: 0
     }
 
     toggle = () => {       

@@ -6,12 +6,44 @@ import Wheel from './prizes/wheel';
 
 
 class TreasureBox extends React.Component{
-   state={}
+   state={
+       totalPoints: 0,
+       selectedPrize: ""
+   }
+
+   selectedPrize=(value)=>{
+        switch (value){
+            case 0:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizeone
+                }))
+            case 1:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizetwo
+                }))
+            case 2:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizethree
+                }))
+            case 3:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizefour
+                }))
+            case 4:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizefive
+                }))
+            case 5:
+                return (this.setState({
+                    selectedPrize: this.state.childIncentive.prizesix
+                }))
+        }
+   }
 
     spinWheel=()=>{
         if(this.state.childIncentive !== undefined){
                return (
-              <Wheel items={[`${this.state.childIncentive.prizeone}`, `${this.state.childIncentive.prizetwo}`, `${this.state.childIncentive.prizethree}`, `${this.state.childIncentive.prizefour}`, `${this.state.childIncentive.prizefive}`, `${this.state.childIncentive.prizesix}`]} />
+              <Wheel selectedPrize={this.selectedPrize} items={[`${this.state.childIncentive.prizeone}`, `${this.state.childIncentive.prizetwo}`, `${this.state.childIncentive.prizethree}`, `${this.state.childIncentive.prizefour}`, `${this.state.childIncentive.prizefive}`, `${this.state.childIncentive.prizesix}`]} />
         )
         }
      
@@ -31,7 +63,8 @@ class TreasureBox extends React.Component{
                   .then(points => 
                       {
                          this.setState({
-                             points: points,
+                             
+                             totalPoints: points.reduce((accum,item) => accum + item.total, 0),
                              childPoints: points.filter(child_id => child_id !== this.props.location.aboutProps.currentChild)
                          },
                          console.log(points)
@@ -80,9 +113,13 @@ class TreasureBox extends React.Component{
 
             <div className="div3"> 
                 <div className="App center child-font">
+                    <h1>Your total Points: {this.state.totalPoints}</h1>
+                        <br/> 
                     <h1>Would you like to spin for a prize?</h1>
-                    <br/>
-                        {this.spinWheel()}
+                        <br/>
+                            {this.spinWheel()}
+                            <br/> 
+                            {this.state.selectedPrize}
                 </div>
             </div>
         </>    
