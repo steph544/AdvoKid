@@ -7,5 +7,5 @@ class Child < ApplicationRecord
     has_many :recordings 
     has_many :captures 
     has_many :images 
-
+    has_many :incentives 
 end

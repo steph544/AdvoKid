@@ -393,3 +393,22 @@ z-index: 1;
     border-radius:10px;
   }
 
+/* <-------Prizes Page-------> */
+.div14 { grid-area: 3 / 4 / 7 / 9; 
+    z-index: 1000}
+
+.div15 { grid-area: 5 / 3 / 7 / 9; 
+    z-index: 1000}
+
+
+.a1, .a2{
+animation:blinking 1.5s infinite;
+font-size: 20px;
+}
+@keyframes blinking{
+0%{   color: red;   }
+47%{   color: #000; }
+62%{   color: transparent; }
+97%{   color:transparent; }
+100%{  color: #000;   }
+}

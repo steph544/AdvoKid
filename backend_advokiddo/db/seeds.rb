@@ -28,19 +28,4 @@ end
     Child.create(user_id: User.all.first.id, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, age: 22, image: "https://picsum.photos/#{rand(1..300)}")
 end 
 
-10.times do
-    Level.create(name: Faker::Name.name, child_id: Child.first.id)
-end 
-
-10.times do
-    Answer.create(level_id: Level.first.id, info: Faker::Quote.yoda)
-end 
-
-10.times do
-    Phrase.create(user_id: User.last.id, level_id: Level.last.id, info: Faker::Quote.yoda)
-end 
-
-10.times do
-    Point.create(child_id: Child.last.id, total: 50)
-end 
-
+Incentive.create(user_id: User.all.first, child_id: Child.all.last, points_required: 0, prizeone: "fun", prizetwo: "fun", prizethree: "fun", prizefive: "fun", prizesix: "fun")

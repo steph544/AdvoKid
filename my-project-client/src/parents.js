@@ -86,9 +86,9 @@ class Parents extends React.Component{
         case 'progress':
             return <Progress currentChild={this.state.currentChild}/>
         case 'levels':
-            return <Levels currentUser={this.state.currentUser}/>
+            return <Levels currentUser={this.state.currentUser} currentChild={this.state.currentChild}/>
         case 'prizes':
-            return <Prizes currentUser={this.state.currentUser}/>
+            return <Prizes currentUser={this.state.currentUser} currentChild={this.state.currentChild}/>
         case 'profile':
             return <ChildProfile selectChild={this.selectChild} currentChild={this.state.currentChild} currentUser={this.state.currentUser} />
         default: 

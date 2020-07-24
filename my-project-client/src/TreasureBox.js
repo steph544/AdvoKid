@@ -11,11 +11,34 @@ class TreasureBox extends React.Component{
         this.places = ['Candy', 'Toy', 'Special Time', 'Soup', 'Japanese food', 'Pastas'];
       }
 
+    componentDidMount(){
+        fetch(`http://localhost:3000/incentives`, 
+        {
+            method: "GET",
+            headers: {
+            "Authorization": `Bearer ${localStorage.token}`,
+            "Content-type": "application/json", 
+            "Accept": "application/json"}
+        })
+             .then(res => res.json())
+             .then(incentives => 
+                 {debugger 
+                    this.setState({
+                        incentives: incentives 
+                    },
+                    console.log(incentives)
+                    )
+             })
+    }
+
     render(){
         let className="span2"
           return(
         <>
-            <div className="div2"> <h1>DIV 3</h1>
+            <div className="div2"> 
+                <br/>
+                <br/>
+                <img src={require("./images/backbtn.png")}/>
             </div>
 
             <div className="div3"> 

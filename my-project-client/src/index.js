@@ -14,6 +14,7 @@ import NavMap from './NavMap';
 import Parents from './parents.js'
 import Webcam from "./WebCam.js"
 import Response from "./response.js"
+import TreasureBox from "./TreasureBox.js"
 
 ReactDOM.render(
    
@@ -28,6 +29,7 @@ ReactDOM.render(
           <Route exact path="/parents" component={Parents} render={(props) => <Parents renderSwitch = {this.renderSwitch} />}/>
           <Route exact path="/webcam" component={Webcam}/>
           <Route exact path="/response" component={Response}/>
+          <Route exact path="/treasurebox" component={TreasureBox}/>
       </Router>,
 
   document.getElementById('root')

@@ -28,12 +28,19 @@ class NavMap extends React.Component{
                       currentChild: this.props.location.aboutProps.currentChild
                   }}
                   }><area coords="1150,1072,1265,1182" shape="rect"></area></Link>
-                    <Link to={{
+                  <Link to={{
                   pathname: "/parents",
                   aboutProps:{
                       currentChild: this.props.location.aboutProps.currentChild
                   }}
                   }><area coords="89,1087,299,1250" shape="rect"></area></Link>
+                  <Link to={{
+                  pathname: "/treasurebox",
+                  aboutProps:{
+                      currentChild: this.props.location.aboutProps.currentChild
+                  }}
+                  }>
+                  <area target="" alt="" title="" href="" coords="2213,45,2470,246" shape="rect"></area></Link>
             </map>
           </div>
             
