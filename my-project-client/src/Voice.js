@@ -78,12 +78,14 @@ function Voice(props) {
             const audio = new Audio(audioUrl);
             audio.play();
             logAudio(audioUrl)
-            // console.log(audioUrl)
+            console.log(audioBlob)
+            console.log(audio)
+
         });
 
         setTimeout(() => {
             mediaRecorder.stop();
-        }, 5000);
+        }, 3000);
         });
     }
 
@@ -100,7 +102,7 @@ function Voice(props) {
         }
     }
 
-    if (localStorage.phraseFetch === "done"){
+    // if (localStorage.phraseFetch !== "done"){
         return(  
         <>
             <div class="voice-bg-img voice_grid">
@@ -158,7 +160,7 @@ function Voice(props) {
               
          </>   
     )}
-}
+// }
 
 
 export default Voice

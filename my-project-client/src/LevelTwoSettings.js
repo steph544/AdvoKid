@@ -7,6 +7,11 @@ import { Button, Form, Segment, Grid } from 'semantic-ui-react'
 class LevelTwoSettings extends React.Component{
     state = {
         currentUser: JSON.parse(localStorage.getItem("currentUser")).id,
+        submitted: false, 
+        currentChildPhrases: "",
+        phrase_one: "",
+        phrase_two: "",
+        phrase_three: ""
     }
 
     handleChange = (e) => {
@@ -20,7 +25,11 @@ class LevelTwoSettings extends React.Component{
 
     handleSubmit = () => this.setState({ first_phrase: '', second_phrase: '', third_phrase: ''})
         
-    
+    notify=()=>{
+      this.setState({
+          submitted: true
+      })
+    }
 
     submitPhrase = (e) => {
         e.preventDefault()
@@ -43,17 +52,43 @@ class LevelTwoSettings extends React.Component{
                     .then(phrase => 
                         {
                             console.log(phrase)
+                            localStorage.setPhrases=phrase 
+                            this.notify()
                     }
                     )}  
         
     }
+    componentDidMount(){fetch("http://localhost:3000/phrases",
+        {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${localStorage.token}`,
+            "Content-type": "application/json", 
+            "Accept": "application/json"
+        } 
+        })
+    .then(res => res.json())
+    .then(data => 
+        {
+
+           this.setState({
+            currentChildPhrases: data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop(),
+            phrase_one: data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop().phrase_one,
+            phrase_one: data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop().phrase_two, 
+            phrase_one: data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop().phrase_three  
+
+           }) 
+            
+        }
+    )}
 
     render(){
      
         const { firstphrase, secondphrase, thirdphrase } = this.state
-    
-        return(
-        
+        if (this.state.submitted === false)
+        {
+            return(
+      
             <div>
                 
             <Grid centered columns={2}>
@@ -67,30 +102,35 @@ class LevelTwoSettings extends React.Component{
                                 <form>
                                     <img className="signup_img" src={require('./images/firstphrase.png')}/>
                                     <br/>
-                                    <input className="rounded-input" type="text" name="firstphrase" onChange={(e) => this.handleChange(e)} value={firstphrase} maxlength="50"></input>
+                                    <input placeholder={this.state.phrase_one} className="rounded-input" type="text" name="firstphrase" onChange={(e) => this.handleChange(e)} value={firstphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
                                     <img className="signup_img" src={require('./images/secondphrase.png')}/>
                                     <br/>
-                                    <input className="rounded-input" type="text" name="secondphrase" onChange={(e) => this.handleChange(e)} value={secondphrase} maxlength="50"></input>
+                                    <input placeholder={this.state.phrase_two} className="rounded-input" type="text" name="secondphrase" onChange={(e) => this.handleChange(e)} value={secondphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
                                     <img className="signup_img" src={require('./images/thirdphrase.png')}/>
                                     <br/>
-                                    <input className="rounded-input" type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
+                                    <input placeholder={this.state.phrase_three} className="rounded-input" type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
                                      <img src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
                                   
                                      </form>
                 
-                                </div>
-                            </div>
+                        </div>
+                        
+                    </div>
                 </Grid.Column>
             </Grid>
         
         </div>
+        )}else {
+        return(
+            <h1>Form has been submitted</h1>
         )
+    } 
     }
   
     

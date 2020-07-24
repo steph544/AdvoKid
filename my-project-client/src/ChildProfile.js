@@ -113,6 +113,7 @@ class ChildProfile extends React.Component{
         
     // }
 
+
     render(){
       
         const { value } = this.state
@@ -184,8 +185,8 @@ class ChildProfile extends React.Component{
                             currentChild: this.props.currentChild,
                             renderSwitch: this.props.renderSwitch  
                         }
-                    }}> 
-                        <img src={require('./images/letsplaybtn.png')} width="450px"/>
+                    }}> SEND TO MAP
+                        <img onClick={this.sendToMap}src={require('./images/letsplaybtn.png')} width="450px"/>
                     </NavLink> 
                 </div>
                 </>

@@ -4,6 +4,7 @@ import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
 import { Dropdown, Grid, Card} from 'semantic-ui-react'
 import LevelOneProgress from "./LevelOneProgress.js"
+import LevelTwoProgress from "./LevelTwoProgress.js"
 
 const options = [
     { key: 1, text: 'Level One', value: 'One' },

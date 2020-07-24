@@ -12,8 +12,8 @@ class NavMap extends React.Component{
       return( 
 
       <Rotate triggerOnce>
-         <div id="bg">
-          
+         <div id="parent_page">
+          <div className="div1">
             <img src={require("./images/navMapImage2.png")} usemap="#image-map"/>
             <map name="image-map">
                 <Link to={{
@@ -35,6 +35,8 @@ class NavMap extends React.Component{
                   }}
                   }><area coords="89,1087,299,1250" shape="rect"></area></Link>
             </map>
+          </div>
+            
         </div>
       </Rotate>
        

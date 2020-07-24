@@ -17,6 +17,7 @@
     "react-awesome-reveal": "^2.4.2",
     "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",
+    "react-draggable": "^4.4.3",
     "react-image-mapper": "0.0.15",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
