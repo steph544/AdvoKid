@@ -7,8 +7,8 @@ class RecordingsController < ApplicationController
                Cloudinary.config.api_key.blank?
         end
     
-        def uploadToCloudinary(imageFile)
-            Cloudinary::Uploader.upload(imageFile)["url"]
+        def uploadToCloudinary(audioFile)
+            Cloudinary::Uploader.upload(audioFile)["url"]
         end
     
         def index 
@@ -18,8 +18,8 @@ class RecordingsController < ApplicationController
     
         def create 
             # user = User.all.find_by(username: params[:username])
-            # url = uploadToCloudinary(recording_params[:audio])
-            @recording=Recording.new(child_id: recording_params[:child_id], level_id: recording_params[:level_id], audio: recording_params[:audio])
+            url = uploadToCloudinary(recording_params[:audio])
+            @recording=Recording.new(child_id: recording_params[:child_id], level_id: recording_params[:level_id], audio: url
         
             if @recording.save
                 render json: @recording
