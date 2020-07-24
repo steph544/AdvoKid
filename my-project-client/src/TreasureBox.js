@@ -18,6 +18,27 @@ class TreasureBox extends React.Component{
       
     }
 
+    getPoints=()=>{
+        fetch(`http://localhost:3000/points`, 
+             {
+                 method: "GET",
+                 headers: {
+                 "Authorization": `Bearer ${localStorage.token}`,
+                 "Content-type": "application/json", 
+                 "Accept": "application/json"}
+             })
+                  .then(res => res.json())
+                  .then(points => 
+                      {
+                         this.setState({
+                             points: points,
+                             childPoints: points.filter(child_id => child_id !== this.props.location.aboutProps.currentChild)
+                         },
+                         console.log(points)
+                         )
+                  })
+    }
+
     componentDidMount(){
         fetch(`http://localhost:3000/incentives`, 
         {
@@ -34,9 +55,10 @@ class TreasureBox extends React.Component{
                         incentives: incentives,
                         childIncentive: incentives.filter(child_id => child_id !== this.props.location.aboutProps.currentChild).pop() 
                     },
-                    // this.setWheel()
+                    this.getPoints()
                     )
              })
+             
     }
 
     render(){
@@ -46,7 +68,14 @@ class TreasureBox extends React.Component{
             <div className="div2"> 
                 <br/>
                 <br/>
+                <NavLink to={{
+                    pathname: "/navMap", 
+                    aboutProps:{
+                        currentChild: this.props.location.aboutProps.currentChild 
+                    }
+                }}>   
                 <img src={require("./images/backbtn.png")}/>
+                </NavLink>
             </div>
 
             <div className="div3"> 
