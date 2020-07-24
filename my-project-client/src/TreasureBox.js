@@ -6,10 +6,17 @@ import Wheel from './prizes/wheel';
 
 
 class TreasureBox extends React.Component{
-    constructor() {
-        super();
-        this.places = ['Candy', 'Toy', 'Special Time', 'Soup', 'Japanese food', 'Pastas'];
-      }
+   state={}
+
+    spinWheel=()=>{
+        if(this.state.childIncentive !== undefined){
+               return (
+              <Wheel items={[`${this.state.childIncentive.prizeone}`, `${this.state.childIncentive.prizetwo}`, `${this.state.childIncentive.prizethree}`, `${this.state.childIncentive.prizefour}`, `${this.state.childIncentive.prizefive}`, `${this.state.childIncentive.prizesix}`]} />
+        )
+        }
+     
+      
+    }
 
     componentDidMount(){
         fetch(`http://localhost:3000/incentives`, 
@@ -22,11 +29,12 @@ class TreasureBox extends React.Component{
         })
              .then(res => res.json())
              .then(incentives => 
-                 {debugger 
+                 {
                     this.setState({
-                        incentives: incentives 
+                        incentives: incentives,
+                        childIncentive: incentives.filter(child_id => child_id !== this.props.location.aboutProps.currentChild).pop() 
                     },
-                    console.log(incentives)
+                    // this.setWheel()
                     )
              })
     }
@@ -42,10 +50,10 @@ class TreasureBox extends React.Component{
             </div>
 
             <div className="div3"> 
-                <div className="App center">
+                <div className="App center child-font">
                     <h1>Would you like to spin for a prize?</h1>
                     <br/>
-                    <Wheel items={this.places} />
+                        {this.spinWheel()}
                 </div>
             </div>
         </>    
