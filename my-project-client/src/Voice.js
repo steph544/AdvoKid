@@ -96,9 +96,9 @@ function Voice(props) {
         const transcriptOutput=document.getElementById("transcript")
         transcriptOutput.textContent=transcript
 
-        if(transcript==="hello"){
-            const transcriptTitle=document.getElementById("correct")
-            transcriptTitle.textContent="CORRECT!"
+        if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript){
+        const transcriptTitle=document.getElementById("correct")
+        transcriptTitle.textContent="Great Job! Let's try one more time!"
         }
     }
 
@@ -111,7 +111,7 @@ function Voice(props) {
                 
                     
                  </div>  
-                 <div className="div12 child_phrase child-font2">
+                 <div className="div12 child_phrase child-font2 center">
                 {/* <div className="div12 child_phrase child-font2">
                     <h1 className="child-font2">
                         {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one} 
@@ -123,20 +123,20 @@ function Voice(props) {
                     <h3 className="child-font2" id="transcript"></h3>
                     <h1 id="correct"></h1>  
                 </div> */}
-                    {currentChildPhrases.phrase_one}
-            {/* {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one} */}
+                LET'S PRACTICE:
+                <br/> 
+                <br/>
+                <br/>
+                   {currentChildPhrases.phrase_one}
+                 
                     <br/> 
                     <br/>
                     <br/> 
                     <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
-              
-                               
-                 
-{/* 
-                    <Button onClick={()=>{nextPhrase()}} inverted color='blue' size="large" content='Next' /> */}
-
-                    <h3 className="child-font2" id="transcript"></h3>
-                    <h1 id="correct"></h1>  
+                    <br/>
+                    <br/>
+                    <h3 className="child-font3" id="transcript"></h3>
+                    <h1 className="child-font3" id="correct"></h1>  
                 </div> 
 
                  <div className="div11">

@@ -387,6 +387,20 @@ z-index: 1;
     text-align: center
 }
 
+.child2 {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    z-index: 1
+    }
+
+.child-font3{
+    font-family: "Rockwell";
+    font-size: 40px;
+    color: rgb(222, 210, 88);
+    text-align: center
+}
+
 /* <--------Level Two Settings-----------> */
 .rounded-input {
     padding:10px;
