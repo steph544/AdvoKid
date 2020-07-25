@@ -15,17 +15,25 @@ class Response extends React.Component{
   constructor() {
     super();
       this.state = {
+      message: "",
       isFlipped: false,
       isFlipped2: false,
       isFlipped3: false,
       isFlipped4: false,
     };
+     
     this.handleClick = this.handleClick.bind(this);
   }
  
   handleClick(e) {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  }
+  
+  setMessage=(value)=>{
+    this.setState({
+      message: value 
+    })
   }
 
   render(){
@@ -85,7 +93,7 @@ class Response extends React.Component{
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Group itemsPerRow={2}>
-                          <HappyCard/>
+                          <HappyCard setMessage={this.setMessage}/>
                           <WorriedCard/> 
                         <Card>
 
@@ -101,13 +109,17 @@ class Response extends React.Component{
                           
                     </Grid.Column>
                     <Grid.Column>
-              
+                      <br/>
+                      <br/>
+                      <br/>
+                      <br/>
+                    <h1 className="child-font2 a4">{this.state.message}</h1>
                     </Grid.Column>
                   </Grid.Row>
                   <Grid.Row>
                
                     <Grid.Column>
-                 
+                        
                     </Grid.Column>
                     <Grid.Column>
                     

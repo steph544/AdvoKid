@@ -14,7 +14,7 @@ class NavMap extends React.Component{
       <Rotate triggerOnce>
          <div id="parent_page">
           <div className="div1">
-            <img src={require("./images/navMapImage2.png")} usemap="#image-map"/>
+            <img width="100%" height='100%' src={require("./images/navMapImage2.png")} usemap="#image-map"/>
             <map name="image-map">
                 <Link to={{
                   pathname: "/levelone",

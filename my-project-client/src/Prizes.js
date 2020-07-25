@@ -143,7 +143,7 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Six Here' maxLength="15" name="prizesix" value={prizesix}/>
+                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Six Here' maxLength="15" name="prizesix" value={prizesix}/>
                         </Card.Description>
                     </Card.Content>
                 </Card>

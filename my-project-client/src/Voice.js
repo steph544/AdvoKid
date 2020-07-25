@@ -119,7 +119,7 @@ function Voice(props) {
         const assignedPhrase=()=>{
             if (!currentChildPhrases){
                 return(
-                    <div>
+                    <div className="child-font2">
                        <h1>How are you doing today?</h1>
                     </div> )
             } else {
@@ -137,7 +137,7 @@ function Voice(props) {
                  </div>  
                  <div className="div12 child_phrase child-font2">
                
-                LET'S PRACTICE:
+                Let's Practice:
                 <br/> 
                 <br/>
                 <br/>
@@ -153,7 +153,7 @@ function Voice(props) {
                     <br/>
                     <br/> 
                     <br/>
-                    YOUR RESPONSE: 
+                    What you said: 
                     <h3 className="child-font3" id="transcript"></h3>
                     <h1 className="a3 center child-font3" id="correct"></h1>  
                 </div> 

@@ -98,7 +98,7 @@ class TreasureBox extends React.Component{
           return(
         <div className="treasure-bg-img parent_page">
 
-            <div className="div2"> 
+            <div className="div16"> 
           
                 <br/>
                 <br/>
@@ -112,8 +112,8 @@ class TreasureBox extends React.Component{
                 </NavLink>
             </div>
 
-            <div className="div3"> 
-                <div className="App center child-font">
+            <div className="div17"> 
+                <div className="center child-font">
                     <h1>Your total Points: {this.state.totalPoints}</h1>
                         <br/> 
                     <h1>Would you like to spin for a prize?</h1>

@@ -76,8 +76,11 @@ class LevelTwoSettings extends React.Component{
                     console.log(phrase)
                     this.notify()
             })
-           }
+           } 
+         
+                    
                 // }  
+        
     }
     componentDidMount(){
         if (!this.state.currentUser.phrases){return (
@@ -117,7 +120,7 @@ class LevelTwoSettings extends React.Component{
             <div>
             
             <Grid centered columns={2}>
-                <Grid.Column className="center" style={{position: 'absolute', top:'10%', left: '35%'}}>
+                <Grid.Column className="center" style={{position: 'absolute', top:'10%'}}>
                     <div>
                         <div>
                             <br/><br/><br/>

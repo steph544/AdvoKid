@@ -3,14 +3,14 @@ html, body {
     padding:0; 
     overflow:hidden 
 }
-/* svg {
+.navMap_bg {
      position:fixed; 
      top:0; 
      bottom:0; 
      left:0; 
      right:0 
     }
-     */
+
 /* <------- Home Page -------> */
 .bg-img{
    
@@ -404,7 +404,7 @@ z-index: 1;
 
 .child-font3{
     font-family: "Rockwell";
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(244, 226, 39);
     /* text-align: center */
 }
@@ -455,16 +455,32 @@ font-size: 20px;
 
 .treasure-bg-img{
    
-    background-color: rgb(19, 191, 230);
-    /* min-height: 100%;
+    background-image: url("./images/treasurebg.png");
+    min-height: 1600px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative; */
+    position: relative;
 }
 
 #prizecard{
   background-color: white;
   border-radius: 5%;
-  height: 235px;
+  height: 230px;
 }
+
+.div16 { grid-area: 1 / 1 / 2 / 3; }
+.div17 { grid-area: 2 / 4 / 8 / 7; }
+
+/* <-------Response Page-------->  */
+.a4{
+    animation:blinking3 1.5s infinite;
+    font-size: 60px;
+    }
+    @keyframes blinking3{
+    0%{   color: rgb(206, 12, 167);   }
+    47%{   color: rgb(220, 177, 8); }
+    62%{   color: transparent; }
+    97%{   color:transparent; }
+    100%{  color: rgb(7, 29, 83);   }
+    }

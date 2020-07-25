@@ -15,6 +15,7 @@ class HappyCard extends React.Component{
   handleClick(event) {
     event.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+    this.props.setMessage("Great Job! Move onto the next level!")
   }
 
   render() {
