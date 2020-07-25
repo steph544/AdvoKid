@@ -34,29 +34,29 @@ class LevelTwoSettings extends React.Component{
     submitPhrase = (e) => {
         e.preventDefault()
        if(this.state.currentChild !== null){
-           if (this.state.currentChildPhrases.id){
-                fetch(`http://localhost:3000/phrases/${this.state.currentChildPhrases.id}`, {
-                    method: "PATCH",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        id: this.state.currentChildPhrases.id, 
-                        phrase_one: this.state.firstphrase,
-                        phrase_two: this.state.secondphrase,   
-                        phrase_three: this.state.thirdphrase, 
-                        user_id: this.state.currentUser,
-                        child_id: this.state.currentChild
-                    })
-                })
-                .then(res => res.json())
-                .then(phrase => 
-                    {
-                        console.log(phrase)
-                        localStorage.setPhrases=phrase 
-                        this.notify()
-                })
-           } else{
+        //    if (this.state.currentChildPhrases.id){
+        //         fetch(`http://localhost:3000/phrases/${this.state.currentChildPhrases.id}`, {
+        //             method: "PATCH",
+        //             headers: {
+        //                 "Content-type": "application/json"
+        //             },
+        //             body: JSON.stringify({
+        //                 id: this.state.currentChildPhrases.id, 
+        //                 phrase_one: this.state.firstphrase,
+        //                 phrase_two: this.state.secondphrase,   
+        //                 phrase_three: this.state.thirdphrase, 
+        //                 user_id: this.state.currentUser,
+        //                 child_id: this.state.currentChild
+        //             })
+        //         })
+        //         .then(res => res.json())
+        //         .then(phrase => 
+        //             {
+        //                 console.log(phrase)
+        //                 localStorage.setPhrases=phrase 
+        //                 this.notify()
+        //         })
+        //    } else{
             fetch(`http://localhost:3000/phrases/`, {
                 method: "POST",
                 headers: {
@@ -76,11 +76,8 @@ class LevelTwoSettings extends React.Component{
                     console.log(phrase)
                     this.notify()
             })
-           } 
-         
-                    
-                }  
-        
+           }
+                // }  
     }
     componentDidMount(){
         if (!this.state.currentUser.phrases){return (

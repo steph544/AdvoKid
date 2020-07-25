@@ -8,7 +8,7 @@ import { Dropdown, Grid} from 'semantic-ui-react'
 
 class ChildSignUpForm extends React.Component{
     state={
-        childPicture: "https://via.placeholder.com/150",
+        childPicture: "../assets/images/childplaceholder.png",
         options: [{key:"", text:"Sign Up"}],
         selectedChild: null
     }

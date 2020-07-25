@@ -106,6 +106,17 @@ function Voice(props) {
     }
 
     // if (localStorage.phraseFetch !== "done"){
+        const assignedPhrase=()=>{
+            if (!currentChildPhrases){
+                return(
+                    <div>
+                       <h1>How are you doing today?</h1>
+                    </div> )
+            } else {
+                return(currentChildPhrases.phrase_one )
+            }
+        }
+        
         return(  
         <>
             <div class="voice-bg-img voice_grid">
@@ -120,7 +131,8 @@ function Voice(props) {
                 <br/> 
                 <br/>
                 <br/>
-                   {currentChildPhrases.phrase_one}
+                   {/* {currentChildPhrases.phrase_one} */}
+                   {assignedPhrase()}
 
                  
                     <br/> 
