@@ -3,6 +3,7 @@ import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid, Card} from 'semantic-ui-react'
 import LevelTwoSettings from "./LevelTwoSettings.js"
+import LevelIntro from "./LevelIntro.js"
   
     const options = [
         { key: 1, text: 'Level One', value: 'One' },
@@ -44,7 +45,7 @@ class Levels extends React.Component{
         case 'Seven':
             return <h1>Level 7 Settings</h1>
         default: 
-        return ""
+        return <LevelIntro/>
         }
     }
 
@@ -52,7 +53,7 @@ class Levels extends React.Component{
         const { value } = this.state
           return(
         <>
-            <div class="div2"> 
+            <div className="div2"> 
               <Grid columns={2}>
                     <Grid.Column>
                     <Dropdown
@@ -68,7 +69,7 @@ class Levels extends React.Component{
             </div>
 
             <div class="div3"> 
-            
+           
       {this.renderSwitch(this.state.value)}
             </div>
         </>    

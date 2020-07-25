@@ -76,6 +76,20 @@ renderSwitch=(param)=>{
           return(
         <>
             <div class="div2"> 
+
+      <Grid columns={1}>
+        <Grid.Column>
+          <Dropdown
+            onChange={this.handleChange}
+            options={options}
+            placeholder='Choose a Level to View Progress'
+            selection
+            value={value}
+          />
+        </Grid.Column>
+
+      </Grid>
+      <br/> 
         <svg viewBox="0 0 400 400" width="80%" height="80%">
         <text x="43%" y="49%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">COMPLETED</text>
         <text x="43%" y="54%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">LEVELS</text>
@@ -115,18 +129,7 @@ renderSwitch=(param)=>{
    
 
             <div class="div3"> 
-            <Grid columns={2}>
-        <Grid.Column>
-          <Dropdown
-            onChange={this.handleChange}
-            options={options}
-            placeholder='Choose a Level to View Progress'
-            selection
-            value={value}
-          />
-        </Grid.Column>
-
-      </Grid>
+            <img src={require("./images/progressbanner.png")}/>
       {this.renderSwitch(this.state.value)}
             </div>
         </>    

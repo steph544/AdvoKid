@@ -70,7 +70,7 @@ class ChildProfile extends React.Component{
         .then(file=> this.setState({
             childPicture: file.secure_url 
         }), 
-        this.updateChildPicture() 
+        setTimeout(this.updateChildPicture(), 3000)
         )
        }
 

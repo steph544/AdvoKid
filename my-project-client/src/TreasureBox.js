@@ -96,7 +96,7 @@ class TreasureBox extends React.Component{
 
     render(){
           return(
-        <div className="treasure-bg-img">
+        <div className="treasure-bg-img parent_page">
 
             <div className="div2"> 
           
@@ -123,15 +123,14 @@ class TreasureBox extends React.Component{
                           
                 </div>
             </div>
+           
 
-            <div>
-                            
+            <div>          
                 <p className="a1 child-font2">
-            
-                {this.state.selectedPrize}
+                    {this.state.selectedPrize}
                 </p>
             </div>
-        </div>    
+         </div>
     )
     }
   

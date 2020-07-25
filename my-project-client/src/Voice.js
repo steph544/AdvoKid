@@ -95,14 +95,24 @@ function Voice(props) {
         const transcript= event.results[current][0].transcript;
         const transcriptOutput=document.getElementById("transcript")
         transcriptOutput.textContent=transcript
-
-        if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript){
-        const transcriptTitle=document.getElementById("correct")
-        transcriptTitle.innerHTML="Great Job! <br/> Go to the next level!"
+        if (currentChildPhrases){
+               if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript){
+                const transcriptTitle=document.getElementById("correct")
+                transcriptTitle.innerHTML="Great Job! <br/> Go to the next level!"
+                } else {
+                    const transcriptTitle=document.getElementById("correct")
+                    transcriptTitle.textContent="Good try! Try again!"
+                }
         } else {
-            const transcriptTitle=document.getElementById("correct")
-            transcriptTitle.textContent="Good try! Try again!"
+            if ("how are you doing today" === transcript){
+                const transcriptTitle=document.getElementById("correct")
+                transcriptTitle.innerHTML="Great Job! <br/> Go to the next level!"
+                } else {
+                const transcriptTitle=document.getElementById("correct")
+                transcriptTitle.textContent="Good try! Try again!"
+                }
         }
+     
     }
 
     // if (localStorage.phraseFetch !== "done"){
@@ -119,7 +129,7 @@ function Voice(props) {
         
         return(  
         <>
-            <div class="voice-bg-img voice_grid">
+            <div className="voice-bg-img voice_grid">
                 <div className="div10">
                     <img width="100%" height="100%" src={require("./images/chalkboard.png")} hidefocus="true"/> 
                 

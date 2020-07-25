@@ -293,7 +293,7 @@ z-index: 1
     display: grid;
     grid-template-columns: .125fr .5fr .9fr repeat(4, .5fr) .125fr .5fr .25fr .125fr;
     grid-template-rows: .1fr .2fr .125fr repeat(5, .25fr);
-    grid-column-gap: 70px;
+    grid-column-gap: 100px;
     grid-row-gap: 0px;
     
     }
@@ -405,7 +405,7 @@ z-index: 1;
 .child-font3{
     font-family: "Rockwell";
     font-size: 40px;
-    color: rgb(222, 210, 88);
+    color: rgb(244, 226, 39);
     /* text-align: center */
 }
 .a3{
@@ -456,11 +456,11 @@ font-size: 20px;
 .treasure-bg-img{
    
     background-color: rgb(19, 191, 230);
-    min-height: 120%;
+    /* min-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
 }
 
 #prizecard{
