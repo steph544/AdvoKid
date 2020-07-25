@@ -1,8 +1,8 @@
 :root {
     --wheel-font: 'Rockwell', 'Quicksand', sans-serif;
-    --wheel-size: 600px;
+    --wheel-size: 700px;
     --wheel-slice-spacing: 10px;
-    --wheel-border-size: 5px;
+    --wheel-border-size: 10px;
     --wheel-color: #eb0b0b;
     --neutral-color: white;
     --PI: 3.14159265358979;

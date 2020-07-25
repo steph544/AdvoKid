@@ -15,6 +15,8 @@ class WorriedCard extends React.Component{
   handleClick(event) {
     event.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+    let audio = new Audio("../assets/sounds/pop.wav")
+    audio.play()
   }
 
   render() {

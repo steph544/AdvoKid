@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './index.css';
 
 export default class Wheel extends React.Component {
@@ -23,6 +22,9 @@ export default class Wheel extends React.Component {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
     }
+  let audio = new Audio("../assets/sounds/wheel.wav")
+    audio.play()
+  
   }
 
   render() {

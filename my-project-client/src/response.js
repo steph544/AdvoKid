@@ -28,6 +28,7 @@ class Response extends React.Component{
   handleClick(e) {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  
   }
   
   setMessage=(value)=>{

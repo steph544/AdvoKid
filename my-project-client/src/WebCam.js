@@ -43,7 +43,9 @@ postProgress=()=>{
 close = () => this.setState({ open: false })
 
 capture = () => {
-   
+    let audio = new Audio("../assets/sounds/cameraclick.wav")
+    audio.play()
+
     const imageSrc = this.webcam.getScreenshot();
     this.setState({
     imageData: imageSrc, 
