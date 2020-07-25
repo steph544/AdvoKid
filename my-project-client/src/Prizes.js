@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import Wheel from './prizes/wheel';
-import {Card, Input, Button} from 'semantic-ui-react'
+import {Card, Input, Button, Image} from 'semantic-ui-react'
 
 class Prizes extends React.Component{
 
@@ -57,17 +57,17 @@ class Prizes extends React.Component{
           return(
         <>
             <div className="div14"> 
-                <img src={require("./images/prizecenter.png")}/>
-            </div>
+                <img width='90%' src={require("./images/prizecenter.png")}/>
+            {/* </div>
 
-            <div className="div15 center"> 
+            <div className="div15 center">  */}
             
-                <Card.Group className="div15" itemsPerRow={3}>
+                <Card.Group itemsPerRow={3}>
                 <Card color="red">
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE ONE
+                            <Image src={require ("./images/prizeone.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -83,7 +83,7 @@ class Prizes extends React.Component{
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE TWO
+                            <Image src={require ("./images/prizetwo.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -96,7 +96,7 @@ class Prizes extends React.Component{
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE THREE
+                            <Image src={require ("./images/prizethree.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -109,7 +109,7 @@ class Prizes extends React.Component{
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE FOUR
+                            <Image src={require ("./images/prizefour.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -122,7 +122,7 @@ class Prizes extends React.Component{
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE FIVE
+                            <Image src={require ("./images/prizefive.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -135,7 +135,7 @@ class Prizes extends React.Component{
                     <Card.Content className="center">
                     
                         <Card.Header>
-                            PRIZE SIX
+                            <Image src={require ("./images/prizesix.png")}/>
                         </Card.Header>
 
                         <Card.Description>
@@ -147,7 +147,10 @@ class Prizes extends React.Component{
             <br/>
             <br/> 
             <br/>
-            <Button color="red" content="Submit" onClick={this.submit}></Button>
+            <div className="center">
+                 <Button  color="red" content="Submit" size="huge" onClick={this.submit}></Button>
+            </div>
+           
 
          
        
@@ -169,7 +172,7 @@ class Prizes extends React.Component{
                     <br/>
                         <br/> 
                             <br/> 
-                                <p className="a1 funfont">
+                                <p className="a1 child-font">
                                     Prizes have been set!
                                 </p>
                 </div>

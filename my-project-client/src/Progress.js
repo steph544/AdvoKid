@@ -19,51 +19,52 @@ const options = [
 
 
 class Progress extends React.Component{
-    constructor() {
-        super();
-        this.state = {
-          metric: 80
-        };
-      
-      }
+  constructor() {
+    super();
+    this.state = {
+      percent: 0, 
+      data: this.getData(0)
+    };
+  }
 
       handleChange = (e, { value }) => this.setState({ value })
 
-  //     componentDidMount() {
-  //       let percent = 25;
-  //       this.setStateInterval = window.setInterval(() => {
-  //         percent += (Math.random() * 25);
-  //         percent = (percent > 100) ? 0 : percent;
-  //         this.setState({
-  //           percent, data: this.getData(percent)
-  //         });
-  //       }, 2000);
-  //     }
+      componentDidMount() {
+        let percent = 25;
+        this.setStateInterval = window.setTimeout(() => {
+          percent += (Math.random() * 25);
+          percent = (percent > 100) ? 0 : percent;
+          this.setState({
+            percent, 
+            data: this.getData(percent)
+          });
+        }, 500);
+      }
     
-  //     componentWillUnmount() {
-  //       window.clearInterval(this.setStateInterval);
-  //     }
-
-  //     getData(percent) {
-  //   return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
-  // }
+      componentWillUnmount() {
+        window.clearInterval(this.setStateInterval);
+      }
+    
+      getData(percent) {
+        return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
+      }
 
 renderSwitch=(param)=>{
     switch(param){
     case 'One':
       return <LevelOneProgress currentChild={this.props.currentChild}/>
     case 'Two':
-        return <h1>Level 2 Progress</h1>
+        return <h1 className="child-font">Level 2 Progress</h1>
     case 'Three':
-        return <h1>Level 3 Progress</h1>
+        return <h1 className="child-font">Level 3 Progress</h1>
     case 'Four':
-        return <h1>Level 4 Progress</h1>
+        return <h1 className="child-font">Level 4 Progress</h1>
     case 'Five':
-        return <h1>Level 5 Progress</h1>
+        return <h1 className="child-font">Level 5 Progress</h1>
     case 'Six':
-        return <h1>Level 6 Progress</h1>
+        return <h1 className="child-font">Level 6 Progress</h1>
     case 'Seven':
-        return <h1>Level 7 Progress</h1>
+        return <h1 className="child-font">Level 7 Progress</h1>
     default: 
     return ""
     }
@@ -75,34 +76,42 @@ renderSwitch=(param)=>{
           return(
         <>
             <div class="div2"> 
-                <svg width={400} height={400}>
                     
-                    <VictoryPie 
-                    standalone={false}
-                        padAngle={0}
-                        // used to hide labels
-                        labelComponent={<span/>}
-                        innerRadius={70}
-                        width={400} height={400}
-                        data={[{'key': "", 'y': this.state.metric}, {'key': "", 'y': (100-this.state.metric)} ]}
-                        colorScale={["orange", "white" ]}
-                    />
-                     <VictoryAnimation duration={1000} data={this.state.metric}>
+        <svg viewBox="0 0 400 400" width="80%" height="80%">
+
+          <VictoryPie
+            standalone={false}
+            animate={{ duration: 1000 }}
+            width={400} height={400}
+            data={this.state.data}
+            innerRadius={100}
+            cornerRadius={0}
+            labels={() => null}
+            style={{
+              data: { fill: ({ datum }) => {
+                const color = datum.y > 0 ? "orange" : "#EEEEEE";
+                return datum.x === 1 ? color : "grey";
+              }
+              }
+      
+            }}
+            
+          />
+          <VictoryAnimation duration={1000} data={this.state}>
             {(newProps) => {
               return (
                 <VictoryLabel
                   textAnchor="middle" verticalAnchor="middle"
                   x={200} y={200}
-                  text={this.state.metric}
-                  style={{ fontSize: 30 }}
+                  text={`${Math.round(newProps.percent)}%`}
+                  style={{ fontSize: 45 }}
                 />
               );
             }}
           </VictoryAnimation>
-
-                </svg>
-
-            </div>
+        </svg>
+      </div>
+   
 
             <div class="div3"> 
             <Grid columns={2}>

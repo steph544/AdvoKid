@@ -46,12 +46,12 @@ class LevelOneProgress extends React.Component{
     render(){
         const { value } = this.state
         if (this.state.displayedPhotos === null){
-          return( <div className="child-font">
-              <br/>
-                <br/> 
-                  <br/> 
-                     No Progress to Report
-            </div>
+          return( 
+          <div>
+            <br/> 
+            <br/>
+             <h1 className="child-font"> No Progress to Report </h1>
+          </div>
             )
         } else{
            return(

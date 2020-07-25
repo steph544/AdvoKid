@@ -44,7 +44,7 @@ class Levels extends React.Component{
         case 'Seven':
             return <h1>Level 7 Settings</h1>
         default: 
-        return <img src={require("./images/levels_dash.png")}/>
+        return ""
         }
     }
 

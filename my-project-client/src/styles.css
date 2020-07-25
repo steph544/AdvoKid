@@ -394,7 +394,7 @@ z-index: 1;
   }
 
 /* <-------Prizes Page-------> */
-.div14 { grid-area: 3 / 4 / 7 / 9; 
+.div14 { grid-area: 3 / 3 / 7 / 9; 
     z-index: 1000}
 
 .div15 { grid-area: 5 / 3 / 7 / 9; 
@@ -412,3 +412,21 @@ font-size: 20px;
 97%{   color:transparent; }
 100%{  color: #000;   }
 }
+
+/* <-------Treasure Box Page-------> */
+
+.child-font2{
+    font-family: "Rockwell";
+    font-size: 50px;
+}
+
+.treasure-bg-img{
+   
+    background-color: rgb(19, 191, 230);
+    min-height: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+

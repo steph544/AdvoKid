@@ -95,10 +95,11 @@ class TreasureBox extends React.Component{
     }
 
     render(){
-        let className="span2"
           return(
-        <>
+        <div className="treasure-bg-img">
+
             <div className="div2"> 
+          
                 <br/>
                 <br/>
                 <NavLink to={{
@@ -119,10 +120,18 @@ class TreasureBox extends React.Component{
                         <br/>
                             {this.spinWheel()}
                             <br/> 
-                            {this.state.selectedPrize}
+                          
                 </div>
             </div>
-        </>    
+
+            <div>
+                            
+                <p className="a1 child-font2">
+            
+                {this.state.selectedPrize}
+                </p>
+            </div>
+        </div>    
     )
     }
   
