@@ -304,7 +304,8 @@ z-index: 1
 z-index: 999;}
 .div3 { grid-area: 4 / 4 / 7 / 9; 
 z-index: 1000}
-.div4 { grid-area: 3 / 7 / 7 / 8; }
+.div4 { grid-area: 3 / 7 / 7 / 8;
+z-index: 1001 }
 .div5 { grid-area: 4 / 3 / 7 / 9; } 
 .div6 { grid-area: 3 / 5 / 7 / 5; 
     z-index: 2000;}
@@ -340,6 +341,12 @@ height:0
     font-family: Impact, Charcoal, sans-serif;
 }
 
+.webcambtn{
+    position: absolute;
+left: 50%;
+z-index: 1;
+}
+
 /* <------ NavMap Page ---------> */
 #bg {
     position: fixed; 
@@ -369,14 +376,15 @@ height:0
 }
 .div10 { grid-area: 2 / 2 / 6 / 7; }
 .div11 { grid-area: 2 / 7 / 6 / 10; }
-.div12 { grid-area: 2 / 3 / 5 / 7; }
+.div12 { grid-area: 2 / 3 / 5 / 7; 
+position: absolute;}
 .div13 { grid-area: 1 / 2 / 2 / 3; 
 z-index: 10000}
 
 .child_phrase {
 position: absolute;
-top: 50%;
-left: 0px;
+top: 40%;
+left: 0%;
 z-index: 1;
 }
 
@@ -384,7 +392,7 @@ z-index: 1;
     font-family: "Rockwell";
     font-size: 40px;
     color: white;
-    text-align: center
+    /* text-align: center */
 }
 
 .child2 {
@@ -398,8 +406,19 @@ z-index: 1;
     font-family: "Rockwell";
     font-size: 40px;
     color: rgb(222, 210, 88);
-    text-align: center
+    /* text-align: center */
 }
+.a3{
+    animation:blinking2 2.5s infinite;
+    font-size: 70px;
+    }
+    @keyframes blinking2{
+    0%{   color: rgb(255, 234, 0);   }
+    47%{   color: rgb(68, 193, 238); }
+    62%{   color: transparent; }
+    97%{   color:transparent; }
+    100%{  color: rgb(241, 166, 3);   }
+    }
 
 /* <--------Level Two Settings-----------> */
 .rounded-input {
@@ -444,3 +463,6 @@ font-size: 20px;
     position: relative;
 }
 
+#prizecard{
+  background-color: red;
+}

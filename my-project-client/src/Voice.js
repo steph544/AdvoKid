@@ -98,7 +98,10 @@ function Voice(props) {
 
         if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript){
         const transcriptTitle=document.getElementById("correct")
-        transcriptTitle.textContent="Great Job! Let's try one more time!"
+        transcriptTitle.innerHTML="Great Job! <br/> Go to the next level!"
+        } else {
+            const transcriptTitle=document.getElementById("correct")
+            transcriptTitle.textContent="Good try! Try again!"
         }
     }
 
@@ -111,35 +114,29 @@ function Voice(props) {
                 
                     
                  </div>  
-                 <div className="div12 child_phrase child-font2 center">
-                {/* <div className="div12 child_phrase child-font2">
-                    <h1 className="child-font2">
-                        {JSON.parse(localStorage.getItem("currentChildPhrases")).phrase_one} 
-                    </h1>
-                    <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
-
-                    <Button onClick={()=>{nextPhrase()}} inverted color='blue' size="large" content='Next' />
-
-                    <h3 className="child-font2" id="transcript"></h3>
-                    <h1 id="correct"></h1>  
-                </div> */}
+                 <div className="div12 child_phrase child-font2">
+               
                 LET'S PRACTICE:
                 <br/> 
                 <br/>
                 <br/>
                    {currentChildPhrases.phrase_one}
+
                  
                     <br/> 
                     <br/>
                     <br/> 
-                    <Button onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
+                    <Button className="center" onClick={()=>{recognition.start()}} inverted color='blue' size="large" content='Respond' />
                     <br/>
                     <br/>
+                    <br/> 
+                    <br/>
+                    YOUR RESPONSE: 
                     <h3 className="child-font3" id="transcript"></h3>
-                    <h1 className="child-font3" id="correct"></h1>  
+                    <h1 className="a3 center child-font3" id="correct"></h1>  
                 </div> 
 
-                 <div className="div11">
+                 <div className="div11 center">
                  <img width="100%" height="100%" src={require("./images/genie.png")} hidefocus="true"/> 
                  </div>
                  <div className="div13">

@@ -127,7 +127,7 @@ class ChildSignUpForm extends React.Component{
                     <br/>
             </div>
 
-            <div class="div8 child-font"> 
+            <div class="div8 child-font" > 
             <Grid columns={2}>
                 <Grid.Column >
                 <Dropdown
@@ -144,19 +144,19 @@ class ChildSignUpForm extends React.Component{
                 <br/>
                     <br/>
 
-                <img className="signup_img" src={require('./images/first_name.png')}/>
+                <img width="25%" className="signup_img" src={require('./images/first_name.png')}/>
                     <br/> 
                 <input type="text" name="first_name" onChange={(e) => this.handleChange(e)} value={first_name}></input>
                     <br/>
                         <br/>
-                <img className="signup_img" src={require('./images/last_name.png')}/>
+                <img width="25%" className="signup_img" src={require('./images/last_name.png')}/>
                     <br/>
                 <input type="text" name="last_name" onChange={(e) => this.handleChange(e)} value={last_name}></input>
                     <br/>
                         <br/>
-                <img className="signup_img" src={require('./images/age.png')}/>
+                <img width="11%" className="signup_img" src={require('./images/age.png')}/>
                     <br/>
-                <input type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
+                <input  type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
                     <br/>
                         <br/>
                 <img src={require('./images/submitbutton.png')} onClick={(e) => this.childSignUp(e)}/> 
@@ -170,15 +170,15 @@ class ChildSignUpForm extends React.Component{
                     <br/> 
                         <br/>
                             <br/> 
-                <NavLink to={{
+                {/* <NavLink to={{
                     pathname: "/navMap",
                     aboutProps:{
                         currentChild: this.props.currentChild, 
                         renderSwitch: this.props.renderSwitch  
                     }
-                }}>
-                    <img src={require('./images/letsplaybtn.png')} width="450px"/>
-                </NavLink> 
+                }}> */}
+                    <img src={require('./images/spacer.png')} width="450px"/>
+                {/* </NavLink>  */}
             </div>
             </>
 

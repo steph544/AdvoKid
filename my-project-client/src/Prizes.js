@@ -63,7 +63,7 @@ class Prizes extends React.Component{
             <div className="div15 center">  */}
             
                 <Card.Group itemsPerRow={3}>
-                <Card color="red">
+                <Card id="prizecard" color="red">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -146,9 +146,8 @@ class Prizes extends React.Component{
             </Card.Group>
             <br/>
             <br/> 
-            <br/>
             <div className="center">
-                 <Button  color="red" content="Submit" size="huge" onClick={this.submit}></Button>
+                 <Button  color="red" content="Submit" size="large" onClick={this.submit}></Button>
             </div>
            
 

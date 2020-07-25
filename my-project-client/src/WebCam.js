@@ -161,12 +161,12 @@ componentDidMount(){
                    Column 1, Row 1 */}
               </Grid.Column>
               <Grid.Column centered width={5}>     
-                          <div onClick={this.change}>
+                          <div onClick={this.change} className="center">
                             <img width="970" height="590" className="parent" src={require("./images/webcam_frame.png")}/>
                                   <Webcam className="webcam_position" width={600} height={400} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} /> 
                               <br/>
                               <br/>
-                                <div className="center">
+                                <div className="center webcambtn">
                                   <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
                                 </div>
                                  

@@ -56,17 +56,6 @@ class ChildProfile extends React.Component{
          }
 
     }
-    // handleChange = (e, { value }) => this.setState({ value })
-
-    // uploadWidget() {
-    //     cloudinary.openUploadWidget({ cloud_name: 'dt5tuiuls', upload_preset: 'child_profile', 
-    //         function(error, result) {
-    //             console.log(result);
-    //         }
-    // })}
-    // const [loading, setLoading] = useState(false)
-    // const [image, setImage] = useState("")
-
 
     uploadImage=(e)=>{
         const files = e.target.files 
@@ -84,35 +73,6 @@ class ChildProfile extends React.Component{
         this.updateChildPicture() 
         )
        }
-
-    // childSignUp = (e) => {
-    //     e.preventDefault()
-
-    //     fetch("http://localhost:3000/children", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-              
-    //             first_name: this.state.first_name,
-    //             last_name: this.state.last_name,   
-    //             age: this.state.username, 
-    //             image: this.state.childPicture, 
-    //             username: localStorage.user 
-               
-    //         })
-    //     })
-    //     .then(res => res.json())
-    //     .then(child => 
-    //         {
-    //             console.log(child)
-    //            this.props.selectChild(child)
-    //     }
-    //     )
-        
-    // }
-
 
     render(){
       
@@ -178,15 +138,14 @@ class ChildProfile extends React.Component{
                     <br/>
                         <br/> 
                             <br/>
-                                <br/>
                     <NavLink to={{
                         pathname: "/navMap",
                         aboutProps:{
                             currentChild: this.props.currentChild,
                             renderSwitch: this.props.renderSwitch  
                         }
-                    }}> SEND TO MAP
-                        <img onClick={this.sendToMap}src={require('./images/letsplaybtn.png')} width="450px"/>
+                    }}>
+                        <img src={require('./images/letsplaybtn.png')} width="450px"/>
                     </NavLink> 
                 </div>
                 </>
