@@ -9,7 +9,7 @@ class Prizes extends React.Component{
     state={
         incentives: [],
         submitted: false,
-        
+        message: "" 
     }
    
     handleChange=(e)=>{   
@@ -46,9 +46,13 @@ class Prizes extends React.Component{
                         submitted: true 
                     })
              })
+        } else {
+            this.setState({
+                message: "Please Choose Child Before Submitting"
+            })
         }
 
-    }
+    } 
 
     render(){
         if (this.state.submitted === false){
@@ -56,14 +60,14 @@ class Prizes extends React.Component{
             const { prizeone, prizetwo, prizethree, prizefour, prizefive, prizesix } = this.state
           return(
         <>
-            <div className="div14"> 
+            <div className="div14 center"> 
                 <img width='90%' src={require("./images/prizecenter.png")}/>
             {/* </div>
 
             <div className="div15 center">  */}
             
                 <Card.Group itemsPerRow={3}>
-                <Card id="prizecard" color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -71,7 +75,7 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize One Here' maxLength="15" name="prizeone" value={prizeone}  />
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize One Here' maxLength="15" name="prizeone" value={prizeone}  />
                         
                         </Card.Description>
                         <br/>
@@ -79,7 +83,7 @@ class Prizes extends React.Component{
                     </Card.Content>
                 </Card>
 
-                <Card color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -87,12 +91,12 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Two Here' maxLength="15" name="prizetwo" value={prizetwo}  />
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Two Here' maxLength="15" name="prizetwo" value={prizetwo}  />
                         </Card.Description>
                     </Card.Content>
                 </Card>
 
-                <Card color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -100,12 +104,12 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Three Here' maxLength="15" name="prizethree" value={prizethree} />
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Three Here' maxLength="15" name="prizethree" value={prizethree} />
                         </Card.Description>
                     </Card.Content>
                 </Card>
 
-                <Card color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -113,12 +117,12 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Four Here' maxLength="15" name="prizefour" value={prizefour} />
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Four Here' maxLength="15" name="prizefour" value={prizefour} />
                         </Card.Description>
                     </Card.Content>
                 </Card>
 
-                <Card color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -126,12 +130,12 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Five Here' maxLength="15" name="prizefive" value={prizefive} />
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Five Here' maxLength="15" name="prizefive" value={prizefive} />
                         </Card.Description>
                     </Card.Content>
                 </Card>
 
-                <Card color="red">
+                <Card id="prizecard">
                     <Card.Content className="center">
                     
                         <Card.Header>
@@ -139,7 +143,7 @@ class Prizes extends React.Component{
                         </Card.Header>
 
                         <Card.Description>
-                        <Input size='large' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Six Here' maxLength="15" name="prizesix" value={prizesix}/>
+                        <Input size='huge' onChange={(e) => this.handleChange(e)} transparent placeholder='Type Prize Six Here' maxLength="15" name="prizesix" value={prizesix}/>
                         </Card.Description>
                     </Card.Content>
                 </Card>
@@ -150,7 +154,7 @@ class Prizes extends React.Component{
                  <Button  color="red" content="Submit" size="large" onClick={this.submit}></Button>
             </div>
            
-
+            {this.state.message}
          
        
 
@@ -159,7 +163,7 @@ class Prizes extends React.Component{
         
         </>    
     )
-        } else {
+        } else { 
             return (
 
             <>
@@ -178,8 +182,7 @@ class Prizes extends React.Component{
             </>
             )
           
-        }
-        
+        } 
     }
   
     

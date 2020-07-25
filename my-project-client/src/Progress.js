@@ -91,7 +91,7 @@ renderSwitch=(param)=>{
             style={{
               data: { fill: ({ datum }) => {
                 const color = datum.y > 0 ? "orange" : "#EEEEEE";
-                return datum.x === 1 ? color : "grey";
+                return datum.x === 1 ? color : "white";
               }
               }
       

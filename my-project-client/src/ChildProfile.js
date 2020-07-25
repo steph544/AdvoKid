@@ -9,7 +9,7 @@ import ChildSignUp from "./ChildSignUp.js"
 
 class ChildProfile extends React.Component{
     state={
-        childPicture: "https://via.placeholder.com/150",
+        childPicture: "../assets/images/childplaceholder.png",
         options: [],
         loading: false,
         selectedChild: this.props.currentChild, 
