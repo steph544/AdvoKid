@@ -118,27 +118,29 @@ class LevelTwoSettings extends React.Component{
             return(
       
             <div>
-                
+            
             <Grid centered columns={2}>
-                <Grid.Column style={{position: 'absolute', top:'10%', left: '35%'}}>
+                <Grid.Column className="center" style={{position: 'absolute', top:'10%', left: '35%'}}>
                     <div>
                         <div>
                             <br/><br/><br/>
                             <br/><br/><br/>
-                            <br/><br/><br/>
+                            <br/>
+                            <img width="50%" src={require("./images/leveltwobanner.png")}/>
+                            <br/><br/>
                             <br/>
                                 <form>
-                                    <img className="signup_img" src={require('./images/firstphrase.png')}/>
+                                    <img width="25%" className="signup_img" src={require('./images/firstphrase.png')}/>
                                     <br/>
                                     <input placeholder={this.state.firstphrase} className="rounded-input" type="text" name="firstphrase" onChange={(e) => this.handleChange(e)} value={firstphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
-                                    <img className="signup_img" src={require('./images/secondphrase.png')}/>
+                                    <img width="25%" className="signup_img" src={require('./images/secondphrase.png')}/>
                                     <br/>
                                     <input placeholder={this.state.secondphrase} className="rounded-input" type="text" name="secondphrase" onChange={(e) => this.handleChange(e)} value={secondphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
-                                    <img className="signup_img" src={require('./images/thirdphrase.png')}/>
+                                    <img width="25%" className="signup_img" src={require('./images/thirdphrase.png')}/>
                                     <br/>
                                     <input placeholder={this.state.thirdphrase} className="rounded-input" type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
                                         <br/>

@@ -76,15 +76,16 @@ renderSwitch=(param)=>{
           return(
         <>
             <div class="div2"> 
-                    
         <svg viewBox="0 0 400 400" width="80%" height="80%">
-
+        <text x="43%" y="49%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">COMPLETED</text>
+        <text x="43%" y="54%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">LEVELS</text>
+  
           <VictoryPie
             standalone={false}
             animate={{ duration: 1000 }}
-            width={400} height={400}
+            width={350} height={350}
             data={this.state.data}
-            innerRadius={100}
+            innerRadius={80}
             cornerRadius={0}
             labels={() => null}
             style={{
@@ -102,7 +103,7 @@ renderSwitch=(param)=>{
               return (
                 <VictoryLabel
                   textAnchor="middle" verticalAnchor="middle"
-                  x={200} y={200}
+                  x={175} y={157}
                   text={`${Math.round(newProps.percent)}%`}
                   style={{ fontSize: 45 }}
                 />

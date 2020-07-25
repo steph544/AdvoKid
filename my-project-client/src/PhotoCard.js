@@ -22,7 +22,7 @@ class PhotoCard extends React.Component{
         })
         .then(res => res.json())
         .then(point => 
-            {console.log(point)},
+            this.delete(this.props.photo),
             this.setState((prevState) => ({
                 percent: prevState.percent === 0 ? 100 : 0,
             })
