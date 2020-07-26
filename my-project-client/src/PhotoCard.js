@@ -6,7 +6,7 @@ import "./styles.css"
 class PhotoCard extends React.Component{
     state = { 
         percent: 0,
-        rating: 0
+        rating: 0 
     }
 
     toggle = () => {       
@@ -22,7 +22,7 @@ class PhotoCard extends React.Component{
         })
         .then(res => res.json())
         .then(point => 
-            this.delete(this.props.photo),
+            {console.log(point)},
             this.setState((prevState) => ({
                 percent: prevState.percent === 0 ? 100 : 0,
             })
@@ -37,6 +37,7 @@ class PhotoCard extends React.Component{
         fetch(`http://localhost:3000/images/${this.props.photo.id}`, {
             method: 'DELETE'
         })
+            this.props.deletePhoto(image)
     }
 
     render(){

@@ -59,7 +59,7 @@ class LevelOneProgress extends React.Component{
           <div className="div3">
             <Card.Group itemsPerRow={4}>
              {this.state.displayedPhotos.map(photo =>
-                <PhotoCard photo={photo} deletePhoto={this.deletePhoto} currentChild={this.props.currentChild}/>)}
+                <PhotoCard key={photo.id} photo={photo} deletePhoto={this.deletePhoto} currentChild={this.props.currentChild}/>)}
             </Card.Group>
           </div>
                

@@ -60,7 +60,7 @@ class LevelTwoProgress extends React.Component{
           <div className="div3">
             <Card.Group itemsPerRow={4}>
              {this.state.displayedRecordings.map(recording =>
-                <AudioCard recording={recording} deleteRecording={this.deleteRecording} currentChild={this.props.currentChild}/>)}
+                <AudioCard key={recording.id} recording={recording} deleteRecording={this.deleteRecording} currentChild={this.props.currentChild}/>)}
             </Card.Group>
           </div>
                
