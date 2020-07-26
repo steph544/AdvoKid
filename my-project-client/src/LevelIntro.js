@@ -11,10 +11,10 @@ class LevelIntro extends React.Component{
     render(){
      
         return(
-            <div className="div14">
-                <img width="80%" src={require("./images/setlevelsbanner.png")}/>
+            <div style={{position: 'absolute', top:'20%', left:'30%'}}>
+                <img width="60%" src={require("./images/setlevelsbanner.png")}/>
                 <br/>
-                <img width="90%" src={require("./images/cycle.png")}/>
+                <img width="60%" src={require("./images/cycle.png")}/>
             </div>
         )
     }

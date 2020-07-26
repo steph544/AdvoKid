@@ -72,6 +72,9 @@ capture = () => {
 }
 
 startVideo=()=> {
+  let audio = new Audio("../assets/sounds/startsound.wav")
+    audio.play()
+
   window.requestAnimFrame = (function() {
     return window.requestAnimationFrame ||
            window.webkitRequestAnimationFrame ||

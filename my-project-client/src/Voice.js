@@ -36,23 +36,26 @@ function Voice(props) {
         }
     )})
     
-    const logAudio=(audio)=>{
-        fetch("http://localhost:3000/recordings",
+    const logAudio=(value)=>{
+        if (localStorage.phraseFetch=== "done" ){
+            fetch("http://localhost:3000/recordings",
         {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
         },
         body: JSON.stringify({
-            audio: audio, 
+            audio: value, 
             level_id: 2,
             child_id: props.location.aboutProps.currentChild.id 
         })
         })
         .then(res => res.json())
         .then(audio=> 
-          console.log(audio)
+        console.log(audio)
         ) 
+        }
+       
     }
 
 
@@ -77,9 +80,15 @@ function Voice(props) {
             const audioUrl = URL.createObjectURL(audioBlob);
             const audio = new Audio(audioUrl);
             audio.play();
-            logAudio(audioUrl)
-            console.log(audioBlob)
-            console.log(audio)
+
+            var reader  = new window.FileReader();
+            reader.readAsDataURL(audioBlob); 
+            reader.onloadend = function() {
+                    var base64data = reader.result;
+                    var savedWAVBlob=base64data
+                    logAudio(savedWAVBlob)
+                }
+    
 
         });
 
@@ -137,7 +146,7 @@ function Voice(props) {
                  </div>  
                  <div className="div12 child_phrase child-font2">
                
-                Let's Practice:
+                Let's Practice Saying:
                 <br/> 
                 <br/>
                 <br/>

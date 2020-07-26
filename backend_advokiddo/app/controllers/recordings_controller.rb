@@ -8,7 +8,9 @@ class RecordingsController < ApplicationController
         end
     
         def uploadToCloudinary(audioFile)
-            Cloudinary::Uploader.upload(audioFile)["url"]
+            Cloudinary::Uploader.upload(audioFile, 
+            :resource_type => :video)["url"]
+       
         end
     
         def index 
@@ -18,8 +20,8 @@ class RecordingsController < ApplicationController
     
         def create 
             # user = User.all.find_by(username: params[:username])
-            url = uploadToCloudinary(recording_params[:audio])
-            @recording=Recording.new(child_id: recording_params[:child_id], level_id: recording_params[:level_id], audio: url
+            url = uploadToCloudinary(params[:audio])
+            @recording=Recording.new(child_id: params[:child_id], level_id: params[:level_id], audio: url)
         
             if @recording.save
                 render json: @recording
@@ -39,9 +41,9 @@ class RecordingsController < ApplicationController
             render json: @recording
         end 
     
-        private
-        def recording_params
-            params.require(:recording).permit(:child_id, :audio, :level_id)
-        end
+        # private
+        # def recording_params
+        #     params.require(:recording).permit! 
+        # end
 end
 

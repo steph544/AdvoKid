@@ -129,7 +129,7 @@ renderSwitch=(param)=>{
    
 
             <div class="div3"> 
-            <img src={require("./images/progressbanner.png")}/>
+            {/* <img src={require("./images/progressbanner.png")}/> */}
       {this.renderSwitch(this.state.value)}
             </div>
         </>    

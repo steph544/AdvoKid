@@ -410,7 +410,7 @@ z-index: 1;
 }
 .a3{
     animation:blinking2 2.5s infinite;
-    font-size: 70px;
+    font-size: 50px;
     }
     @keyframes blinking2{
     0%{   color: rgb(255, 234, 0);   }
@@ -425,6 +425,11 @@ z-index: 1;
     padding:10px;
     border-radius:10px;
   }
+
+.banner{
+    position: relative;
+    padding: 100px;
+}
 
 /* <-------Prizes Page-------> */
 .div14 { grid-area: 3 / 3 / 7 / 9; 
@@ -471,6 +476,12 @@ font-size: 20px;
 
 .div16 { grid-area: 1 / 1 / 2 / 3; }
 .div17 { grid-area: 2 / 4 / 8 / 7; }
+.div18 { grid-area: 2 / 7 / 7 / 9; 
+    z-index: 1000}
+#chatbot{
+    border-radius: 50%;
+}
+
 
 /* <-------Response Page-------->  */
 .a4{

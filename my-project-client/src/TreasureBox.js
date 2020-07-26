@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import Wheel from './prizes/wheel';
+import CustomChatBot from "./ChatBot.js"
 
 
 
@@ -10,8 +11,11 @@ class TreasureBox extends React.Component{
        totalPoints: 0,
        selectedPrize: ""
    }
+   selectedPrize=(value)=>{(
+       setTimeout(this.showPrize(value), 10000)
+   )}
 
-   selectedPrize=(value)=>{
+   showPrize=(value)=>{
         switch (value){
             case 0:
                 return (this.setState({
@@ -61,11 +65,10 @@ class TreasureBox extends React.Component{
              })
                   .then(res => res.json())
                   .then(points => 
-                      {
+                      { 
                          this.setState({
-                             
                              totalPoints: points.reduce((accum,item) => accum + item.total, 0),
-                             childPoints: points.filter(child_id => child_id !== this.props.location.aboutProps.currentChild)
+                             childPoints: points.filter(point => point.child_id === this.props.location.aboutProps.currentChild.id).reduce((accum,item) => accum + item.total, 0)
                          },
                          console.log(points)
                          )
@@ -84,9 +87,10 @@ class TreasureBox extends React.Component{
              .then(res => res.json())
              .then(incentives => 
                  {
+                     debugger 
                     this.setState({
                         incentives: incentives,
-                        childIncentive: incentives.filter(child_id => child_id !== this.props.location.aboutProps.currentChild).pop() 
+                        childIncentive: incentives.filter(incentive => incentive.child_id === this.props.location.aboutProps.currentChild.id).pop() 
                     },
                     this.getPoints()
                     )
@@ -95,6 +99,13 @@ class TreasureBox extends React.Component{
     }
 
     render(){
+        if (this.state.childPoints === undefined || this.state.childPoints < 5){
+            return(
+                <div>
+                    You currently do not have enough points to redeem a prize. Please come back when you have more points.
+                </div>
+            )
+        } else {
           return(
         <div className="treasure-bg-img parent_page">
 
@@ -114,9 +125,8 @@ class TreasureBox extends React.Component{
 
             <div className="div17"> 
                 <div className="center child-font">
-                    <h1>Your total Points: {this.state.totalPoints}</h1>
-                        <br/> 
-                    <h1>Would you like to spin for a prize?</h1>
+                    <h1>Your total Points: {this.state.childPoints}</h1>
+                        
                         <br/>
                             {this.spinWheel()}
                             <br/> 
@@ -125,13 +135,14 @@ class TreasureBox extends React.Component{
             </div>
            
 
-            <div>          
-                <p className="a1 child-font2">
-                    {this.state.selectedPrize}
-                </p>
+            <div className="div18">          
+                <CustomChatBot currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
+                    <p className="a1 child-font2">
+                        {this.state.selectedPrize}
+                    </p>
             </div>
          </div>
-    )
+    )}
     }
   
     

@@ -29,19 +29,19 @@ class AudioCard extends React.Component{
         )
       )}
      
-    // playAudio=()=>{
-    //     const audio = this.props.recording.audio.replace(/['"]+/g, '')
-    //     const audioUrl = URL.createObjectURL(audio);
-    //     const audio2 = new Audio(audioUrl);
-    //     audio2.play();
-    //     console.log(audio)
-    // }
+    playAudio=()=>{
+        const audio = this.props.recording.audio.replace(/['"]+/g, '')
+        const audioUrl = URL.createObjectURL(audio);
+        const audio2 = new Audio(audioUrl);
+        audio2.play();
+        console.log(audio)
+    }
 
     handleRate = (e, { rating, maxRating }) =>
       this.setState({ rating, maxRating })
         
     delete=(audio)=>{
-        fetch(`http://localhost:3000/recordings/${this.props.photo.id}`, {
+        fetch(`http://localhost:3000/recordings/${this.props.audio.id}`, {
             method: 'DELETE'
         })
             this.props.deleteRecording(audio)
@@ -49,10 +49,10 @@ class AudioCard extends React.Component{
 
     render(){
        
-        // const audio = (this.props.recording.audio).replace(/['"]+/g, '') 
-        // console.log(audio)
-        // const audioPlay=new Audio(audio)
-        // console.log(audio)
+        const audio = (this.props.recording.audio).replace(/['"]+/g, '') 
+        console.log(audio)
+        const audioPlay=new Audio(audio)
+        console.log(audio)
           return(
         <> 
             <Card color='orange'>

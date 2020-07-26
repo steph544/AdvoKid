@@ -11,7 +11,8 @@ class LevelTwoSettings extends React.Component{
         currentChildPhrases: "",
         firstphrase: "",
         secondphrase: "",
-        thirdphrase: ""
+        thirdphrase: "",
+        message: ""
     }
 
     handleChange = (e) => {
@@ -27,7 +28,8 @@ class LevelTwoSettings extends React.Component{
         
     notify=()=>{
       this.setState({
-          submitted: true
+          submitted: true,
+          message: "Phrases have been submitted"
       })
     }
 
@@ -113,16 +115,16 @@ class LevelTwoSettings extends React.Component{
     render(){
      
         const { firstphrase, secondphrase, thirdphrase } = this.state
-        if (this.state.submitted === false)
-        {
+        // if (this.state.submitted === false)
+        // {
             return(
       
             <div>
             
             <Grid centered columns={2}>
-                <Grid.Column className="center" style={{position: 'absolute', top:'10%'}}>
+                <Grid.Column className="center" style={{position: 'absolute', top:'10%', left:'25%'}}>
                     <div>
-                        <div>
+                        <div className="center">
                             <br/><br/><br/>
                             <br/><br/><br/>
                             <br/>
@@ -145,23 +147,25 @@ class LevelTwoSettings extends React.Component{
                                     <input placeholder={this.state.thirdphrase} className="rounded-input" type="text" name="thirdphrase" onChange={(e) => this.handleChange(e)} value={thirdphrase} maxlength="50"></input>
                                         <br/>
                                         <br/>
-                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
+                                     <img width='20%' src={require('./images/submitbutton.png')} onClick={(e) => this.submitPhrase(e)}/> 
                                   
                                      </form>
-                
+                                     <br/>
+                                <h1 className="child-font2, a2">{this.state.message}</h1>
                         </div>
                         
                     </div>
                 </Grid.Column>
             </Grid>
-        
+            
         </div>
-        )}else {
-        return(
-            <h1>Phrases have been updated!</h1>
-        )
-    } 
-    }
+        )}
+    //     else {
+    //     return(
+     
+    //     )
+    // } 
+    // }
   
     
 }

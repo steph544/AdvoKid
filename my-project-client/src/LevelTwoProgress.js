@@ -32,11 +32,11 @@ class LevelTwoProgress extends React.Component{
         .then(res => res.json())
         .then(data => 
           {
-            // this.setState({
-            //   recordings: data,
-            //   displayedRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8),
-            //   currentChildRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8)
-            // })
+            this.setState({
+              recordings: data,
+              displayedRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8),
+              currentChildRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8)
+            })
             console.log(data)
           }
         )
