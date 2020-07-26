@@ -124,7 +124,7 @@ function Voice(props) {
         const transcriptOutput=document.getElementById("transcript")
         transcriptOutput.textContent=transcript
         if (currentChildPhrases){
-               if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript){
+               if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript.toLowerCase()){
                 const transcriptTitle=document.getElementById("correct")
                 transcriptTitle.innerHTML="Great Job! <br/> Go to the next level!"
                 } else {
