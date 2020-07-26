@@ -20,9 +20,10 @@ class RecordingsController < ApplicationController
     
         def create 
             # user = User.all.find_by(username: params[:username])
+             
             url = uploadToCloudinary(params[:audio])
             @recording=Recording.new(child_id: params[:child_id], level_id: params[:level_id], audio: url)
-        
+    
             if @recording.save
                 render json: @recording
             else
@@ -41,9 +42,9 @@ class RecordingsController < ApplicationController
             render json: @recording
         end 
     
-        # private
-        # def recording_params
-        #     params.require(:recording).permit! 
-        # end
+        private
+        def recording_params
+            params.require(:recording).permit! 
+        end
 end
 

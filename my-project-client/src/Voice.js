@@ -20,6 +20,24 @@ function Voice(props) {
     }
     const [currentChildPhrases, setData] = useState("");
 
+    const postProgress=()=>{
+        fetch("http://localhost:3000/levels",
+        {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            name: "LevelTwo", 
+            child_id: props.location.aboutProps.currentChild.id 
+        })
+        })
+        .then(res => res.json())
+        .then(level=> 
+            localStorage.currentLevel = level.id 
+        ) 
+      }
+
     useEffect(()=>{fetch("http://localhost:3000/phrases",
         {
         method: "GET",
@@ -33,11 +51,12 @@ function Voice(props) {
     .then(data => 
         {
             phrases(data)       
-        }
+        },
+        postProgress() 
     )})
     
     const logAudio=(value)=>{
-        if (localStorage.phraseFetch=== "done" ){
+        if (localStorage.phraseFetch=== "done" && localStorage.currentLevel !== "undefined"){
             fetch("http://localhost:3000/recordings",
         {
         method: "POST",
@@ -46,7 +65,7 @@ function Voice(props) {
         },
         body: JSON.stringify({
             audio: value, 
-            level_id: 2,
+            level_id:  localStorage.currentLevel,
             child_id: props.location.aboutProps.currentChild.id 
         })
         })
