@@ -54,7 +54,7 @@ renderSwitch=(param)=>{
     case 'One':
       return <LevelOneProgress currentChild={this.props.currentChild}/>
     case 'Two':
-        return <h1 className="child-font">Level 2 Progress</h1>
+        return <LevelTwoProgress currentChild={this.props.currentChild}/>
     case 'Three':
         return <h1 className="child-font">Level 3 Progress</h1>
     case 'Four':

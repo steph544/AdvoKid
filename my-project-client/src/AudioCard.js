@@ -22,40 +22,39 @@ class AudioCard extends React.Component{
         })
         .then(res => res.json())
         .then(point => 
-            {console.log(point)},
             this.setState((prevState) => ({
                 percent: prevState.percent === 0 ? 100 : 0,
             })
-        )
-      )}
+        ))
+    }
      
     playAudio=()=>{
-        const audio = this.props.recording.audio.replace(/['"]+/g, '')
-        const audioUrl = URL.createObjectURL(audio);
-        const audio2 = new Audio(audioUrl);
-        audio2.play();
+        const audio = this.props.recording.audio
+        // const audioUrl = URL.createObjectURL(audio);
+        // const audio2 = new Audio(audioUrl);
+        audio.play();
         console.log(audio)
     }
 
     handleRate = (e, { rating, maxRating }) =>
       this.setState({ rating, maxRating })
         
-    delete=(audio)=>{
-        fetch(`http://localhost:3000/recordings/${this.props.audio.id}`, {
+    delete=(recording)=>{
+        fetch(`http://localhost:3000/recordings/${this.props.recording.id}`, {
             method: 'DELETE'
         })
-            this.props.deleteRecording(audio)
+            this.props.deleteRecording(recording)
     }
 
     render(){
-       
-        const audio = (this.props.recording.audio).replace(/['"]+/g, '') 
-        console.log(audio)
-        const audioPlay=new Audio(audio)
-        console.log(audio)
+
           return(
         <> 
             <Card color='orange'>
+            <audio controls style={{width: "200px"}}>
+                <source src={this.props.recording.audio} type="audio/ogg"></source>
+            </audio>
+          <div id="waveform"></div>
                 {/* <Button onClick={this.playAudio} color="red" content="Hear Audio"></Button> */}
                <Progress percent={this.state.percent} autoSuccess color='green'/>
                <Card.Content extra>

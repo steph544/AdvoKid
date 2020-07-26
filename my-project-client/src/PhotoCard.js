@@ -37,7 +37,6 @@ class PhotoCard extends React.Component{
         fetch(`http://localhost:3000/images/${this.props.photo.id}`, {
             method: 'DELETE'
         })
-            this.props.deletePhoto(image)
     }
 
     render(){

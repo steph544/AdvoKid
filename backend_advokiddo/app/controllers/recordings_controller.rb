@@ -1,5 +1,5 @@
 class RecordingsController < ApplicationController
-        skip_before_action :logged_in?, only: [:create, :index, :update]
+        skip_before_action :logged_in?, only: [:create, :index, :update, :destroy]
         before_action :check_configuration, only: [:create]
 
         def check_configuration
@@ -32,7 +32,7 @@ class RecordingsController < ApplicationController
         end 
     
         def destroy 
-            recording=Recording.find(recording_params[:id])
+            recording=Recording.find(params[:id])
             recording.destroy 
         end 
     
