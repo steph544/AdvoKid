@@ -3,24 +3,31 @@ import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import Wheel from './prizes/wheel';
 import CustomChatBot from "./ChatBot.js"
+import CountUp from 'react-countup';
 
 
 
 class TreasureBox extends React.Component{
    state={
        totalPoints: 0,
-       selectedPrize: ""
+       childPoints: 0, 
+       selectedPrize: "", 
+       newPointValue: 0
    }
    selectedPrize=(value)=>{(
        setTimeout(this.showPrize(value), 10000)
    )}
 
    subtractPoints=()=>{
-       const newPointValue= this.state.childPoints - 5
-       this.setState({
-            childPoints: newPointValue
-       })
-       console.log(newPointValue)
+       if (this.state.newPointValue > 5){
+            const childPoints=this.state.newPointValue
+            const newPointValue= this.state.childPoints - 5
+       
+            this.setState({
+                    newPointValue: newPointValue
+            })
+            console.log(newPointValue)
+       }
    }
 
    showPrize=(value)=>{
@@ -78,7 +85,8 @@ class TreasureBox extends React.Component{
                       { 
                          this.setState({
                              totalPoints: points.reduce((accum,item) => accum + item.total, 0),
-                             childPoints: points.filter(point => point.child_id === this.props.location.aboutProps.currentChild.id).reduce((accum,item) => accum + item.total, 0)
+                             childPoints: points.filter(point => point.child_id === this.props.location.aboutProps.currentChild.id).reduce((accum,item) => accum + item.total, 0),
+                             newPointValue: points.filter(point => point.child_id === this.props.location.aboutProps.currentChild.id).reduce((accum,item) => accum + item.total, 0)
                          },
                          console.log(points)
                          )
@@ -137,7 +145,8 @@ class TreasureBox extends React.Component{
             </div>
 
             <div className="div19">
-            {/* <h1>Your total Points: {this.state.childPoints}</h1> */}
+            <h1>Your total Points: {this.state.childPoints}</h1>
+
             </div>
             
             <div className="div20">
@@ -155,14 +164,20 @@ class TreasureBox extends React.Component{
            
 
             <div className="div18">          
-                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
+                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue}/>
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}
                     </p>
             </div>
 
             <div className="div21">
-            {this.state.childPoints}
+            <CountUp duration="2" className="child-font3" start={this.state.childPoints} end={this.state.newPointValue} delay={0}>
+                {({ countUpRef }) => (
+                <div>
+                    <span className="child-font3" ref={countUpRef} />
+                </div>
+                )}
+            </CountUp>
                 <img src={require("./images/star.png")}/>
             </div>
          </div>
