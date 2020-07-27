@@ -1,10 +1,7 @@
-import React, {Component} from 'react'
-import { Grid, Image, Card } from 'semantic-ui-react'
+import React from 'react'
+import { Grid, Card } from 'semantic-ui-react'
 import { NavLink} from 'react-router-dom';
-import Webcam from "react-webcam";
 import "./styles.css"
-import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
-import ReactCardFlip from 'react-card-flip';
 import HappyCard from "./HappyCard.js"
 import WorriedCard from "./WorriedCard.js"
 import SurprisedCard from "./SurprisedCard.js"

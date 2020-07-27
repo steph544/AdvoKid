@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import Wheel from './prizes/wheel';
@@ -41,6 +41,8 @@ class TreasureBox extends React.Component{
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizesix
                 }))
+            default: 
+                return ""
         }
    }
 
@@ -87,7 +89,6 @@ class TreasureBox extends React.Component{
              .then(res => res.json())
              .then(incentives => 
                  {
-                     debugger 
                     this.setState({
                         incentives: incentives,
                         childIncentive: incentives.filter(incentive => incentive.child_id === this.props.location.aboutProps.currentChild.id).pop() 
@@ -119,7 +120,7 @@ class TreasureBox extends React.Component{
                         currentChild: this.props.location.aboutProps.currentChild 
                     }
                 }}>   
-                <img src={require("./images/backbtn.png")}/>
+                <img src={require("./images/backbtn.png")} alt=""/>
                 </NavLink>
             </div>
 
@@ -136,7 +137,7 @@ class TreasureBox extends React.Component{
            
 
             <div className="div18">          
-                <CustomChatBot currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
+                <CustomChatBot spinWheel={this.spinWheel} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}
                     </p>

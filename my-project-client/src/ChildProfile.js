@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react'
+import React from 'react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
@@ -16,7 +16,7 @@ class ChildProfile extends React.Component{
     }
 
     selectChild = (e, { value }) =>  (
-        this.props.selectChild({ value }.value),  
+        this.props.selectChild({ value }.value), 
         this.setState({ 
             childPicture: {value}.value.image, 
             selectedChild: {value}.value  
@@ -57,6 +57,10 @@ class ChildProfile extends React.Component{
 
     }
 
+    logout=()=>{
+        localStorage.clear()
+    }
+
     uploadImage=(e)=>{
         const files = e.target.files 
         const data = new FormData()
@@ -77,7 +81,7 @@ class ChildProfile extends React.Component{
     render(){
       
         const { value } = this.state
-        const { username, first_name, last_name, image } = this.state
+        const { image } = this.state
 
         if (this.props.currentChild !== null){
         return(
@@ -85,9 +89,9 @@ class ChildProfile extends React.Component{
                 <>        
                 <div class="div2 image-upload">
                     <label for="file-input"> 
-                        <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
+                        <img className="avatar" src={this.state.childPicture} alt="" width="400px" height="400px"/>
                             <br/>
-                        <img src={require('./images/addchildpicbtn.svg')} width="450px"/> 
+                        <img src={require('./images/addchildpicbtn.svg')} alt="" width="450px"/> 
                     </label>      
                         <br/> 
                     <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
@@ -109,21 +113,21 @@ class ChildProfile extends React.Component{
                 </Grid>
                 <br/>
                 <br/> 
-                    <img className="signup_img" src={require('./images/first_name.png')}/>
+                    <img className="signup_img" alt="" src={require('./images/first_name.png')}/>
                             <br/> 
                                 <br/>
                         {this.props.currentChild.first_name}
                             <br/>
                                 <br/>
                                     <br/> 
-                        <img className="signup_img" src={require('./images/last_name.png')}/>
+                        <img className="signup_img" alt="" src={require('./images/last_name.png')}/>
                             <br/> 
                                 <br/>
                             {this.props.currentChild.last_name}
                             <br/>
                                 <br/>
                                     <br/> 
-                        <img className="signup_img" src={require('./images/age.png')}/>
+                        <img className="signup_img" alt="" src={require('./images/age.png')}/>
                             <br/> 
                                 <br/>
                             {this.props.currentChild.age}
@@ -134,10 +138,9 @@ class ChildProfile extends React.Component{
                 </div>
 
                 <div className="div4">
-                    <img width="90%" height="80%" src={require("./images/dog.png")}/> 
+                    <img width="90%" height="80%" alt="" src={require("./images/dog.png")}/> 
                     <br/>
-                        <br/> 
-                            <br/>
+                       
                     <NavLink to={{
                         pathname: "/navMap",
                         aboutProps:{
@@ -145,8 +148,14 @@ class ChildProfile extends React.Component{
                             renderSwitch: this.props.renderSwitch  
                         }
                     }}>
-                        <img src={require('./images/letsplaybtn.png')} width="450px"/>
+                        <img src={require('./images/letsplaybtn.png')} alt="" width="450px"/>
                     </NavLink> 
+
+                    <NavLink to={{
+                        pathname: "/",
+                    }}>
+                        <img width="450px" onClick={this.logout} alt="" src={require('./images/logout.png')}/>
+                    </NavLink>
                 </div>
                 </>
             </>      

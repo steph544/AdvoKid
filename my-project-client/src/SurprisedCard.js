@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Grid, Image, Card } from 'semantic-ui-react'
+import React from 'react';
+import { Image } from 'semantic-ui-react'
 import ReactCardFlip from 'react-card-flip';
 
 class SurprisedCard extends React.Component{

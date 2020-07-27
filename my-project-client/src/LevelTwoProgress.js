@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
 import AudioCard from "./AudioCard.js"
-import {Grid, Container, Card} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 
 class LevelTwoProgress extends React.Component{
 

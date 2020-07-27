@@ -1,11 +1,10 @@
-import React, {Component} from 'react'
+import React from 'react'
 import "./styles.css"
-import { render } from 'react-dom';
 import Progress from "./Progress.js"
 import ChildSignUp from './ChildSignUp.js'
 import Levels from "./Levels.js"
 import Prizes from "./Prizes.js"
-import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
+import { Slide} from 'react-awesome-reveal';
 import ChildProfile from "./ChildProfile.js"
 
 
@@ -106,7 +105,7 @@ class Parents extends React.Component{
                         <Slide>
                             <div className="parent_page parents-bg-img parents_page">
                                 <div className="div1"> 
-                                    <img width="100%" height="100%" src="./assets/images/parents_tabs.png" usemap="#image-map" hidefocus="true"/> 
+                                    <img width="100%" height="100%" alt=""  src="./assets/images/parents_tabs.png" useMap="#image-map" hidefocus="true"/> 
 
                                     <map name="image-map">
                                         <area target="" alt="Child" title="Child" href="" coords="288,36,710,213" shape="rect" onClick={(e)=> this.changeComp(e)}></area>

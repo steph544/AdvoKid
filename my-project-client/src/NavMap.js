@@ -1,9 +1,7 @@
-import React, {Component} from 'react'
-
-  import { Link} from 'react-router-dom';
-  import "./styles.css"
-  import {ReactComponent as NavMapImage} from './images/navMapImage.svg';
-  import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
+import React from 'react'
+import { Link} from 'react-router-dom';
+import "./styles.css"
+import { Rotate } from 'react-awesome-reveal';
 
 
 class NavMap extends React.Component{

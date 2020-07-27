@@ -1,7 +1,6 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
-import { Dropdown, Grid, Card} from 'semantic-ui-react'
+import { Dropdown, Grid} from 'semantic-ui-react'
 import LevelTwoSettings from "./LevelTwoSettings.js"
 import LevelIntro from "./LevelIntro.js"
   

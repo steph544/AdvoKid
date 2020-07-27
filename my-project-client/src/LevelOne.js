@@ -1,14 +1,10 @@
-import React, {Component} from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import React from 'react'
+import { Grid } from 'semantic-ui-react'
 import { NavLink} from 'react-router-dom';
 import "./styles.css"
 import {ReactComponent as TV} from './images/tv.svg';
 import {ReactComponent as Chicken} from './images/chicken.svg';
-import Webcam from "react-webcam";
-
-
-
-
+ 
 class LevelOne extends React.Component{
 
 changePage=()=>{
@@ -16,8 +12,6 @@ changePage=()=>{
 }    
 
 render(){
-
-
 
     return(
       

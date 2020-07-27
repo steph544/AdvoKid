@@ -1,7 +1,6 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
-import { Button, Form, Segment, Grid } from 'semantic-ui-react'
+
 
     
 class LevelIntro extends React.Component{

@@ -1,6 +1,5 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
-import {Card, Image, Button, Rating, Progress, Modal, Header} from 'semantic-ui-react'
+import React from 'react'
+import {Card, Button, Rating, Progress} from 'semantic-ui-react'
 import "./styles.css"
 
 class AudioCard extends React.Component{

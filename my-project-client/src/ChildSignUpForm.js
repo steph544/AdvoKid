@@ -1,10 +1,7 @@
-import React, {Component, useState} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
 import { Dropdown, Grid} from 'semantic-ui-react'
-
-
-
+import { NavLink} from 'react-router-dom';
 
 class ChildSignUpForm extends React.Component{
     state={
@@ -116,11 +113,11 @@ class ChildSignUpForm extends React.Component{
           return(
         <>
             <>        
-            <div class="div2 image-upload">
+            <div className="div2 image-upload">
                 <label for="file-input"> 
-                    <img className="avatar" src={this.state.childPicture} width="400px" height="400px"/>
+                    <img className="avatar" src={this.state.childPicture} alt="" width="400px" height="400px"/>
                         <br/>
-                    <img src={require('./images/addchildpicbtn.svg')} width="450px"/>
+                    <img src={require('./images/addchildpicbtn.svg')} alt="" width="450px"/>
                 </label>      
                     <br/> 
                 <input  id="file-input" type="file" name="image" onChange={(e) => this.uploadImage(e)} value={image}/>
@@ -144,41 +141,37 @@ class ChildSignUpForm extends React.Component{
                 <br/>
                     <br/>
 
-                <img width="25%" className="signup_img" src={require('./images/first_name.png')}/>
+                <img width="25%" className="signup_img" alt="" src={require('./images/first_name.png')}/>
                     <br/> 
                 <input type="text" name="first_name" onChange={(e) => this.handleChange(e)} value={first_name}></input>
                     <br/>
                         <br/>
-                <img width="25%" className="signup_img" src={require('./images/last_name.png')}/>
+                <img width="25%" className="signup_img" alt="" src={require('./images/last_name.png')}/>
                     <br/>
                 <input type="text" name="last_name" onChange={(e) => this.handleChange(e)} value={last_name}></input>
                     <br/>
                         <br/>
-                <img width="11%" className="signup_img" src={require('./images/age.png')}/>
+                <img width="11%" className="signup_img" alt="" src={require('./images/age.png')}/>
                     <br/>
                 <input  type="text" name="username" onChange={(e) => this.handleChange(e)} value={username}></input>
                     <br/>
                         <br/>
-                <img src={require('./images/submitbutton.png')} onClick={(e) => this.childSignUp(e)}/> 
+                <img src={require('./images/submitbutton.png')} alt=""  onClick={(e) => this.childSignUp(e)}/> 
         
             </form>
             </div>
 
             <div className="div4">
-                <img width="90%" height="80%" src={require("./images/dog.png")}/> 
+                <img width="90%" height="80%" alt="" src={require("./images/dog.png")}/> 
                 <br/>
                     <br/> 
                         <br/>
                             <br/> 
-                {/* <NavLink to={{
-                    pathname: "/navMap",
-                    aboutProps:{
-                        currentChild: this.props.currentChild, 
-                        renderSwitch: this.props.renderSwitch  
-                    }
-                }}> */}
-                    <img src={require('./images/spacer.png')} width="450px"/>
-                {/* </NavLink>  */}
+                    <NavLink to={{
+                    pathname: "/",
+                    }}>
+                        <img width="450px" onClick={this.logout} alt="" src={require('./images/logout.png')}/>
+                    </NavLink>
             </div>
             </>
 

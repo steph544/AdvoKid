@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
 import PhotoCard from "./PhotoCard.js"
-import {Grid, Container, Card} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 class LevelOneProgress extends React.Component{
 
     state={

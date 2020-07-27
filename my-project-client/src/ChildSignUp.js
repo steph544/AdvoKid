@@ -1,6 +1,5 @@
-import React, {Component, useState} from 'react'
+import React from 'react'
 import "./styles.css"
-import { Dropdown, Grid} from 'semantic-ui-react'
 import ChildSignUpForm from './ChildSignUpForm.js'
 import ChildProfile from "./ChildProfile.js"
 

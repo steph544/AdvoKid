@@ -1,9 +1,8 @@
-import React, {Component} from 'react'
-import { Grid, Image, Modal, Message } from 'semantic-ui-react'
+import React from 'react'
+import { Grid, Image, Modal} from 'semantic-ui-react'
 import { NavLink} from 'react-router-dom';
 import Webcam from "react-webcam";
 import "./styles.css"
-import { Slide, LightSpeed, Bounce, Rotate } from 'react-awesome-reveal';
 
 
 
@@ -167,12 +166,12 @@ componentDidMount(){
               </Grid.Column>
               <Grid.Column centered width={5}>     
                           <div onClick={this.change} className="center">
-                            <img width="970" height="590" className="parent" src={require("./images/webcam_frame.png")}/>
+                            <img width="970" height="590" alt="" className="parent" src={require("./images/webcam_frame.png")}/>
                                   <Webcam className="webcam_position" width={600} height={400} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} /> 
                               <br/>
                               <br/>
                                 <div className="center webcambtn">
-                                  <img src={require("./images/startbtn.png")} onClick={this.startVideo}></img>
+                                  <img src={require("./images/startbtn.png")} alt="" onClick={this.startVideo}></img>
                                 </div>
                                  
                           </div>

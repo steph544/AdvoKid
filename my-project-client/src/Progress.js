@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
 import {VictoryPie, VictoryLabel, VictoryAnimation} from 'victory';
-import { Dropdown, Grid, Card} from 'semantic-ui-react'
+import { Dropdown, Grid} from 'semantic-ui-react'
 import LevelOneProgress from "./LevelOneProgress.js"
 import LevelTwoProgress from "./LevelTwoProgress.js"
 
@@ -91,8 +90,8 @@ renderSwitch=(param)=>{
       </Grid>
       <br/> 
         <svg viewBox="0 0 400 400" width="80%" height="80%">
-        <text x="43%" y="49%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">COMPLETED</text>
-        <text x="43%" y="54%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em">LEVELS</text>
+        <text x="43%" y="49%" textAnchor="middle" stroke="black" strokeWidth="1px" dy=".3em">COMPLETED</text>
+        <text x="43%" y="54%" textAnchor="middle" stroke="black" strokeWidth="1px" dy=".3em">LEVELS</text>
   
           <VictoryPie
             standalone={false}

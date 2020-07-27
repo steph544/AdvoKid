@@ -1,7 +1,5 @@
-import React, {Component} from 'react'
-import { NavLink} from 'react-router-dom';
+import React from 'react'
 import "./styles.css"
-import Wheel from './prizes/wheel';
 import {Card, Input, Button, Image} from 'semantic-ui-react'
 
 class Prizes extends React.Component{
@@ -61,7 +59,7 @@ class Prizes extends React.Component{
           return(
         <>
             <div className="div14 center"> 
-                <img width='90%' src={require("./images/prizecenter.png")}/>
+                <img width='90%' src={require("./images/prizecenter.png")} alt="" />
             {/* </div>
 
             <div className="div15 center">  */}
@@ -168,7 +166,7 @@ class Prizes extends React.Component{
 
             <>
                 <div className="div14"> 
-                    <img src={require("./images/prizecenter.png")}/>
+                    <img src={require("./images/prizecenter.png")} alt="" />
                 </div>
 
                 <div className="div15 center"> 
