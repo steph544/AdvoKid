@@ -124,7 +124,7 @@ class ChildSignUpForm extends React.Component{
                     <br/>
             </div>
 
-            <div class="div8 child-font" > 
+            <div className="div8 child-font" > 
             <Grid columns={2}>
                 <Grid.Column >
                 <Dropdown

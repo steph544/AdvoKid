@@ -43,7 +43,6 @@ class LevelOneProgress extends React.Component{
       }
     
     render(){
-        const { value } = this.state
         if (this.state.displayedPhotos === null){
           return( 
           <div>

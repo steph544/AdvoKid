@@ -1,12 +1,6 @@
 import React, {Component} from 'react'
-import {
-    Button,
-    Form,
-    Grid,
-    Message,
-    Segment,
-  } from 'semantic-ui-react';
-  import { NavLink} from 'react-router-dom';
+import {Grid} from 'semantic-ui-react';
+import { NavLink} from 'react-router-dom';
 
 
 class Login extends Component{

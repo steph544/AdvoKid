@@ -124,10 +124,16 @@ class TreasureBox extends React.Component{
                 </NavLink>
             </div>
 
+            <div className="div19">
+            <h1>Your total Points: {this.state.childPoints}</h1>
+            </div>
+            
+            <div className="div20">
+                    <img alt="" width="100%" src={require("./images/wheelbanner.png")}/>
+            </div>
+
             <div className="div17"> 
                 <div className="center child-font">
-                    <h1>Your total Points: {this.state.childPoints}</h1>
-                        
                         <br/>
                             {this.spinWheel()}
                             <br/> 
@@ -141,6 +147,11 @@ class TreasureBox extends React.Component{
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}
                     </p>
+            </div>
+
+            <div className="div21">
+            {this.state.childPoints}
+                <img src={require("./images/star.png")}/>
             </div>
          </div>
     )}

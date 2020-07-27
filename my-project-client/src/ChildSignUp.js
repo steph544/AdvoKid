@@ -37,8 +37,6 @@ class ChildSignUp extends React.Component{
     //   if (this.props.location.aboutProps.currentChild === null){
     //       return ""
     //   } else {
-           const { value } = this.state
-           const { username, first_name, last_name, image } = this.state
           return(
             <>   
                 {this.renderSwitch(this.state.view)}
