@@ -9,7 +9,7 @@ function Voice(props) {
 
     const phrases=(data)=>{
         if (localStorage.currentChild !== "null"){
-               let currentChildPhrases= data.filter(obj=> obj.child_id === JSON.parse(localStorage.getItem("currentChild")).id).pop()
+               let currentChildPhrases= data.filter(obj=> obj.child_id === JSON.parse(localStorage.currentChild).id).pop()
 
         // localStorage.setItem( 'currentChildPhrases', JSON.stringify(currentChildPhrases)) 
                 setData(currentChildPhrases)

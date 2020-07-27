@@ -22,11 +22,12 @@ export default class Wheel extends React.Component {
         
       }
       this.setState({ selectedItem });
+      let audio = new Audio("../assets/sounds/wheel.wav")
+      audio.play()
     } else {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
-      let audio = new Audio("../assets/sounds/wheel.wav")
-      audio.play()
+     
     }
   // let audio = new Audio("../assets/sounds/wheel.wav")
   //   audio.play()
@@ -34,7 +35,8 @@ export default class Wheel extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getItem(this.selectItem)
+    window.getPrize=this.selectItem
+    console.log(this.selectItem)
   }
     
   
@@ -48,7 +50,7 @@ export default class Wheel extends React.Component {
       '--selected-item': selectedItem,
     };
     const spinning = selectedItem !== null ? 'spinning' : '';
-    localStorage.getItem=this.selectItem
+    // localStorage.setItem('getPrize',this.selectItem)
     return (
       <div className="wheel-container">
        

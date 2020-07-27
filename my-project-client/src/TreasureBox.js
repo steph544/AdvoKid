@@ -94,7 +94,7 @@ class TreasureBox extends React.Component{
     }
 
     getItem=(value)=>{
-       localStorage.getItem= value
+    value.selectItem()
     }
 
     componentDidMount(){
@@ -164,7 +164,7 @@ class TreasureBox extends React.Component{
                 <br/>  
                     <br/>  
                         <br/>    
-                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue}/>
+                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue} getItem={this.getItem}/>
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}
                     </p>

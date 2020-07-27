@@ -82,7 +82,7 @@ subtractPoints=()=>{
         id: "playgame", 
         message: "Okay Great! Good luck!", 
         trigger: () =>{
-            localStorage.getItem()
+            window.getPrize()
             return "you won"
         }
 
