@@ -102,7 +102,7 @@ class TreasureBox extends React.Component{
     render(){
         if (this.state.childPoints === undefined || this.state.childPoints < 5){
             return(
-                <div>
+                <div className="treasure-bg-img parent_page">
                     You currently do not have enough points to redeem a prize. Please come back when you have more points.
                 </div>
             )
@@ -125,7 +125,7 @@ class TreasureBox extends React.Component{
             </div>
 
             <div className="div19">
-            <h1>Your total Points: {this.state.childPoints}</h1>
+            {/* <h1>Your total Points: {this.state.childPoints}</h1> */}
             </div>
             
             <div className="div20">

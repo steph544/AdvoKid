@@ -104,7 +104,7 @@ class CustomChatBot extends React.Component{
          return (
         <ThemeProvider theme={theme}>
             <ChatBot headerTitle="Let's Play!"
-            speechSynthesis={{ enable: true, lang: 'en' }} userAvatar={this.props.currentChild.image} botAvatar={require("./images/dog.png")} hideSubmitButton="true" steps={steps} style={{width: '400px', height: '650px'}}/>
+            speechSynthesis={{ enable: true, lang: 'en' }} userAvatar={this.props.currentChild.image} botAvatar={require("./images/dog.png")} hideSubmitButton="true" steps={steps} style={{width: '400px', height: '750px'}}/>
         </ThemeProvider>
         )
     }
