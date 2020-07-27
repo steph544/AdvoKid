@@ -3,9 +3,21 @@ import ChatBot from "react-simple-chatbot"
 import {ThemeProvider} from "styled-components"
 
 class CustomChatBot extends React.Component{
-subtractPoints=()=>{
-    this.props.subtractPoints()
-}
+    triggerNextStep=()=>{
+            return (
+                "prize"
+            )
+        }
+
+    componentDidMount() {
+        this.handleEnd = this.handleEnd.bind(this);
+        }
+    
+        handleEnd({ steps, values }) {
+            console.log(steps);
+            console.log(values);
+            alert(`Chat handleEnd callback! Number: ${values[0]}`);
+          }
     
     render(){
             
@@ -66,10 +78,7 @@ subtractPoints=()=>{
             {
                 value: true, 
                 label: "Yes",
-                trigger: ()=>{
-                    this.subtractPoints()
-                    return "playgame"
-                } 
+                trigger: "playgame"
             },
             {
                 value: false, 
@@ -83,7 +92,7 @@ subtractPoints=()=>{
         message: "Okay Great! Click the wheel and good luck!", 
         trigger: () =>{
             console.log("Wheel should spin now")
-            localStorage.getItem()
+            this.props.spinWheel()
             return "you won"
         }
 
@@ -99,7 +108,7 @@ subtractPoints=()=>{
          return (
         <ThemeProvider theme={theme}>
             <ChatBot headerTitle="Let's Play!"
-            speechSynthesis={{ enable: true, lang: 'en' }} userAvatar={this.props.currentChild.image} botAvatar={require("./images/dog.png")} hideSubmitButton="true" steps={steps} style={{width: '400px', height: '750px'}} subtractPoints={this.props.subtractPoints}/>
+            speechSynthesis={{ enable: true, lang: 'en' }} userAvatar={this.props.currentChild.image}  hideSubmitButton="true" steps={steps} style={{width: '400px', height: '750px'}} spinWheel={this.props.spinWheel} currentChild={this.props.currentChild}/>
         </ThemeProvider>
         )
     }

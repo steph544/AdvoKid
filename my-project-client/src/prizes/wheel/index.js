@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import CustomChatBot from "./ChatBot.js"
 
 export default class Wheel extends React.Component {
   constructor(props) {
@@ -14,6 +15,8 @@ export default class Wheel extends React.Component {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
       this.props.selectedPrize(selectedItem)
+      let audio = new Audio("../assets/sounds/wheel.wav")
+      audio.play()
       if (this.props.onSelectItem) {
         this.props.onSelectItem(selectedItem);
       }
@@ -22,10 +25,16 @@ export default class Wheel extends React.Component {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
     }
-  let audio = new Audio("../assets/sounds/wheel.wav")
-    audio.play()
+  // let audio = new Audio("../assets/sounds/wheel.wav")
+  //   audio.play()
   
   }
+
+  componentDidMount(){
+    this.props.getItem(this.selectItem)
+  }
+    
+  
 
   render() {
     const { selectedItem } = this.state;
@@ -36,9 +45,10 @@ export default class Wheel extends React.Component {
       '--selected-item': selectedItem,
     };
     const spinning = selectedItem !== null ? 'spinning' : '';
-
+    localStorage.getItem=this.selectItem
     return (
       <div className="wheel-container">
+       
         <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
           {items.map((item, index) => (
             <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
@@ -46,6 +56,11 @@ export default class Wheel extends React.Component {
             </div>
           ))}
         </div>
+
+        {/* <div className="div18">
+           <CustomChatBot spinWheel={this.spinWheel} currentChild={this.props.currentChild} childPoints={this.state.childPoints}/>
+        </div>
+        */}
       </div>
     );
   }

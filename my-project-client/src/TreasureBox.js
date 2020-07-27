@@ -15,6 +15,14 @@ class TreasureBox extends React.Component{
        setTimeout(this.showPrize(value), 10000)
    )}
 
+   subtractPoints=()=>{
+       const newPointValue= this.state.childPoints - 5
+       this.setState({
+            childPoints: newPointValue
+       })
+       console.log(newPointValue)
+   }
+
    showPrize=(value)=>{
         switch (value){
             case 0:
@@ -49,7 +57,7 @@ class TreasureBox extends React.Component{
     spinWheel=()=>{
         if(this.state.childIncentive !== undefined){
                return (
-              <Wheel selectedPrize={this.selectedPrize} items={[`${this.state.childIncentive.prizeone}`, `${this.state.childIncentive.prizetwo}`, `${this.state.childIncentive.prizethree}`, `${this.state.childIncentive.prizefour}`, `${this.state.childIncentive.prizefive}`, `${this.state.childIncentive.prizesix}`]} />
+              <Wheel selectedPrize={this.selectedPrize} items={[`${this.state.childIncentive.prizeone}`, `${this.state.childIncentive.prizetwo}`, `${this.state.childIncentive.prizethree}`, `${this.state.childIncentive.prizefour}`, `${this.state.childIncentive.prizefive}`, `${this.state.childIncentive.prizesix}`]} currentChild={this.props.location.aboutProps.currentChild} getItem={this.getItem}/>
         )
         }
      
@@ -75,6 +83,10 @@ class TreasureBox extends React.Component{
                          console.log(points)
                          )
                   })
+    }
+
+    getItem=(value)=>{
+       localStorage.getItem= value
     }
 
     componentDidMount(){
@@ -143,7 +155,7 @@ class TreasureBox extends React.Component{
            
 
             <div className="div18">          
-                <CustomChatBot spinWheel={this.spinWheel} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
+                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.childPoints}/>
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}
                     </p>
