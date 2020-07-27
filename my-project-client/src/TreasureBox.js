@@ -11,12 +11,33 @@ class TreasureBox extends React.Component{
    state={
        totalPoints: 0,
        childPoints: 0, 
-       selectedPrize: "", 
+       selectedPrize: null, 
        newPointValue: 0
    }
-   selectedPrize=(value)=>{(
-       setTimeout(this.showPrize(value), 10000)
-   )}
+
+   postPrize=()=>{
+    if (this.state.selectedPrize !== null){
+        fetch("http://localhost:3000/prizes", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                child_id: this.props.location.aboutProps.currentChild.id, 
+                name: this.state.selectedPrize
+            })
+        })
+        .then(res => res.json())
+        .then(prize => 
+            console.log(prize))
+        }
+       
+    }
+
+
+   selectedPrize=(value)=>{
+           this.showPrize(value)
+   }
 
    subtractPoints=()=>{
        if (this.state.newPointValue > 5){
@@ -35,27 +56,39 @@ class TreasureBox extends React.Component{
             case 0:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizeone
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             case 1:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizetwo
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             case 2:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizethree
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             case 3:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizefour
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             case 4:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizefive
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             case 5:
                 return (this.setState({
                     selectedPrize: this.state.childIncentive.prizesix
-                }))
+                }, 
+                ()=>{this.postPrize()}
+                ))
             default: 
                 return ""
         }
@@ -93,9 +126,6 @@ class TreasureBox extends React.Component{
                   })
     }
 
-    getItem=(value)=>{
-    value.selectItem()
-    }
 
     componentDidMount(){
         fetch(`http://localhost:3000/incentives`, 
@@ -122,9 +152,22 @@ class TreasureBox extends React.Component{
     render(){
         if (this.state.childPoints === undefined || this.state.childPoints < 5){
             return(
-                <div className="treasure-bg-img parent_page">
-                    You currently do not have enough points to redeem a prize. Please come back when you have more points.
-                </div>
+                <><div className="treasure-bg-img parent_page">
+                    <div className="div20">
+                        <h1>
+                            You currently do not have enough points to redeem a prize. Please come back when you have more points.
+                        </h1>
+                    </div>
+                        <NavLink to={{
+                                pathname: "/navMap", 
+                                aboutProps:{
+                                    currentChild: this.props.location.aboutProps.currentChild 
+                            }
+                            }}>   
+                            <img src={require("./images/backbtn.png")} alt=""/>
+                            </NavLink>
+                    </div>
+                </>
             )
         } else {
           return(
@@ -164,9 +207,9 @@ class TreasureBox extends React.Component{
                 <br/>  
                     <br/>  
                         <br/>    
-                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue} getItem={this.getItem}/>
+                <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue} showPrize={this.showPrize} selectedPrize={this.state.selectedPrize}/>
                     <p className="a1 child-font2">
-                        {this.state.selectedPrize}
+                        {/* {this.state.selectedPrize} */}
                     </p>
             </div>
 

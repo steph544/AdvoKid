@@ -15,7 +15,7 @@ export default class Wheel extends React.Component {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
       this.props.selectedPrize(selectedItem)
-      
+      localStorage.setItem('selectedPrize',selectedItem)
       
       if (this.props.onSelectItem) {
         this.props.onSelectItem(selectedItem);
@@ -36,7 +36,6 @@ export default class Wheel extends React.Component {
 
   componentDidMount(){
     window.getPrize=this.selectItem
-    console.log(this.selectItem)
   }
     
   

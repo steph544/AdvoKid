@@ -6,9 +6,11 @@ class CustomChatBot extends React.Component{
 subtractPoints=()=>{
     this.props.subtractPoints()
 }
+
     
     render(){
-            
+   const selectedPrize= this.props.showPrize(localStorage.selectedPrize)
+
    const theme={
     background: "white", 
     fontFamily: "Rockwell", 
@@ -30,7 +32,7 @@ subtractPoints=()=>{
     const steps=[
     {
         id: "Greet", 
-        message: `Hi, ${this.props.currentChild.first_name}! Are you ready to win a prize?! You currently have ${this.props.childPoints} points. Would you like to use your points to spin the wheel?`, 
+        message: `Hi, ${this.props.currentChild.first_name}! Are you ready to win a prize?! You currently have ${this.props.childPoints} points.`, 
         trigger: "Display Options" 
 
     },
@@ -89,7 +91,12 @@ subtractPoints=()=>{
     },
     {
         id: "you won", 
-        message: `Congratulations! You won a prize! Would you like to spin again?`, 
+        message: `Congratulations! You won! Your parents have been notified of your prize.`,
+        trigger: "play again"
+    },
+    {
+        id: "play again",
+        message: "Would you like to spin again?",
         trigger: "spin"
 
     }
