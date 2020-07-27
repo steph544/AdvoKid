@@ -22,8 +22,8 @@ subtractPoints=()=>{
     }
     
     const config= {
-            width: "400px",
-            height: "500px",
+            width: "430px",
+            height: "550px",
             floating: true
         };
     
@@ -51,7 +51,7 @@ subtractPoints=()=>{
     },
     {
         id: "No",
-        message: "Okay, no problem! Thanks for stopping by!", 
+        message: "Okay, no problem! You're doing a great job, keep playing!" , 
         end: true
     },
     {
@@ -80,18 +80,17 @@ subtractPoints=()=>{
     },
     {
         id: "playgame", 
-        message: "Okay Great! Click the wheel and good luck!", 
+        message: "Okay Great! Good luck!", 
         trigger: () =>{
-            console.log("Wheel should spin now")
             localStorage.getItem()
             return "you won"
         }
 
     },
     {
-        id: "prize", 
-        message: `Congratulations! You won a prize!`, 
-        end: true 
+        id: "you won", 
+        message: `Congratulations! You won a prize! Would you like to spin again?`, 
+        trigger: "spin"
 
     }
 

@@ -159,7 +159,11 @@ class TreasureBox extends React.Component{
             </div>
            
 
-            <div className="div18">          
+            <div className="div18">   
+            <br/> 
+                <br/>  
+                    <br/>  
+                        <br/>    
                 <CustomChatBot subtractPoints={this.subtractPoints} currentChild={this.props.location.aboutProps.currentChild} childPoints={this.state.newPointValue}/>
                     <p className="a1 child-font2">
                         {this.state.selectedPrize}

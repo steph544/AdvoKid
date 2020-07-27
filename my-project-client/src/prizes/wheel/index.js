@@ -15,15 +15,18 @@ export default class Wheel extends React.Component {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
       this.props.selectedPrize(selectedItem)
-      let audio = new Audio("../assets/sounds/wheel.wav")
-      audio.play()
+      
+      
       if (this.props.onSelectItem) {
         this.props.onSelectItem(selectedItem);
+        
       }
       this.setState({ selectedItem });
     } else {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
+      let audio = new Audio("../assets/sounds/wheel.wav")
+      audio.play()
     }
   // let audio = new Audio("../assets/sounds/wheel.wav")
   //   audio.play()

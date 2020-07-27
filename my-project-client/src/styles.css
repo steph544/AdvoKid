@@ -480,7 +480,7 @@ font-size: 20px;
 
 .div16 { grid-area: 1 / 1 / 2 / 3; }
 .div17 { grid-area: 3 / 4 / 8 / 7; }
-.div18 { grid-area: 3 / 8 / 7 / 10; 
+.div18 { grid-area: 2 / 8 / 7 / 10; 
     z-index: 1000}
 .div19 { grid-area: 2 / 2 / 7 / 4; }
 .div20 { grid-area: 1 / 3 / 3 / 9; }
