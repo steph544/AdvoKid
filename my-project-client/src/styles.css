@@ -431,7 +431,7 @@ z-index: 1;
     padding: 100px;
 }
 
-<---------- Level Intro Page---------->
+/* <---------- Level Intro Page----------> */
 .div22 { grid-area: 2 / 5 / 7 / 9; 
     z-index: 1000}
 
@@ -487,7 +487,27 @@ font-size: 20px;
 #chatbot{
     border-radius: 50%;
 }
-.div21 { grid-area: 1 / 10 / 3 / 12; }
+.div21 { grid-area: 2 / 1 / 3 / 11; }
+
+.star-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.child-font5{
+    font-family: "Rockwell";
+    font-size: 50px;
+    color: black
+}
+
+.counter {
+position: absolute;
+top: 60%;
+left: 49.6%;
+transform: translate(-50%, -50%);
+z-index: 10005;
+}
 
 
 /* <-------Response Page-------->  */

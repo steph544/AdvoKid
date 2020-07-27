@@ -143,11 +143,6 @@ class TreasureBox extends React.Component{
                 <img src={require("./images/backbtn.png")} alt=""/>
                 </NavLink>
             </div>
-
-            <div className="div19">
-            <h1>Your total Points: {this.state.childPoints}</h1>
-
-            </div>
             
             <div className="div20">
                     <img alt="" width="100%" src={require("./images/wheelbanner.png")}/>
@@ -156,6 +151,7 @@ class TreasureBox extends React.Component{
             <div className="div17"> 
                 <div className="center child-font">
                         <br/>
+                        <br/> 
                             {this.spinWheel()}
                             <br/> 
                           
@@ -170,16 +166,20 @@ class TreasureBox extends React.Component{
                     </p>
             </div>
 
-            <div className="div21">
-            <CountUp duration="2" className="child-font3" start={this.state.childPoints} end={this.state.newPointValue} delay={0}>
-                {({ countUpRef }) => (
-                <div>
-                    <span className="child-font3" ref={countUpRef} />
+            <div className="div21 star-container child-font5">
+                <br/> 
+                <br/>
+                    <img height="80%" style={{display: "in-line"}}src={require("./images/star.png")}/> 
+                    <br/>Points
+
+                        <CountUp duration="2" start={this.state.childPoints} end={this.state.newPointValue} delay={0}>
+                            {({ countUpRef }) => (
+                            <div className="counter">
+                                <span className="child-font5" ref={countUpRef} />
+                            </div>
+                            )}
+                        </CountUp>
                 </div>
-                )}
-            </CountUp>
-                <img src={require("./images/star.png")}/>
-            </div>
          </div>
     )}
     }
