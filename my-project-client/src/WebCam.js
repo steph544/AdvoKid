@@ -199,9 +199,9 @@ componentDidMount(){
                   </Grid.Row>  
               </Grid.Column>
 
-              <Grid.Column centered width={6} textAlign='center'> 
+              <Grid.Column centered width={7} textAlign='center'> 
                        <Grid.Row>   
-                            <img src={require("./images/chicken_response2.svg")}/>
+                            <img width="90%" src={require("./images/chickenresponse.png")}/>
                       
                        </Grid.Row>
 

@@ -39,7 +39,7 @@ class Response extends React.Component{
     return(
       <div className="levelone-bg-img level-one-response">
         <div className="div27">
-          <img width="90%" src={require("./images/dogresponse.png")}/>
+          <img width="95%" src={require("./images/dogresponse.png")}/>
           <br/> 
           <br/> 
           <NavLink
@@ -64,6 +64,14 @@ class Response extends React.Component{
       </div>
 
       <div className="div28"> 
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         <Card.Group itemsPerRow={2}>
             <HappyCard setMessage={this.setMessage}/>
             <WorriedCard/> 

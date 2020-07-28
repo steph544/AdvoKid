@@ -152,13 +152,13 @@ form input{
 .level-one-response {
     display: grid;
     grid-template-columns: .3fr repeat(4, 1fr) .25fr repeat(6, 1fr);
-    grid-template-rows: .3fr .5fr 1fr 1.6fr .75fr 1fr;
+    grid-template-rows: .2fr .5fr 1fr .1fr .75fr 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
     
-.div28 { grid-area: 4 / 8 / 3 / 11; }
-.div27 { grid-area: 3 / 3 / 6 / 8; }
+.div28 { grid-area: 3 / 8 / 4 / 12; }
+.div27 { grid-area: 3 / 3 / 4 / 8; }
 /* 
 body { 
     font-family: 'Lato';
