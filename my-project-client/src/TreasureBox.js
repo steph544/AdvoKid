@@ -33,7 +33,11 @@ class TreasureBox extends React.Component{
         }
        
     }
-
+    setPointValue=()=>{
+        this.setState({
+            childPoints: this.state.childPoints - 5 
+        })
+    }
 
    selectedPrize=(value)=>{
            this.showPrize(value)
@@ -41,13 +45,12 @@ class TreasureBox extends React.Component{
 
    subtractPoints=()=>{
        if (this.state.newPointValue > 5){
-            const childPoints=this.state.newPointValue
             const newPointValue= this.state.childPoints - 5
-       
+    
             this.setState({
                     newPointValue: newPointValue
             })
-            console.log(newPointValue)
+            setTimeout(this.setPointValue(), 5000)
        }
    }
 
@@ -219,7 +222,7 @@ class TreasureBox extends React.Component{
                     <img height="80%" style={{display: "in-line"}}src={require("./images/star.png")}/> 
                     <br/>Points
 
-                        <CountUp duration="2" start={this.state.childPoints} end={this.state.newPointValue} delay={0}>
+                        <CountUp duration="5" start={this.state.childPoints} end={this.state.newPointValue} delay={1}>
                             {({ countUpRef }) => (
                             <div className="counter">
                                 <span className="child-font5" ref={countUpRef} />
