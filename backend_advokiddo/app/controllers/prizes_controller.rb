@@ -1,9 +1,9 @@
 class PrizesController < ApplicationController
-    skip_before_action :logged_in?, only: [:create, :index, :update]
+    skip_before_action :logged_in?, only: [:create, :index, :update, :destroy]
 
     def index 
         prizes=Prize.all 
-        render json: prizes.to_json(:except => [:updated_at, :created_at])
+        render json: prizes.to_json
     end 
 
     def create 
@@ -30,6 +30,6 @@ class PrizesController < ApplicationController
 
     private
     def prize_params
-        params.require(:prize).permit(:child_id, :name)
+        params.permit(:id, :child_id, :name)
     end
 end

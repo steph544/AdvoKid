@@ -12,8 +12,8 @@ class ChildrenController < ApplicationController
     end
     
     def index 
-        children=Child.all 
-        render json: children.to_json(:except => [:updated_at, :created_at])
+        children=Child.all
+        render json: children.to_json, :include => :prizes
     end 
 
     def create 

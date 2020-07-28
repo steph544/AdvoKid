@@ -1,19 +1,28 @@
 import React from 'react'
 import "./styles.css"
-import {Card, Input, Button, Image} from 'semantic-ui-react'
+import {Card, Input, Button, Image, Header, Modal, Table, Icon, Menu} from 'semantic-ui-react'
+import PrizeTable from "./PrizeTable.js"
 
 class Prizes extends React.Component{
 
     state={
         incentives: [],
         submitted: false,
-        message: "" 
+        message: "",
+        currentPrizes: [], 
+        displayedPrizes: []
     }
    
     handleChange=(e)=>{   
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
+
+    deletePrize=(value)=>{
+        this.setState({
+            displayedPrizes: this.state.displayedPrizes.filter(prize => prize !== value)
+          })
     }
 
     submit=()=>{
@@ -51,6 +60,25 @@ class Prizes extends React.Component{
         }
 
     } 
+
+    componentDidMount(){
+        if (this.props.currentChild !== null)
+        {fetch(`http://localhost:3000/prizes`, 
+        {
+            method: "GET",
+            headers: {
+            "Authorization": `Bearer ${localStorage.token}`,
+            "Content-type": "application/json", 
+            "Accept": "application/json"}
+        })
+             .then(res => res.json())
+             .then(prizes => 
+                 this.setState({
+                     currentPrizes: prizes.filter(prize => prize.child_id === this.props.currentChild.id),
+                     displayedPrizes: prizes.filter(prize => prize.child_id === this.props.currentChild.id)
+                 })
+                 )
+    }}
 
     render(){
         if (this.state.submitted === false){
@@ -149,7 +177,51 @@ class Prizes extends React.Component{
             <br/>
             <br/> 
             <div className="center">
-                 <Button  color="red" content="Submit" size="large" onClick={this.submit}></Button>
+                 <Button  color="red" content="Submit Prizes" size="large" onClick={this.submit}></Button>
+                 <Modal trigger={  <Button  color="red" content="Current Prizes" size="large" ></Button>}>
+    <Modal.Header> <img src={require("./images/currentprizebanner.png")}/> </Modal.Header>
+    <Modal.Content image>
+      <Modal.Description>
+      <Table celled>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Prize Won</Table.HeaderCell>
+        <Table.HeaderCell>Date Won</Table.HeaderCell>
+        <Table.HeaderCell>Redeemed</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
+
+    <Table.Body>
+        {this.state.displayedPrizes.map(prize =>
+            <PrizeTable key={prize.id} deletePrize={this.deletePrize} prize={prize}/>
+        )
+        }
+      
+    </Table.Body>
+
+    <Table.Footer>
+      <Table.Row>
+        <Table.HeaderCell colSpan='3'>
+          <Menu floated='right' pagination>
+            <Menu.Item as='a' icon>
+              <Icon name='chevron left' />
+            </Menu.Item>
+            <Menu.Item as='a'>1</Menu.Item>
+            <Menu.Item as='a'>2</Menu.Item>
+            <Menu.Item as='a'>3</Menu.Item>
+            <Menu.Item as='a'>4</Menu.Item>
+            <Menu.Item as='a' icon>
+              <Icon name='chevron right' />
+            </Menu.Item>
+          </Menu>
+        </Table.HeaderCell>
+      </Table.Row>
+    </Table.Footer>
+  </Table>
+      </Modal.Description>
+    </Modal.Content>
+  </Modal>
+                 {/* <Button  color="red" content="Current Prizes" size="large" ></Button> */}
             </div>
            
             {this.state.message}
