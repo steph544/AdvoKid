@@ -8,7 +8,7 @@ function Home(){
 
     return(
     <div class="center">
-        <LandingBg width="100%" style={{height: '120%'}} />
+        <LandingBg width="100%" style={{height: '110%'}} />
     </div>
        
     )

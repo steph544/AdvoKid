@@ -117,7 +117,7 @@ form input{
 }
 
 .tv{
-    width: 60vw;
+    width: 63vw;
 }
 
 .center{
@@ -138,7 +138,27 @@ form input{
     float: right;
 }
 
+.level-one-page{
+    display: grid;
+    grid-template-columns: .6fr 1.6fr 1fr repeat(3, .75fr) .4fr;
+    grid-template-rows: .5fr repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.div25 { grid-area: 2 / 2 / 5 / 4; }
+.div26 { grid-area: 1 / 4 / 4 / 7; }
 
+.level-one-response {
+    display: grid;
+    grid-template-columns: .3fr repeat(4, 1fr) .25fr repeat(6, 1fr);
+    grid-template-rows: .3fr .5fr 1fr 1.6fr .75fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.div28 { grid-area: 4 / 8 / 3 / 11; }
+.div27 { grid-area: 3 / 3 / 6 / 8; }
 /* 
 body { 
     font-family: 'Lato';

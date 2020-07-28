@@ -37,8 +37,48 @@ class Response extends React.Component{
   render(){
   
     return(
-      <div className="levelone-bg-img">
-            <br/>
+      <div className="levelone-bg-img level-one-response">
+        <div className="div27">
+          <img width="90%" src={require("./images/dogresponse.png")}/>
+          <br/> 
+          <br/> 
+          <NavLink
+              to={{
+              pathname: "/levelone", 
+              aboutProps:{
+                  currentChild: this.props.location.aboutProps.currentChild 
+              }
+          }}>  
+              <img src={require("./images/backbtn.png")}></img> 
+          </NavLink> 
+          <NavLink
+              to={{
+                pathname: "/webCam", 
+                aboutProps:{
+                    currentChild: this.props.location.aboutProps.currentChild 
+                }
+            }}
+              > 
+              <img src={require("./images/nextbtn.png")}></img> 
+          </NavLink> 
+      </div>
+
+      <div className="div28"> 
+        <Card.Group itemsPerRow={2}>
+            <HappyCard setMessage={this.setMessage}/>
+            <WorriedCard/> 
+          <Card>
+
+          </Card>
+          <Card>
+            
+          </Card>
+              <SurprisedCard/>
+              <SadCard/>
+        </Card.Group>
+        <h1 className="child-font2 a4">{this.state.message}</h1>
+      </div>
+            {/* <br/>
             <br/>
             <br/>
             <br/>
@@ -50,7 +90,7 @@ class Response extends React.Component{
               </Grid.Column>
               <Grid.Column centered width={7}>
                   <Grid.Column>
-                    <img src={require("./images/dog_response.svg")}/>
+                    <img width="85%" src={require("./images/dogresponse.png")}/>
                   </Grid.Column>
                       <Grid.Row> 
                       </Grid.Row> 
@@ -60,6 +100,7 @@ class Response extends React.Component{
                           </Grid.Column>
 
                           <Grid.Column>
+                            <br/> 
                             <NavLink
                                to={{
                                 pathname: "/levelone", 
@@ -134,7 +175,7 @@ class Response extends React.Component{
                 <Grid.Column width={8}>
                 </Grid.Column>
             </Grid.Row>
-      </Grid>
+      </Grid> */}
        
 
   </div>

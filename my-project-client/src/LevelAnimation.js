@@ -48,7 +48,7 @@ class LevelAnimation extends React.Component{
             <div className="div22"> 
                 <h1 className="child-font4">{this.state.childName} Current Overall Progress:</h1>
               {/* <img src={require("./images/progressbanner.png")}/> */}
-                <svg viewBox="0 0 400 400" width="70%" height="70%">
+                <svg viewBox="0 0 400 400" width="65%" height="65%">
                 <text x="43%" y="49%" textAnchor="middle" stroke="black" strokeWidth="1px" dy=".3em">COMPLETED</text>
                 <text x="43%" y="54%" textAnchor="middle" stroke="black" strokeWidth="1px" dy=".3em">LEVELS</text>
         

@@ -83,7 +83,7 @@ class SignUp extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
                                   
                                         <NavLink
                                             to="/"
