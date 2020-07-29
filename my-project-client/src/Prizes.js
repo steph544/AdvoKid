@@ -177,7 +177,7 @@ class Prizes extends React.Component{
             <br/>
             <br/> 
             <div className="center">
-                 <Button  color="red" content="Submit Prizes" size="large" onClick={this.submit}></Button>
+                 <Button  color="red" content="Set Prizes" size="large" onClick={this.submit}></Button>
                  <Modal trigger={  <Button  color="red" content="Current Prizes" size="large" ></Button>}>
     <Modal.Header> <img src={require("./images/currentprizebanner.png")}/> </Modal.Header>
     <Modal.Content image>

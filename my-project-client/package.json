@@ -24,11 +24,13 @@
     "react-script-tag": "^1.1.2",
     "react-scripts": "3.4.1",
     "react-simple-chatbot": "^0.6.1",
+    "react-wavesurfer": "^0.8.6",
     "react-webcam": "^5.2.0",
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.1.1",
     "use-sound": "^1.0.2",
-    "victory": "^35.0.5"
+    "victory": "^35.0.5",
+    "waveform-react": "^0.2.3"
   },
   "devDependencies": {
     "rollup": "^0.41.6",

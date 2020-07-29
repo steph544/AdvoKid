@@ -11,7 +11,8 @@ class LevelTwoSettings extends React.Component{
         firstphrase: "",
         secondphrase: "",
         thirdphrase: "",
-        message: ""
+        message: "",
+        submitted: false 
     }
 
     handleChange = (e) => {
@@ -114,8 +115,8 @@ class LevelTwoSettings extends React.Component{
     render(){
      
         const { firstphrase, secondphrase, thirdphrase } = this.state
-        // if (this.state.submitted === false)
-        // {
+        if (this.state.submitted === false)
+        {
             return(
       
             <div>
@@ -150,7 +151,7 @@ class LevelTwoSettings extends React.Component{
                                   
                                      </form>
                                      <br/>
-                                <h1 className="child-font2, a2">{this.state.message}</h1>
+                              
                         </div>
                         
                     </div>
@@ -159,12 +160,15 @@ class LevelTwoSettings extends React.Component{
             
         </div>
         )}
-    //     else {
-    //     return(
-     
-    //     )
-    // } 
-    // }
+        else {
+        return(
+                <div className="div15 center">
+                    <h1 className="child-font, a1">{this.state.message}</h1>
+                </div>
+                
+        )
+    } 
+    }
   
     
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Card, Button, Rating, Progress} from 'semantic-ui-react'
 import "./styles.css"
+// import WaveSurfer from "./wavesurfer.js"
 
 class AudioCard extends React.Component{
     state = { 
@@ -50,6 +51,8 @@ class AudioCard extends React.Component{
           return(
         <> 
             <Card color='orange'>
+                {/* <WaveSurfer audio={this.props.recording.audio}/> */}
+                <br/> 
             <audio controls style={{width: "200px"}}>
                 <source src={this.props.recording.audio} type="audio/ogg"></source>
             </audio>
