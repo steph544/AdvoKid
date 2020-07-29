@@ -59,7 +59,73 @@ subtractPoints=()=>{
     {
         id: "explain", 
         message: "Does your child show much inflection in their voice?", 
-        end: true
+        trigger: "inflection options"
+
+    },    
+    {
+        id: "inflection options", 
+        options:[
+            {
+                value: "Yes", 
+                label: "Yes",
+                trigger: "reward"
+            },
+            {
+                value: "No", 
+                label: "No",
+                trigger: "Not really"
+            }
+        ]
+    },
+    {
+        id: "reward", 
+        message: "Awesome, go ahead and give them some stars!", 
+        trigger: "second question"
+
+    }, 
+    {
+        id: "Not really", 
+        message: "Okay no problem, encourage them to try with more inflection next time. Still reward them with a few stars for trying.", 
+        trigger: "second question"
+
+    }, 
+    {
+        id: "second question", 
+        message: "Are they speaking clearly?", 
+        trigger: "speaking clearly options"
+
+    }, 
+    {
+        id: "speaking clearly options", 
+        options:[
+            {
+                value: "Yes", 
+                label: "Yes",
+                trigger: "reward again"
+            },
+            {
+                value: "No", 
+                label: "No",
+                trigger: "Not really clear"
+            }
+        ]
+    },
+    {
+        id: "Not really clear", 
+        message: "Sometimes it's hard to talk clearly, encourage them to keep trying! Definitely reward them with a few stars for trying.", 
+        trigger: "final"
+
+    }, 
+    {
+        id: "reward again", 
+        message: "Amazing! Go ahead and reward them with extra stars!", 
+        trigger: "final"
+
+    },
+    {
+        id: "final", 
+        message: `Great Job, ${this.props.currentUser.first_name}! Keep up the good work!`,
+        end: true,
 
     },
 
