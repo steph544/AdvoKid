@@ -6,6 +6,7 @@ import LevelOneProgress from "./LevelOneProgress.js"
 import LevelTwoProgress from "./LevelTwoProgress.js"
 import LevelAnimation from "./LevelAnimation.js"
 import ChatBot2 from "./ChatBot2.js"
+import ChatBot3 from "./ChatBot3.js"
 
 const options = [
     { key: 1, text: 'Level One', value: 'One' },
@@ -25,21 +26,15 @@ class Progress extends React.Component{
     this.state = {
       percent: 0, 
       data: this.getData(0), 
-      chatbot2: false 
+      chatbot: "" 
     };
   }
 
-    changeChatBot=()=>{
+    changeChatBot=(value)=>{
       this.setState({
-        chatbot2: true
+        chatbot: value
       })}
-    
-      changeChatBot2=()=>{
-        this.setState({
-          chatbot2: false 
-        })
-
-    }
+  
       handleChange = (e, { value }) => this.setState({ value })
 
       componentDidMount() {
@@ -65,7 +60,7 @@ class Progress extends React.Component{
 renderSwitch=(param)=>{
     switch(param){
     case 'One':
-      return <LevelOneProgress changeChatBot2={this.changeChatBot2} currentChild={this.props.currentChild}/>
+      return <LevelOneProgress changeChatBot={this.changeChatBot} currentChild={this.props.currentChild}/>
     case 'Two':
         return <LevelTwoProgress changeChatBot={this.changeChatBot} currentChild={this.props.currentChild} currentUser={this.props.currentUser}/>
     // case 'Three':
@@ -83,37 +78,47 @@ renderSwitch=(param)=>{
     }
 }
 
+renderSwitch2=(param)=>{
+switch(param){
+  case 'levelone':
+    return  <ChatBot3 currentUser={this.props.currentUser}/>
+  case 'leveltwo':
+    return <ChatBot2 currentUser={this.props.currentUser}/>
+  default: 
+    return "" }
+               
+}
 
     render(){
         const { value } = this.state
-        if (this.state.chatbot2 === false){
+        // if (this.state.chatbot2 === false && this.state.chatbot3=== false){
 
-           return(
-        <>
-            <div class="div30 parent_page"> 
+        //    return(
+        // <>
+        //     <div class="div30 parent_page"> 
 
-              <Grid columns={1}>
-                <Grid.Column>
-                  <Dropdown
-                    onChange={this.handleChange}
-                    options={options}
-                    placeholder='Choose a Level to View Progress'
-                    selection
-                    value={value}
-                  />
-                  <br/>
-                  <br/>
-                </Grid.Column>
+        //       <Grid columns={1}>
+        //         <Grid.Column>
+        //           <Dropdown
+        //             onChange={this.handleChange}
+        //             options={options}
+        //             placeholder='Choose a Level to View Progress'
+        //             selection
+        //             value={value}
+        //           />
+        //           <br/>
+        //           <br/>
+        //         </Grid.Column>
 
-              </Grid>
-            </div>
+        //       </Grid>
+        //     </div>
    
 
-            <div class="div29"> 
-              {this.renderSwitch(this.state.value)}
-            </div>
-        </> 
-           )} else {
+        //     <div class="div29"> 
+        //       {this.renderSwitch(this.state.value)}
+        //     </div>
+        // </> 
+        //    )} else {
           return(
             <>
                 <div class="div30 parent_page"> 
@@ -144,13 +149,13 @@ renderSwitch=(param)=>{
                   <br/>
                   <br/>
                 
-                <ChatBot2 currentUser={this.props.currentUser}/>
+                {this.renderSwitch2(this.state.chatbot)}
                 </div>
             </> 
           )}
             
     
-    }
+    // }
   
     
 }

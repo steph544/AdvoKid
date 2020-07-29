@@ -40,7 +40,7 @@ class LevelTwoProgress extends React.Component{
             console.log(data)
           }
         )
-        this.props.changeChatBot()
+        this.props.changeChatBot("leveltwo")
       }
        
       }
