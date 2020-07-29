@@ -321,7 +321,7 @@ z-index: 1
 
 .div1 { grid-area: 1 / 2 / 8 / 10; }
 .div2 { grid-area: 4 / 3 / 7 / 5; 
-z-index: 999;}
+z-index: 2000;}
 .div3 { grid-area: 4 / 4 / 7 / 9; 
 z-index: 1000}
 .div4 { grid-area: 3 / 7 / 7 / 8;
@@ -553,4 +553,12 @@ z-index: 10005;
     .div29 { grid-area: 3 / 4 / 7 / 9; 
         z-index: 1000}
     .div30 { grid-area: 3 / 3 / 7 / 9; 
-            z-index: 1000}
+            z-index: 1999}
+    .div31 { grid-area: 3 / 8 / 7 / 9; 
+        z-index: 1000}
+    .div32 { grid-area: 4 / 4 / 3 / 5; 
+        z-index: 1000}
+
+    #dropdown{
+        z-index: 2002
+    }

@@ -52,7 +52,7 @@ class Levels extends React.Component{
         const { value } = this.state
           return(
         <>
-            <div className="div2"> 
+            <div class="div30 parent_page"> 
               <Grid columns={2}>
                     <Grid.Column>
                     <Dropdown
@@ -67,7 +67,7 @@ class Levels extends React.Component{
                 </Grid>
             </div>
 
-            <div class="div3"> 
+            <div class="div29"> 
            
       {this.renderSwitch(this.state.value)}
             </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import "./styles.css"
 import AudioCard from "./AudioCard.js"
 import {Card} from 'semantic-ui-react'
+// import ChatBot2 from "./ChatBot2.js"
 
 class LevelTwoProgress extends React.Component{
 
@@ -33,12 +34,13 @@ class LevelTwoProgress extends React.Component{
           {
             this.setState({
               recordings: data,
-              displayedRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8),
-              currentChildRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,8)
+              displayedRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,6),
+              currentChildRecordings: data.filter(obj=> obj.child_id === this.props.currentChild.id).sort((a, b) => b.datetime - a.datetime).slice(0,6)
             })
             console.log(data)
           }
         )
+        this.props.changeChatBot()
       }
        
       }
@@ -56,11 +58,12 @@ class LevelTwoProgress extends React.Component{
         } else{
            return(
         <>
-          <div className="div3">
-            <Card.Group itemsPerRow={4}>
+          <div className="div32">
+            <Card.Group itemsPerRow={4} float="left">
              {this.state.displayedRecordings.map(recording =>
                 <AudioCard key={recording.id} recording={recording} deleteRecording={this.deleteRecording} currentChild={this.props.currentChild}/>)}
             </Card.Group>
+            
           </div>
                
         </>    
