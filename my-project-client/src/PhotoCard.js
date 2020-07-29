@@ -43,9 +43,9 @@ class PhotoCard extends React.Component{
           return(
         <> 
             <Card color='orange'>
-                <Modal basic size="large" trigger={ <Image src={this.props.photo.screen_shot}/>}>
+                <Modal basic trigger={ <Image src={this.props.photo.screen_shot}/>}>
                     <Modal.Content image>
-                    <Image wrapped rounded fluid size='big' src={this.props.photo.screen_shot} />
+                    <Image wrapped rounded fluid height="500px" width="400px"  src={this.props.photo.screen_shot} />
                     <Modal.Description>
                         
                     </Modal.Description>

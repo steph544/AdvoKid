@@ -62,7 +62,7 @@ class AudioCard extends React.Component{
             </audio> */}
    
           <div id="waveform"></div>
-                {/* <Button onClick={this.playAudio} color="red" content="Hear Audio"></Button> */}
+             
                <Progress percent={this.state.percent} autoSuccess color='green'/>
                <Card.Content extra>
                    <Rating icon='star' defaultRating={0} maxRating={4} onRate={this.handleRate} /> 
@@ -75,7 +75,7 @@ class AudioCard extends React.Component{
                         Delete
                     </Button>
                     </div>
-                    {/* <AudioVisualiser audio={this.props.recording.audio}/> */}
+               
                 </Card.Content>
            </Card>
         </>    

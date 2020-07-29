@@ -549,3 +549,8 @@ z-index: 10005;
         color: rgb(0, 0, 0);
         /* text-align: center */
     }
+
+    .div29 { grid-area: 3 / 4 / 7 / 9; 
+        z-index: 1000}
+    .div30 { grid-area: 3 / 3 / 7 / 9; 
+            z-index: 1000}

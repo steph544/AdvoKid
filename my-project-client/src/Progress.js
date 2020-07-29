@@ -75,7 +75,7 @@ renderSwitch=(param)=>{
         const { value } = this.state
           return(
         <>
-            <div class="div2"> 
+            <div class="div30 parent_page"> 
 
               <Grid columns={1}>
                 <Grid.Column>
@@ -92,7 +92,7 @@ renderSwitch=(param)=>{
             </div>
    
 
-            <div class="div3"> 
+            <div class="div29"> 
               {this.renderSwitch(this.state.value)}
             </div>
         </>    
