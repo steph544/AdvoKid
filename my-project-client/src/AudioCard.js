@@ -1,7 +1,9 @@
 import React from 'react'
 import {Card, Button, Rating, Progress} from 'semantic-ui-react'
 import "./styles.css"
-// import WaveSurfer from "./wavesurfer.js"
+import AudioVisualizer from "./AudioVisualizer.js"
+
+
 
 class AudioCard extends React.Component{
     state = { 
@@ -29,11 +31,11 @@ class AudioCard extends React.Component{
     }
      
     playAudio=()=>{
-        const audio = this.props.recording.audio
+        const audio2 = this.props.recording.audio
         // const audioUrl = URL.createObjectURL(audio);
         // const audio2 = new Audio(audioUrl);
-        audio.play();
-        console.log(audio)
+        audio2.play();
+        console.log(audio2)
     }
 
     handleRate = (e, { rating, maxRating }) =>
@@ -50,12 +52,15 @@ class AudioCard extends React.Component{
 
           return(
         <> 
+     
             <Card color='orange'>
-                {/* <WaveSurfer audio={this.props.recording.audio}/> */}
+            <AudioVisualizer height="20px" width="75px" audio={this.props.recording.audio}/>
+{/*      
                 <br/> 
             <audio controls style={{width: "200px"}}>
                 <source src={this.props.recording.audio} type="audio/ogg"></source>
-            </audio>
+            </audio> */}
+   
           <div id="waveform"></div>
                 {/* <Button onClick={this.playAudio} color="red" content="Hear Audio"></Button> */}
                <Progress percent={this.state.percent} autoSuccess color='green'/>
@@ -70,7 +75,7 @@ class AudioCard extends React.Component{
                         Delete
                     </Button>
                     </div>
-                   
+                    {/* <AudioVisualiser audio={this.props.recording.audio}/> */}
                 </Card.Content>
            </Card>
         </>    
