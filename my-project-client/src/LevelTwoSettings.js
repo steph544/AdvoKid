@@ -28,8 +28,7 @@ class LevelTwoSettings extends React.Component{
         
     notify=()=>{
       this.setState({
-          submitted: true,
-          message: "Phrases have been submitted"
+          submitted: true
       })
     }
 
@@ -162,8 +161,9 @@ class LevelTwoSettings extends React.Component{
         )}
         else {
         return(
-                <div className="div15 center">
-                    <h1 className="child-font, a1">{this.state.message}</h1>
+                <div className="div15">
+                    {/* <h1 className="child-font, a1">{this.state.message}</h1> */}
+                    <img src={require('./images/setphrases.png')}/>
                 </div>
                 
         )

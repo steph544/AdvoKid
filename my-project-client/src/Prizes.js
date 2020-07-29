@@ -237,18 +237,11 @@ class Prizes extends React.Component{
             return (
 
             <>
-                <div className="div14"> 
-                    <img src={require("./images/prizecenter.png")} alt="" />
+                <div className="div14 center"> 
+                    <img src={require('./images/setprizes.png')}/>
                 </div>
 
-                <div className="div15 center"> 
-                    <br/>
-                        <br/> 
-                            <br/> 
-                                <p className="a1 child-font">
-                                    Prizes have been set!
-                                </p>
-                </div>
+                
             </>
             )
           

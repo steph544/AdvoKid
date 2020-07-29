@@ -32,7 +32,7 @@ subtractPoints=()=>{
     const steps=[
     {
         id: "Greet", 
-        message: `Hi, ${this.props.currentUser.first_name}! Do you need help with rewarding?`, 
+        message: `Hi, ${this.props.currentUser.first_name}! For this level, you want to reward your child for a big expression. Do you need some help?`, 
         trigger: "Display Options" 
 
     },
@@ -79,7 +79,7 @@ subtractPoints=()=>{
     },
     {
         id: "reward", 
-        message: "Awesome, go ahead and give them some stars!", 
+        message: `Awesome, go ahead and give them some stars and hit "reward"!`, 
         end: true 
 
     }, 
