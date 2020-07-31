@@ -1,0 +1,2 @@
+class WebCamCapturesController < ApplicationController
+end

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+<<<<<<< HEAD
 import {
     Button,
     Form,
@@ -7,6 +8,10 @@ import {
     Segment,
   } from 'semantic-ui-react';
   import { NavLink, withRouter } from 'react-router-dom';
+=======
+import {Grid} from 'semantic-ui-react';
+import { NavLink} from 'react-router-dom';
+>>>>>>> Stephanie
 
 
 class Login extends Component{
@@ -39,8 +44,15 @@ class Login extends Component{
                 console.log(userInfo)
             localStorage.token = userInfo.token 
             localStorage.user = this.state.username 
+<<<<<<< HEAD
             
             this.props.history.push("/navMap") 
+=======
+            if (localStorage.token !== "undefined"){
+                this.props.history.push("/parents") 
+            }
+            
+>>>>>>> Stephanie
         }
         )
         
@@ -68,7 +80,11 @@ class Login extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
+<<<<<<< HEAD
                                      <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/>
+=======
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
+>>>>>>> Stephanie
                                      <br/>
                                      <br/>
                                      <NavLink
@@ -78,7 +94,11 @@ class Login extends Component{
                                         activeStyle={{
                                             background: 'darkblue'
                                         }}
+<<<<<<< HEAD
                                         > <img className="yellowbutton" src={require('./images/signupbutton.png')}/> 
+=======
+                                        > <img src={require('./images/signupbutton.png')}/> 
+>>>>>>> Stephanie
                                         </NavLink> 
                                      
                                 </form>
@@ -94,6 +114,7 @@ class Login extends Component{
 }
 
 
+<<<<<<< HEAD
 export default withRouter(Login)
 
 {/* <Grid centered columns={2}>
@@ -139,3 +160,7 @@ export default withRouter(Login)
             
             </Grid.Column>
         </Grid> */}
+=======
+export default Login
+
+>>>>>>> Stephanie

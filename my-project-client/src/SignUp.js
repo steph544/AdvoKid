@@ -6,8 +6,12 @@ import {
     Grid,
     Segment,
   } from 'semantic-ui-react';
+<<<<<<< HEAD
   import { NavLink, withRouter} from 'react-router-dom';
   import {connect} from 'react-redux'
+=======
+  import { NavLink} from 'react-router-dom';
+>>>>>>> Stephanie
 
 class SignUp extends Component{
     state = {}
@@ -42,7 +46,11 @@ class SignUp extends Component{
         .then(userInfo => 
             {
                 console.log(userInfo)
+<<<<<<< HEAD
             
+=======
+            if (localStorage.user !== "undefined")
+>>>>>>> Stephanie
             this.props.history.push("/login") 
         }
         )
@@ -84,8 +92,19 @@ class SignUp extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
+<<<<<<< HEAD
                                      <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
                                 </form>
+=======
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
+                                  
+                                        <NavLink
+                                            to="/"
+                                            > 
+                                            <img src={require("./images/signup_back.png")}></img> 
+                                        </NavLink> 
+                                     </form>
+>>>>>>> Stephanie
                 
                                 </div>
                             </div>
@@ -97,6 +116,10 @@ class SignUp extends Component{
     }
 }
 
+<<<<<<< HEAD
 export default withRouter(SignUp)
+=======
+export default SignUp
+>>>>>>> Stephanie
 
 
