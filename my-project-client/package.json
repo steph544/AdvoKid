@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  "main": "build/clmtrackr.js",
+  "module": "build/clmtrackr.module.js",
+>>>>>>> Stephanie
 =======
   "main": "build/clmtrackr.js",
   "module": "build/clmtrackr.module.js",
@@ -11,6 +16,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "react": "^16.13.1",
     "react-awesome-reveal": "^2.4.2",
@@ -22,6 +28,8 @@
     "redux": "^4.0.5",
     "semantic-ui-react": "^0.88.2"
 =======
+=======
+>>>>>>> Stephanie
     "jsfeat": "git+https://github.com/inspirit/jsfeat",
     "mosse": "^0.1.1",
     "numeric": "^1.2.6",
@@ -53,6 +61,9 @@
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "uglify-es": "^3.0.17"
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
   },
   "scripts": {

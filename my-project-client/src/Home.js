@@ -9,7 +9,11 @@ function Home(){
     return(
     <div class="center">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <LandingBg style={{height: '100%'}} />
+=======
+        <LandingBg width="100%" style={{height: '110%'}} />
+>>>>>>> Stephanie
 =======
         <LandingBg width="100%" style={{height: '110%'}} />
 >>>>>>> Stephanie

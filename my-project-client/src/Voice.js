@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import {connect} from 'react-redux'
 
@@ -6,6 +7,8 @@ import {connect} from 'react-redux'
 
 function Voice() {
 =======
+=======
+>>>>>>> Stephanie
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Button} from 'semantic-ui-react';
@@ -86,6 +89,9 @@ function Voice(props) {
     }
 
 
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
     const SpeechRecognition=
     window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -94,8 +100,11 @@ function Voice(props) {
 
     recognition.onstart=function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         console.log("voice is activated, you can speak into microphone");
 =======
+=======
+>>>>>>> Stephanie
         navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
         const mediaRecorder = new MediaRecorder(stream);
@@ -127,6 +136,9 @@ function Voice(props) {
             mediaRecorder.stop();
         }, 3000);
         });
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
     }
 
@@ -135,6 +147,7 @@ function Voice(props) {
 
         const transcript= event.results[current][0].transcript;
         const transcriptOutput=document.getElementById("transcript")
+<<<<<<< HEAD
 <<<<<<< HEAD
         transcriptOutput.textContent=transcript.toUpperCase()
 
@@ -162,6 +175,8 @@ const mapStateToProps=state=>({
 })
 export default connect(mapStateToProps)(Voice)
 =======
+=======
+>>>>>>> Stephanie
         transcriptOutput.textContent=transcript
         if (currentChildPhrases){
                if (currentChildPhrases.phrase_one.toLowerCase().replace(/[^a-zA-Z ]/g, "") === transcript.toLowerCase()){
@@ -251,6 +266,9 @@ export default connect(mapStateToProps)(Voice)
 
 
 export default Voice
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
 
 

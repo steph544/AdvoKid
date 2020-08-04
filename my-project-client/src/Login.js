@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
     Button,
     Form,
@@ -8,6 +9,10 @@ import {
     Segment,
   } from 'semantic-ui-react';
   import { NavLink, withRouter } from 'react-router-dom';
+=======
+import {Grid} from 'semantic-ui-react';
+import { NavLink} from 'react-router-dom';
+>>>>>>> Stephanie
 =======
 import {Grid} from 'semantic-ui-react';
 import { NavLink} from 'react-router-dom';
@@ -45,13 +50,19 @@ class Login extends Component{
             localStorage.token = userInfo.token 
             localStorage.user = this.state.username 
 <<<<<<< HEAD
+<<<<<<< HEAD
             
             this.props.history.push("/navMap") 
 =======
+=======
+>>>>>>> Stephanie
             if (localStorage.token !== "undefined"){
                 this.props.history.push("/parents") 
             }
             
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
         }
         )
@@ -81,7 +92,11 @@ class Login extends Component{
                                         <br/>
                                         <br/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                      <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/>
+=======
+                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
+>>>>>>> Stephanie
 =======
                                      <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
 >>>>>>> Stephanie
@@ -95,7 +110,11 @@ class Login extends Component{
                                             background: 'darkblue'
                                         }}
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         > <img className="yellowbutton" src={require('./images/signupbutton.png')}/> 
+=======
+                                        > <img src={require('./images/signupbutton.png')}/> 
+>>>>>>> Stephanie
 =======
                                         > <img src={require('./images/signupbutton.png')}/> 
 >>>>>>> Stephanie
@@ -114,6 +133,7 @@ class Login extends Component{
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export default withRouter(Login)
 
@@ -160,6 +180,10 @@ export default withRouter(Login)
             
             </Grid.Column>
         </Grid> */}
+=======
+export default Login
+
+>>>>>>> Stephanie
 =======
 export default Login
 

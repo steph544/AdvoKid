@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, {Component} from 'react'
 
   import { NavLink, withRouter } from 'react-router-dom';
@@ -25,6 +26,8 @@ function NavMap(){
 
 export default NavMap
 =======
+=======
+>>>>>>> Stephanie
 import React from 'react'
 import { Link} from 'react-router-dom';
 import "./styles.css"
@@ -78,4 +81,7 @@ class NavMap extends React.Component{
 
 export default NavMap
 
+<<<<<<< HEAD
+>>>>>>> Stephanie
+=======
 >>>>>>> Stephanie
