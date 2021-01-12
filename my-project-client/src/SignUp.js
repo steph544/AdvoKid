@@ -6,16 +6,7 @@ import {
     Grid,
     Segment,
   } from 'semantic-ui-react';
-<<<<<<< HEAD
-<<<<<<< HEAD
-  import { NavLink, withRouter} from 'react-router-dom';
-  import {connect} from 'react-redux'
-=======
   import { NavLink} from 'react-router-dom';
->>>>>>> Stephanie
-=======
-  import { NavLink} from 'react-router-dom';
->>>>>>> Stephanie
 
 class SignUp extends Component{
     state = {}
@@ -50,15 +41,7 @@ class SignUp extends Component{
         .then(userInfo => 
             {
                 console.log(userInfo)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
             if (localStorage.user !== "undefined")
->>>>>>> Stephanie
-=======
-            if (localStorage.user !== "undefined")
->>>>>>> Stephanie
             this.props.history.push("/login") 
         }
         )
@@ -100,13 +83,6 @@ class SignUp extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
-                                </form>
-=======
-=======
->>>>>>> Stephanie
                                      <img src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/> 
                                   
                                         <NavLink
@@ -115,10 +91,6 @@ class SignUp extends Component{
                                             <img src={require("./images/signup_back.png")}></img> 
                                         </NavLink> 
                                      </form>
-<<<<<<< HEAD
->>>>>>> Stephanie
-=======
->>>>>>> Stephanie
                 
                                 </div>
                             </div>
@@ -130,14 +102,4 @@ class SignUp extends Component{
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default withRouter(SignUp)
-=======
 export default SignUp
->>>>>>> Stephanie
-=======
-export default SignUp
->>>>>>> Stephanie
-
-

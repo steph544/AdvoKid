@@ -1,22 +1,6 @@
 import React, {Component} from 'react'
-<<<<<<< HEAD
-<<<<<<< HEAD
-import {
-    Button,
-    Form,
-    Grid,
-    Message,
-    Segment,
-  } from 'semantic-ui-react';
-  import { NavLink, withRouter } from 'react-router-dom';
-=======
 import {Grid} from 'semantic-ui-react';
 import { NavLink} from 'react-router-dom';
->>>>>>> Stephanie
-=======
-import {Grid} from 'semantic-ui-react';
-import { NavLink} from 'react-router-dom';
->>>>>>> Stephanie
 
 
 class Login extends Component{
@@ -49,21 +33,10 @@ class Login extends Component{
                 console.log(userInfo)
             localStorage.token = userInfo.token 
             localStorage.user = this.state.username 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-            this.props.history.push("/navMap") 
-=======
-=======
->>>>>>> Stephanie
             if (localStorage.token !== "undefined"){
                 this.props.history.push("/parents") 
             }
             
-<<<<<<< HEAD
->>>>>>> Stephanie
-=======
->>>>>>> Stephanie
         }
         )
         
@@ -91,15 +64,7 @@ class Login extends Component{
                                     <input type="password" name="password" onChange={(e) => this.handleChange(e)} value={password}></input>
                                         <br/>
                                         <br/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                     <img className="yellowbutton" src={require('./images/submitbutton.png')} onClick={(e) => this.signUp(e)}/>
-=======
                                      <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
->>>>>>> Stephanie
-=======
-                                     <img src={require('./images/submitbutton.png')} onClick={(e) => this.logIn(e)}/>
->>>>>>> Stephanie
                                      <br/>
                                      <br/>
                                      <NavLink
@@ -109,15 +74,7 @@ class Login extends Component{
                                         activeStyle={{
                                             background: 'darkblue'
                                         }}
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        > <img className="yellowbutton" src={require('./images/signupbutton.png')}/> 
-=======
                                         > <img src={require('./images/signupbutton.png')}/> 
->>>>>>> Stephanie
-=======
-                                        > <img src={require('./images/signupbutton.png')}/> 
->>>>>>> Stephanie
                                         </NavLink> 
                                      
                                 </form>
@@ -133,58 +90,4 @@ class Login extends Component{
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default withRouter(Login)
-
-{/* <Grid centered columns={2}>
-            <Grid.Column style={{position: 'absolute', left: '35%'}}>
-                    
-            <Segment style={{width: '500px'}}>
-                <Form size="large" onSubmit={(e) => this.logIn(e)} >
-                    <Form.Input
-                        fluid
-                        icon="user"
-                        iconPosition="left"
-                        placeholder="User Name"
-                        name="username"
-                        onChange={(e) => this.handleChange(e)}
-                    />
-                    <Form.Input
-                        fluid
-                        icon="lock"
-                        iconPosition="left"
-                        placeholder="Password"
-                        type="password"
-                        name="password"
-                        onChange={(e) => this.handleChange(e)}
-                    />
-                    <Button color="grey" fluid size="large">
-                        Login
-                    </Button>
-                </Form>
-            
-                <Message>
-                    Not registered yet? 
-                    <NavLink
-                    to="/signup"
-                    exact
-                    
-                    activeStyle={{
-                        background: 'darkblue'
-                    }}
-                    > Signup</NavLink>
-                </Message>
-            
-            </Segment>
-            
-            </Grid.Column>
-        </Grid> */}
-=======
 export default Login
-
->>>>>>> Stephanie
-=======
-export default Login
-
->>>>>>> Stephanie
