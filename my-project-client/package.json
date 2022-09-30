@@ -30,7 +30,7 @@
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.1.1",
     "use-sound": "^1.0.2",
-    "victory": "^35.0.5",
+    "victory": "^36.6.8",
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
